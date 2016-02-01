@@ -1,14 +1,14 @@
 package com.lasergiraffe.rideshare;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 
 import com.parse.FindCallback;
 import com.parse.Parse;
@@ -26,24 +26,24 @@ public class MainActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         // [Optional] Power your app with Local Datastore. For more info, go to
         // https://parse.com/docs/android/guide#local-datastore
         Parse.enableLocalDatastore(this);
         Parse.initialize(this);
-
+        // Declare post as an arraylist
         posts = new ArrayList<Note>();
         ArrayAdapter<Note> adapter = new ArrayAdapter<Note>(this, R.layout.list_item_layout, posts);
         setListAdapter(adapter);
         refreshPostList();
+
+        Button switchtonewpage = (Button) findViewById(R.id.newpost_button);
+        switchtonewpage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newPost = new Intent(MainActivity.this, newpost.class);
+                startActivity(newPost);
+            }
+        });
     }
 
     @Override

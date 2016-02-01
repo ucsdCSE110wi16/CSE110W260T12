@@ -14,6 +14,7 @@ public class Note {
     }
 
     @Override
+    // toString is the function for the content of the action bar
     public String toString() {
         return this.getTitle();
     }
