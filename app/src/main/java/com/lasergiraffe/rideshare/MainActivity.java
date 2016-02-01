@@ -1,22 +1,31 @@
 package com.lasergiraffe.rideshare;
 
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
 
-public class MainActivity extends AppCompatActivity {
+import com.parse.FindCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends ListActivity {
+
+    private List<Note> posts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -26,6 +35,15 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        // [Optional] Power your app with Local Datastore. For more info, go to
+        // https://parse.com/docs/android/guide#local-datastore
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this);
+
+        posts = new ArrayList<Note>();
+        ArrayAdapter<Note> adapter = new ArrayAdapter<Note>(this, R.layout.list_item_layout, posts);
+        setListAdapter(adapter);
+        refreshPostList();
     }
 
     @Override
@@ -48,5 +66,26 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void refreshPostList() {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Post");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> postList, ParseException e) {
+                if (e == null) {
+                    // If there are results, update the list of posts
+                    // and notify the adapter
+                    posts.clear();
+                    for (ParseObject post : postList) {
+                        Note note = new Note(post.getObjectId(), post.getString("title"), post.getString("content"));
+                        posts.add(note);
+                    }
+                    ((ArrayAdapter<Note>) getListAdapter()).notifyDataSetChanged();
+                } else {
+                    Log.d(getClass().getSimpleName(), "Error: " + e.getMessage());
+                }
+            }
+        });
     }
 }
