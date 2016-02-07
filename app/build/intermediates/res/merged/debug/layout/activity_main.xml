@@ -16,6 +16,6 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_main" />
-    <include layout="@layout/newpost" />
 </android.support.design.widget.CoordinatorLayout>
-<!-- From: file:/C:/Users/lamki/AndroidStudioProjects/CSE110W260T12/app/src/main/res/layout/activity_main.xml -->
+
+<!-- From: file:/C:/Users/Daylon/AndroidStudioProjects/CSE110W260T12/app/src/main/res/layout/activity_main.xml -->

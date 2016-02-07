@@ -10,40 +10,59 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 
+
 import com.parse.FindCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseClassName;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.parse.Parse.*;
+
+
 public class MainActivity extends ListActivity {
 
-    private List<Note> posts;
+    public static List<Note> posts;
+    static boolean started = false; //don't reinitialize parse if already done once
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // [Optional] Power your app with Local Datastore. For more info, go to
         // https://parse.com/docs/android/guide#local-datastore
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this);
+        //enableLocalDatastore(this);
+
+        //already done once check (VERY INELEGANT SOLUTION - work on later)
+        if(!started) {
+            ParseObject.registerSubclass(Note.class);
+
+            initialize(this);
+            ParseInstallation.getCurrentInstallation().saveInBackground();
+            started = true;
+        }
         // Declare post as an arraylist
         posts = new ArrayList<Note>();
         ArrayAdapter<Note> adapter = new ArrayAdapter<Note>(this, R.layout.list_item_layout, posts);
         setListAdapter(adapter);
         refreshPostList();
 
+
         Button switchtonewpage = (Button) findViewById(R.id.newpost_button);
         switchtonewpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newPost = new Intent(MainActivity.this, newpost.class);
-                startActivity(newPost);
+                Intent newPost = new Intent(v.getContext(), newpost.class);
+                startActivityForResult(newPost, 1);
             }
         });
+
     }
 
     @Override
@@ -69,7 +88,7 @@ public class MainActivity extends ListActivity {
     }
 
     private void refreshPostList() {
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Post");
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("notes");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> postList, ParseException e) {

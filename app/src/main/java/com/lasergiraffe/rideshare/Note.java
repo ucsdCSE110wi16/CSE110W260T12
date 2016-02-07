@@ -1,12 +1,22 @@
 package com.lasergiraffe.rideshare;
 
-public class Note {
+import android.view.View;
+
+import com.parse.*;
+
+@ParseClassName("notes")
+public class Note extends ParseObject{
 
     private String id;
     private String title;
     private String content;
 
-    Note(String noteId, String noteTitle, String noteContent) {
+    public Note(){
+        //empty constructor
+    }
+
+
+    public Note(String noteId, String noteTitle, String noteContent) {
         id = noteId;
         title = noteTitle;
         content = noteContent;
