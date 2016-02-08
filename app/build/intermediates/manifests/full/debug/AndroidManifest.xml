@@ -33,6 +33,7 @@
 
     <application
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:launchMode="singleTask"
@@ -84,10 +85,17 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-<!--                   IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
+                <!-- IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
                 <category android:name="com.lasergiraffe.rideshare" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name="com.lasergiraffe.rideshare.OpenedPostActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_opened_post"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
     </application>
 
 </manifest>

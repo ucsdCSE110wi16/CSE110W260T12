@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-        >
+    android:background="#42cfff">
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/title_id"
         android:text="Title"
+        android:textSize="50dp"
+        android:textAlignment="center"
+        android:clickable="false"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp" />
+        android:background="#00000000" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -18,10 +21,13 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/description_id"
-        android:layout_marginTop="113dp"
         android:text="Description"
+        android:textAlignment="viewStart"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/title_id"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/submit_id"
+        android:background="#00000000" />
 
     <Button
         android:layout_width="wrap_content"
@@ -32,12 +38,4 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="55dp" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/clear_button"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/title_id" />
 </RelativeLayout>

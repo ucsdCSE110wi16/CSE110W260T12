@@ -7,8 +7,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 
 import com.parse.FindCallback;
@@ -63,6 +65,46 @@ public class MainActivity extends ListActivity {
             }
         });
 
+        ListView list = getListView();
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(MainActivity.this, OpenedPostActivity.class);
+                String noteTitle = parent.getItemAtPosition(position).toString();
+                String noteContent = ((Note)parent.getItemAtPosition(position)).getContent();
+                i.putExtra(getString(R.string.theNote), noteTitle);
+                i.putExtra(getString(R.string.theContent), noteContent);
+                System.out.println("Note title is " + noteTitle);
+                startActivity(i);
+            }
+        });
+
+        Button clear = (Button) findViewById(R.id.clear_button);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                ParseQuery<ParseObject> query = ParseQuery.getQuery("notes");
+                query.findInBackground(new FindCallback<ParseObject>() {
+
+
+                    @Override
+                    public void done(List<ParseObject> postList, ParseException e) {
+                        if (e == null) {
+                            // If there are results, update the list of posts
+                            // and notify the adapter
+                            posts.clear();
+                            ParseObject.deleteAllInBackground(postList);
+                            ((ArrayAdapter<Note>) getListAdapter()).notifyDataSetChanged();
+                        } else {
+                            Log.d(getClass().getSimpleName(), "Error: " + e.getMessage());
+                        }
+                    }
+                });
+                refreshPostList();
+            }
+        });
+
+
     }
 
     @Override
@@ -98,6 +140,7 @@ public class MainActivity extends ListActivity {
                     posts.clear();
                     for (ParseObject post : postList) {
                         Note note = new Note(post.getObjectId(), post.getString("title"), post.getString("content"));
+                        note.getObjectId();
                         posts.add(note);
                     }
                     ((ArrayAdapter<Note>) getListAdapter()).notifyDataSetChanged();
@@ -107,4 +150,6 @@ public class MainActivity extends ListActivity {
             }
         });
     }
+
+
 }
