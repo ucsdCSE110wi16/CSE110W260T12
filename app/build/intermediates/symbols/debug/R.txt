@@ -555,7 +555,7 @@ int id center_horizontal 0x7f0c001c
 int id center_vertical 0x7f0c001d
 int id checkbox 0x7f0c004d
 int id chronometer 0x7f0c0073
-int id clear_button 0x7f0c006b
+int id clear_button 0x7f0c0066
 int id clip_horizontal 0x7f0c0029
 int id clip_vertical 0x7f0c002a
 int id collapseActionView 0x7f0c0031
@@ -564,7 +564,7 @@ int id custom 0x7f0c004a
 int id customPanel 0x7f0c0049
 int id decor_content_parent 0x7f0c0053
 int id default_activity_button 0x7f0c003e
-int id description_id 0x7f0c0069
+int id description_id 0x7f0c006a
 int id disableHome 0x7f0c000d
 int id edit_query 0x7f0c0057
 int id end 0x7f0c001e
@@ -623,8 +623,8 @@ int id shortcut 0x7f0c004e
 int id showCustom 0x7f0c0010
 int id showHome 0x7f0c0011
 int id showTitle 0x7f0c0012
-int id snackbar_action 0x7f0c0067
-int id snackbar_text 0x7f0c0066
+int id snackbar_action 0x7f0c0068
+int id snackbar_text 0x7f0c0067
 int id split_action_bar 0x7f0c0007
 int id src_atop 0x7f0c0026
 int id src_in 0x7f0c0027
@@ -632,14 +632,14 @@ int id src_over 0x7f0c0028
 int id start 0x7f0c0022
 int id status_bar_latest_event_content 0x7f0c006e
 int id submit_area 0x7f0c0060
-int id submit_id 0x7f0c006a
+int id submit_id 0x7f0c006b
 int id tabMode 0x7f0c000c
 int id text 0x7f0c0076
 int id text2 0x7f0c0074
 int id textSpacerNoButtons 0x7f0c0048
 int id time 0x7f0c0072
 int id title 0x7f0c0041
-int id title_id 0x7f0c0068
+int id title_id 0x7f0c0069
 int id title_template 0x7f0c0044
 int id toolbar 0x7f0c0064
 int id top 0x7f0c0023

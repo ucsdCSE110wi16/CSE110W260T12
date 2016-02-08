@@ -2132,7 +2132,7 @@ containing a value of this type.
         public static final int center_vertical=0x7f0c001d;
         public static final int checkbox=0x7f0c004d;
         public static final int chronometer=0x7f0c0073;
-        public static final int clear_button=0x7f0c006b;
+        public static final int clear_button=0x7f0c0066;
         public static final int clip_horizontal=0x7f0c0029;
         public static final int clip_vertical=0x7f0c002a;
         public static final int collapseActionView=0x7f0c0031;
@@ -2141,7 +2141,7 @@ containing a value of this type.
         public static final int customPanel=0x7f0c0049;
         public static final int decor_content_parent=0x7f0c0053;
         public static final int default_activity_button=0x7f0c003e;
-        public static final int description_id=0x7f0c0069;
+        public static final int description_id=0x7f0c006a;
         public static final int disableHome=0x7f0c000d;
         public static final int edit_query=0x7f0c0057;
         public static final int end=0x7f0c001e;
@@ -2200,8 +2200,8 @@ containing a value of this type.
         public static final int showCustom=0x7f0c0010;
         public static final int showHome=0x7f0c0011;
         public static final int showTitle=0x7f0c0012;
-        public static final int snackbar_action=0x7f0c0067;
-        public static final int snackbar_text=0x7f0c0066;
+        public static final int snackbar_action=0x7f0c0068;
+        public static final int snackbar_text=0x7f0c0067;
         public static final int split_action_bar=0x7f0c0007;
         public static final int src_atop=0x7f0c0026;
         public static final int src_in=0x7f0c0027;
@@ -2209,14 +2209,14 @@ containing a value of this type.
         public static final int start=0x7f0c0022;
         public static final int status_bar_latest_event_content=0x7f0c006e;
         public static final int submit_area=0x7f0c0060;
-        public static final int submit_id=0x7f0c006a;
+        public static final int submit_id=0x7f0c006b;
         public static final int tabMode=0x7f0c000c;
         public static final int text=0x7f0c0076;
         public static final int text2=0x7f0c0074;
         public static final int textSpacerNoButtons=0x7f0c0048;
         public static final int time=0x7f0c0072;
         public static final int title=0x7f0c0041;
-        public static final int title_id=0x7f0c0068;
+        public static final int title_id=0x7f0c0069;
         public static final int title_template=0x7f0c0044;
         public static final int toolbar=0x7f0c0064;
         public static final int top=0x7f0c0023;
