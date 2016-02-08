@@ -4,8 +4,10 @@ import android.view.View;
 
 import com.parse.*;
 
+
+
 @ParseClassName("notes")
-public class Note extends ParseObject{
+public class Note extends ParseObject implements View.OnClickListener{
 
     private String id;
     private String title;
@@ -47,4 +49,8 @@ public class Note extends ParseObject{
         this.content = content;
     }
 
+    @Override
+    public void onClick(View v) {
+        System.out.println("hi");
+    }
 }
