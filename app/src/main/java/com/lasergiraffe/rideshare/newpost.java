@@ -17,7 +17,7 @@ import com.parse.ParseObject;
 /**
  * Created by lamki on 2/1/2016.
  */
-public class newpost extends Activity{
+public class newpost extends Activity {
     private Note note;
     EditText title;
     EditText description; //content
@@ -43,6 +43,7 @@ public class newpost extends Activity{
                 note.setContent(description.getText().toString());
 
                 note.put("title", note.getTitle());
+                note.put("content", note.getContent());
                 note.saveInBackground();
 
                 Intent main = new Intent(newpost.this, MainActivity.class);
@@ -54,18 +55,7 @@ public class newpost extends Activity{
             }
         });
 
-        Button clear = (Button) findViewById(R.id.clear_button);
-        clear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-
-
-                Intent main = new Intent();
-                setResult(5, main);
-                finish();
-            }});
-        }
     }
-
+}
 
