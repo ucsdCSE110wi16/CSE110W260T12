@@ -6,11 +6,11 @@ Week 5:
   submit, view posts (opened post screen). There is also a temporary clear button that deletes the items off of parse (for 
   testing, will be removed before the finished product). 
 Week 6:
-  Todo: begin user story 6 (Group functionality + group chat - Kenny/Amit work on this)
+  TODO: begin user story 6 (Group functionality + group chat - Kenny/Amit work on this)
         Clean up the menu options for creating a new post (Daylon)
         Increase Parse use (change to sending note class objects instead of strings to parse, automatic deletion? low priority) (Daylon)
         Comment functionality (Yahav)
 Week 7:
-  User story 10, User story 11
+  TODO: User story 10, User story 11 - also, consider personal profile functionality
 Week 8­10:
   Rest of the User stories (low priority, miscellaneous bonus features)
