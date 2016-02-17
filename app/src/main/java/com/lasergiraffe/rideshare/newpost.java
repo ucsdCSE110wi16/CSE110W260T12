@@ -14,6 +14,8 @@ public class newpost extends Activity {
     private Note note;
     EditText title;
     EditText description; //content
+    EditText userName; //name
+    EditText userPhone; //phone
     Button submit;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,8 @@ public class newpost extends Activity {
 
         submit = (Button) findViewById(R.id.submit_id);
         title = (EditText) findViewById(R.id.title_id);
+        userName = (EditText) findViewById(R.id.name_id);
+        userPhone = (EditText) findViewById(R.id.phone_id);
         description = (EditText) findViewById(R.id.description_id);
         note = new Note();
 
@@ -32,9 +36,13 @@ public class newpost extends Activity {
                 note.setId("my new id");
                 note.setTitle(title.getText().toString());
                 note.setContent(description.getText().toString());
+                note.setName(userName.getText().toString());
+                note.setPhone(userPhone.getText().toString());
 
                 note.put("title", note.getTitle());
                 note.put("content", note.getContent());
+                note.put("userName", note.getName());
+                note.put("userPhone", note.getPhone());
                 note.saveInBackground();
 
                 Intent main = new Intent(newpost.this, MainActivity.class);
