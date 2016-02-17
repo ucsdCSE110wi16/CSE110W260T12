@@ -11,6 +11,8 @@ public class Note extends ParseObject implements View.OnClickListener{
 
     private String id;
     private String title;
+    private String name;
+    private String phone;
     private String content;
 
     public Note(){
@@ -18,9 +20,11 @@ public class Note extends ParseObject implements View.OnClickListener{
     }
 
 
-    public Note(String noteId, String noteTitle, String noteContent) {
+    public Note(String noteId, String noteTitle, String noteName, String notePhone, String noteContent) {
         id = noteId;
         title = noteTitle;
+        name = noteName;
+        phone = notePhone;
         content = noteContent;
 
     }
@@ -48,6 +52,11 @@ public class Note extends ParseObject implements View.OnClickListener{
     public void setContent(String content) {
         this.content = content;
     }
+    public String getName() { return name; }
+    public void setName( String name) { this.name = name; }
+    public String getPhone() { return phone; }
+    public void setPhone( String phone ) { this.phone = phone;}
+
 
     @Override
     public void onClick(View v) {

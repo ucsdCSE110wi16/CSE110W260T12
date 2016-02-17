@@ -136,7 +136,8 @@ public class MainActivity extends ListActivity {
                     // and notify the adapter
                     posts.clear();
                     for (ParseObject post : postList) {
-                        Note note = new Note(post.getObjectId(), post.getString("title"), post.getString("content"));
+                        Note note = new Note(post.getObjectId(), post.getString("title"),
+                                post.getString("name"), post.getString("phone"), post.getString("content"));
                         note.getObjectId();
                         posts.add(note);
                     }
