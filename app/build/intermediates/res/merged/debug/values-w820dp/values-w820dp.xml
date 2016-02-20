@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110Winter2016Team12B260/app/src/main/res/values-w820dp/dimens.xml -->
+    <!-- From: file:/C:/Users/lamki/AndroidStudioProjects/CSE110W260T12/app/src/main/res/values-w820dp/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">64dp</dimen>
 </resources>

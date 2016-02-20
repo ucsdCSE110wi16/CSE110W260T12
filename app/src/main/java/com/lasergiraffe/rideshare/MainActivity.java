@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.lasergiraffe.rideshare.Layer.layerMain;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseInstallation;
@@ -52,7 +53,14 @@ public class MainActivity extends ListActivity {
         setListAdapter(adapter);
         refreshPostList();
 
+        Button toLayer = (Button) findViewById(R.id.toLayerPage);
+        toLayer.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent layerclass = new Intent(MainActivity.this, layerMain.class);
+                startActivity(layerclass);
+            }
 
+        });
         Button switchtonewpage = (Button) findViewById(R.id.newpost_button);
         switchtonewpage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,8 +108,6 @@ public class MainActivity extends ListActivity {
                 refreshPostList();
             }
         });
-
-
     }
 
     @Override
@@ -126,6 +132,7 @@ public class MainActivity extends ListActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // Method that refreshes the action bar from Parse.
     private void refreshPostList() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("notes");
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -148,6 +155,4 @@ public class MainActivity extends ListActivity {
             }
         });
     }
-
-
 }

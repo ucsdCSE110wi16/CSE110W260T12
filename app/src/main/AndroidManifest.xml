@@ -2,28 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lasergiraffe.rideshare" >
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <!--
-      GET_ACCOUNTS is only required for GCM on devices running Android lower than
-      4.0.4. You may leave out this permission if you are targetting 4.0.4+.
-    -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- Standard permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
 
-    <!--
-      IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
-      to match your app's package name + ".permission.C2D_MESSAGE".
-    -->
-    <permission
-        android:name="com.lasergiraffe.rideshare.permission.C2D_MESSAGE"
-        android:protectionLevel="signature" />
+    <!-- Signature-only permissions -->
+    <permission android:name="com.lasergiraffe.rideshare.permission.LAYER_PUSH"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.myapp.package.permission.LAYER_PUSH"/>
+    <permission android:name="com.lasergiraffe.rideshare.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.lasergiraffe.rideshare.permission.C2D_MESSAGE"/>
 
-    <uses-permission android:name="com.lasergiraffe.rideshare.permission.C2D_MESSAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- LayerClient.sendLogs() permissions -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+
+
 
     <application
         android:allowBackup="true"
@@ -51,18 +48,32 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".OpenedPostActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_opened_post"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
             android:name=".newpost"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
-                <action android:name="android.intent.action.NEWPOST" />
-
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Layer.layerMain"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
+        <!-- Parse -->
         <service android:name="com.parse.PushService" />
-
         <receiver
             android:name="com.parse.ParsePushBroadcastReceiver"
             android:exported="false" >
@@ -79,17 +90,33 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-<!--                   IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
+                <!-- IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
                 <category android:name="com.lasergiraffe.rideshare" />
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name=".OpenedPostActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_opened_post"
-            android:theme="@style/FullscreenTheme" >
-        </activity>
+
+        <!-- Layer -->
+        <application>
+            <!-- Your custom "com.layer.sdk.PUSH" notification Receiver -->
+            <receiver android:name=".LayerPushReceiver">
+                <intent-filter>
+                    <action android:name="com.layer.sdk.PUSH"/>
+                    <category android:name="com.myapp.package"/>
+                </intent-filter>
+            </receiver>
+
+            <!-- Layer's GCM Receiver and Service -->
+            <receiver android:name="com.layer.sdk.services.GcmBroadcastReceiver"
+                android:permission="com.google.android.c2dm.permission.SEND">
+                <intent-filter android:priority="950">
+                    <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                    <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                    <category android:name="com.myapp.package"/>
+                </intent-filter>
+            </receiver>
+            <service android:name="com.layer.sdk.services.GcmIntentService"/>
+        </application>
     </application>
 
 </manifest>
