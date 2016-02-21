@@ -7,4 +7,10 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="theNote">theNote</string>
     <string name="theContent">hahaha</string>
+    <string name="title_activity_sign_up">SignUp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="username">username</string>
+    <string name="title_activity_login">Login</string>
+    <string name="logout">logout</string>
 </resources>

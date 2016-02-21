@@ -3,24 +3,27 @@
     package="com.lasergiraffe.rideshare" >
 
     <!-- Standard permissions -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <!-- Signature-only permissions -->
-    <permission android:name="com.lasergiraffe.rideshare.permission.LAYER_PUSH"
-        android:protectionLevel="signature"/>
-    <uses-permission android:name="com.myapp.package.permission.LAYER_PUSH"/>
-    <permission android:name="com.lasergiraffe.rideshare.permission.C2D_MESSAGE"
-        android:protectionLevel="signature"/>
-    <uses-permission android:name="com.lasergiraffe.rideshare.permission.C2D_MESSAGE"/>
+    <permission
+        android:name="com.lasergiraffe.rideshare.permission.LAYER_PUSH"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.myapp.package.permission.LAYER_PUSH" />
+
+    <permission
+        android:name="com.lasergiraffe.rideshare.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.lasergiraffe.rideshare.permission.C2D_MESSAGE" />
 
     <!-- LayerClient.sendLogs() permissions -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_LOGS"/>
-
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
 
     <application
         android:allowBackup="true"
@@ -41,11 +44,13 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".OpenedPostActivity"
@@ -57,10 +62,6 @@
             android:name=".newpost"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Layer.layerMain"
@@ -68,12 +69,14 @@
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <!-- Parse -->
         <service android:name="com.parse.PushService" />
+
         <receiver
             android:name="com.parse.ParsePushBroadcastReceiver"
             android:exported="false" >
@@ -95,28 +98,42 @@
             </intent-filter>
         </receiver>
 
-
         <!-- Layer -->
         <application>
+
             <!-- Your custom "com.layer.sdk.PUSH" notification Receiver -->
-            <receiver android:name=".LayerPushReceiver">
+            <receiver android:name=".LayerPushReceiver" >
                 <intent-filter>
-                    <action android:name="com.layer.sdk.PUSH"/>
-                    <category android:name="com.myapp.package"/>
+                    <action android:name="com.layer.sdk.PUSH" />
+
+                    <category android:name="com.myapp.package" />
                 </intent-filter>
             </receiver>
 
             <!-- Layer's GCM Receiver and Service -->
-            <receiver android:name="com.layer.sdk.services.GcmBroadcastReceiver"
-                android:permission="com.google.android.c2dm.permission.SEND">
-                <intent-filter android:priority="950">
-                    <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
-                    <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-                    <category android:name="com.myapp.package"/>
+            <receiver
+                android:name="com.layer.sdk.services.GcmBroadcastReceiver"
+                android:permission="com.google.android.c2dm.permission.SEND" >
+                <intent-filter android:priority="950" >
+                    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                    <category android:name="com.myapp.package" />
                 </intent-filter>
             </receiver>
-            <service android:name="com.layer.sdk.services.GcmIntentService"/>
+
+            <service android:name="com.layer.sdk.services.GcmIntentService" />
         </application>
+
+        <activity
+            android:name=".util.SignUp"
+            android:label="@string/title_activity_sign_up" >
+
+        </activity>
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login" >
+        </activity>
     </application>
 
 </manifest>
