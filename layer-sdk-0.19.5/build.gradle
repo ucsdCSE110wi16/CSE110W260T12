@@ -1,0 +1,2 @@
+configurations.create("default")
+artifacts.add("default", file('layer-sdk-0.19.5.jar'))

@@ -116,20 +116,28 @@ public class OpenedPostActivity extends Activity {
 
         TextView title = (TextView) findViewById(R.id.fullscreen_title);
         TextView content = (TextView) findViewById(R.id.fullscreen_content);
+        //TextView name = (TextView) findViewById(R.id.fullscreen_name);
+
 
         Bundle extras = null;
         String title_text = null;
         String content_text = null;
+        String name_text = null;
+        String phone_text= null;
         if(savedInstanceState==null){
             extras = getIntent().getExtras();
             if(extras==null){
                 title_text=null;
                 content_text=null;
+                name_text = null;
+                phone_text = null;
 
             }
             else{
                 title_text=extras.getString(getString(R.string.theNote));
                 content_text=extras.getString(getString(R.string.theContent));
+                //name_text = extras.getString(getString(R.string.name))
+
             }
         }
         title.setText(title_text);

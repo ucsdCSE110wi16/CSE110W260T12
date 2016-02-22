@@ -2,8 +2,14 @@ Week 4:
   DONE: Successfully created basic scrollable interface!
 Week 5:
   TODO: finish "new post" option (parse). Begin working on activity for when a post opens up.
+  DONE: Created lots of the layout. Parse interaction is completely set up. Users can create posts (new post screen opens up), 
+  submit, view posts (opened post screen). There is also a temporary clear button that deletes the items off of parse (for 
+  testing, will be removed before the finished product). 
 Week 6:
-  User story 3, start on User story 6
+  Todo: begin user story 6 (Group functionality + group chat - Kenny/Amit work on this)
+        Clean up the menu options for creating a new post (Daylon)
+        Increase Parse use (change to sending note class objects instead of strings to parse, automatic deletion? low priority) (Daylon)
+        Comment functionality (Yahav)
 Week 7:
   User story 10, User story 11
 Week 8­10:

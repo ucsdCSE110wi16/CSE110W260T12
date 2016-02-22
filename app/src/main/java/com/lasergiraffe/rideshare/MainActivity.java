@@ -12,11 +12,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.lasergiraffe.rideshare.Layer.layerMain;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +33,15 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        if(!started) {
+
+            ParseObject.registerSubclass(Note.class);
+
+            initialize(this);
+            ParseInstallation.getCurrentInstallation().saveInBackground();
+            started = true;
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -39,20 +50,39 @@ public class MainActivity extends ListActivity {
         //enableLocalDatastore(this);
 
         //already done once check (VERY INELEGANT SOLUTION - work on later)
-        if(!started) {
+        /*if(!started) {
             ParseObject.registerSubclass(Note.class);
 
             initialize(this);
             ParseInstallation.getCurrentInstallation().saveInBackground();
             started = true;
-        }
+        }*/
         // Declare post as an arraylist
+
+        /* prevent from this activity if not logged on */
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        System.out.println("Testing curr user");
+        if(currentUser == null) {
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+            finish();
+        }
+        System.out.println("Curr exist?");
+
+
         posts = new ArrayList<Note>();
         ArrayAdapter<Note> adapter = new ArrayAdapter<Note>(this, R.layout.list_item_layout, posts);
         setListAdapter(adapter);
         refreshPostList();
 
+        Button toLayer = (Button) findViewById(R.id.toLayerPage);
+        toLayer.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent layerclass = new Intent(MainActivity.this, layerMain.class);
+                startActivity(layerclass);
+            }
 
+        });
         Button switchtonewpage = (Button) findViewById(R.id.newpost_button);
         switchtonewpage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,13 +131,25 @@ public class MainActivity extends ListActivity {
             }
         });
 
+        Button logout = (Button) findViewById(R.id.logout_button);
+        logout.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                ParseUser.logOut();
+                Intent intent = new Intent(MainActivity.this, Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        System.out.println("Created?");
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        System.out.println("Created options");
         return true;
     }
 
@@ -116,16 +158,18 @@ public class MainActivity extends ListActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_logout:
+                ParseUser.logOut();
+                Intent intent = new Intent(this, Login.class);
+                startActivity(intent);
+                finish();
+                return true;
         }
-
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 
+    // Method that refreshes the action bar from Parse.
     private void refreshPostList() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("notes");
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -136,7 +180,8 @@ public class MainActivity extends ListActivity {
                     // and notify the adapter
                     posts.clear();
                     for (ParseObject post : postList) {
-                        Note note = new Note(post.getObjectId(), post.getString("title"), post.getString("content"));
+                        Note note = new Note(post.getObjectId(), post.getString("title"),
+                                post.getString("name"), post.getString("phone"), post.getString("content"));
                         note.getObjectId();
                         posts.add(note);
                     }
@@ -147,6 +192,4 @@ public class MainActivity extends ListActivity {
             }
         });
     }
-
-
 }

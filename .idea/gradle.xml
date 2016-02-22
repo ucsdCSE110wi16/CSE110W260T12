@@ -10,8 +10,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Parse-1.13.0" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/layer-sdk-0.19.5" />
           </set>
         </option>
       </GradleProjectSettings>
