@@ -1,16 +1,17 @@
 Week 4:
   DONE: Successfully created basic scrollable interface!
 Week 5:
-  TODO: finish "new post" option (parse). Begin working on activity for when a post opens up.
   DONE: Created lots of the layout. Parse interaction is completely set up. Users can create posts (new post screen opens up), 
   submit, view posts (opened post screen). There is also a temporary clear button that deletes the items off of parse (for 
   testing, will be removed before the finished product). 
 Week 6:
-  Todo: begin user story 6 (Group functionality + group chat - Kenny/Amit work on this)
-        Clean up the menu options for creating a new post (Daylon)
-        Increase Parse use (change to sending note class objects instead of strings to parse, automatic deletion? low priority) (Daylon)
-        Comment functionality (Yahav)
+  DONE: light re-arrangement of create post ability
 Week 7:
-  User story 10, User story 11
-Week 8­10:
-  Rest of the User stories (low priority, miscellaneous bonus features)
+  DONE: Group chat / comment functionality set up! Users can click a post, join the group, and talk amongst each other there!
+        Users can (MUST) create accounts / login to join! (helped to establish group chat)
+Week 8:
+  TODO: Clean up the project. Still need to fix creating new posts to fit customer specifications (price etc).
+  TODO: Work on design (colors and layout look pretty bad) - Amit / Yahav work on this 
+  TODO: refresh ability on main screen
+  TODO: set group limits? / know who is in the group
+Week 9-10: miscellaneous bonus features
