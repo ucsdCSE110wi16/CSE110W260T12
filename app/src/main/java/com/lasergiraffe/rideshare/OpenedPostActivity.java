@@ -2,11 +2,13 @@ package com.lasergiraffe.rideshare;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.lasergiraffe.rideshare.util.SystemUiHider;
@@ -48,6 +50,7 @@ public class OpenedPostActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String note_id=null;
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_opened_post);
@@ -112,12 +115,23 @@ public class OpenedPostActivity extends Activity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+        findViewById(R.id.join_group).setOnTouchListener(mDelayHideTouchListener);
+
+        Button joinButton = (Button) findViewById(R.id.join_group);
+
+        joinButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(OpenedPostActivity.this, ChatActivity.class);
+                i.putExtra("note_key", getIntent().getExtras().getString("note_key")); //note string
+                startActivity(i);
+                //finish();
+            }
+        });
 
         TextView title = (TextView) findViewById(R.id.fullscreen_title);
         TextView content = (TextView) findViewById(R.id.fullscreen_content);
         //TextView name = (TextView) findViewById(R.id.fullscreen_name);
-
 
         Bundle extras = null;
         String title_text = null;
@@ -131,6 +145,7 @@ public class OpenedPostActivity extends Activity {
                 content_text=null;
                 name_text = null;
                 phone_text = null;
+
 
             }
             else{

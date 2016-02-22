@@ -33,7 +33,7 @@ public class newpost extends Activity {
             @Override
             public void onClick(View v) {
 
-                note.setId("my new id");
+                note.setId(note.getObjectId());
                 note.setTitle(title.getText().toString());
                 note.setContent(description.getText().toString());
                 note.setName(userName.getText().toString());
@@ -47,6 +47,7 @@ public class newpost extends Activity {
 
                 Intent main = new Intent(newpost.this, MainActivity.class);
                 startActivity(main);
+                finish();
                 /*Intent main = new Intent();
                 setResult(0, main);
                 finish();*/

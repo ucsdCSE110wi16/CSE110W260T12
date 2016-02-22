@@ -379,6 +379,10 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="hello_world">Hello world!</string>
     <string name="logout">logout</string>
+    <string name="message_hint">Say anything</string>
+    <string name="profile_me">My Profile Pic</string>
+    <string name="profile_other">Other profile pic</string>
+    <string name="send">Send</string>
     <!-- From: file:/C:/Users/Daylon/AndroidStudioProjects/CSE110W260T12_2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
@@ -386,6 +390,7 @@
     <eat-comment/>
     <string name="theContent">hahaha</string>
     <string name="theNote">theNote</string>
+    <string name="title_activity_chat">ChatActivity</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_opened_post">OpenedPostActivity</string>
     <string name="title_activity_sign_up">SignUp</string>

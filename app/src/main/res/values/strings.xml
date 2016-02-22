@@ -13,4 +13,11 @@
     <string name="username">username</string>
     <string name="title_activity_login">Login</string>
     <string name="logout">logout</string>
+    <string name="title_activity_chat">ChatActivity</string>
+
+    <string name="message_hint">Say anything</string>
+    <string name="send">Send</string>
+
+    <string name="profile_me">My Profile Pic</string>
+    <string name="profile_other">Other profile pic</string>
 </resources>

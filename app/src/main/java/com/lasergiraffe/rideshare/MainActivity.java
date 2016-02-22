@@ -36,6 +36,8 @@ public class MainActivity extends ListActivity {
         if(!started) {
 
             ParseObject.registerSubclass(Note.class);
+            ParseObject.registerSubclass(Message.class);
+
 
             initialize(this);
             ParseInstallation.getCurrentInstallation().saveInBackground();
@@ -61,13 +63,13 @@ public class MainActivity extends ListActivity {
 
         /* prevent from this activity if not logged on */
         ParseUser currentUser = ParseUser.getCurrentUser();
-        System.out.println("Testing curr user");
+
         if(currentUser == null) {
             Intent intent = new Intent(this, Login.class);
             startActivity(intent);
             finish();
         }
-        System.out.println("Curr exist?");
+
 
 
         posts = new ArrayList<Note>();
@@ -89,6 +91,7 @@ public class MainActivity extends ListActivity {
             public void onClick(View v) {
                 Intent newPost = new Intent(v.getContext(), newpost.class);
                 startActivityForResult(newPost, 1);
+                finish();
             }
         });
 
@@ -99,10 +102,12 @@ public class MainActivity extends ListActivity {
                 Intent i = new Intent(MainActivity.this, OpenedPostActivity.class);
                 String noteTitle = parent.getItemAtPosition(position).toString();
                 String noteContent = ((Note)parent.getItemAtPosition(position)).getContent();
+                String note_key = ((Note)parent.getItemAtPosition(position)).getId();
                 i.putExtra(getString(R.string.theNote), noteTitle);
                 i.putExtra(getString(R.string.theContent), noteContent);
-                System.out.println("Note title is " + noteTitle);
+                i.putExtra("note_key", note_key);
                 startActivity(i);
+                //finish();
             }
         });
 
@@ -172,6 +177,7 @@ public class MainActivity extends ListActivity {
     // Method that refreshes the action bar from Parse.
     private void refreshPostList() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("notes");
+        query.orderByDescending("createdAt");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> postList, ParseException e) {
