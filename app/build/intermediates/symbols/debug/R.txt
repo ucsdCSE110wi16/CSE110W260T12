@@ -618,7 +618,7 @@ int id activity_chooser_view_content 0x7f0c003f
 int id adjust_height 0x7f0c0032
 int id adjust_width 0x7f0c0033
 int id alertTitle 0x7f0c004b
-int id already_have_acc 0x7f0c007c
+int id already_have_acc 0x7f0c007d
 int id always 0x7f0c0034
 int id beginning 0x7f0c0030
 int id bottom 0x7f0c001c
@@ -630,7 +630,7 @@ int id center_horizontal 0x7f0c001e
 int id center_vertical 0x7f0c001f
 int id checkbox 0x7f0c0054
 int id chronometer 0x7f0c0097
-int id clear_button 0x7f0c0081
+int id clear_button 0x7f0c0082
 int id clip_horizontal 0x7f0c002b
 int id clip_vertical 0x7f0c002c
 int id collapseActionView 0x7f0c0035
@@ -639,6 +639,7 @@ int id custom 0x7f0c0052
 int id customPanel 0x7f0c0051
 int id decor_content_parent 0x7f0c005a
 int id default_activity_button 0x7f0c0042
+int id deletePost 0x7f0c0079
 int id description_id 0x7f0c008e
 int id design_menu_item_action_area 0x7f0c008a
 int id design_menu_item_action_area_stub 0x7f0c0089
@@ -669,8 +670,8 @@ int id ifRoom 0x7f0c0036
 int id image 0x7f0c0041
 int id info 0x7f0c009b
 int id item_touch_helper_previous_elevation 0x7f0c0005
-int id ivProfileMe 0x7f0c007f
-int id ivProfileOther 0x7f0c007d
+int id ivProfileMe 0x7f0c0080
+int id ivProfileOther 0x7f0c007e
 int id join_group 0x7f0c0077
 int id left 0x7f0c0022
 int id line1 0x7f0c0095
@@ -689,7 +690,7 @@ int id name_id 0x7f0c008c
 int id navigation_header_container 0x7f0c0086
 int id need_acc 0x7f0c0073
 int id never 0x7f0c0037
-int id newpost_button 0x7f0c0080
+int id newpost_button 0x7f0c0081
 int id none 0x7f0c0010
 int id normal 0x7f0c000c
 int id parallax 0x7f0c001a
@@ -699,8 +700,8 @@ int id pin 0x7f0c001b
 int id progress_circular 0x7f0c0006
 int id progress_horizontal 0x7f0c0007
 int id radio 0x7f0c0056
-int id register_password 0x7f0c007a
-int id register_username 0x7f0c0079
+int id register_password 0x7f0c007b
+int id register_username 0x7f0c007a
 int id right 0x7f0c0023
 int id screen 0x7f0c0027
 int id scroll 0x7f0c0018
@@ -723,7 +724,7 @@ int id shortcut 0x7f0c0055
 int id showCustom 0x7f0c0011
 int id showHome 0x7f0c0012
 int id showTitle 0x7f0c0013
-int id sign_up 0x7f0c007b
+int id sign_up 0x7f0c007c
 int id signin_password 0x7f0c0071
 int id signin_username 0x7f0c0070
 int id snackbar_action 0x7f0c0085
@@ -746,11 +747,10 @@ int id time 0x7f0c0096
 int id title 0x7f0c0045
 int id title_id 0x7f0c008b
 int id title_template 0x7f0c004a
-int id toLayerPage 0x7f0c0082
 int id toolbar 0x7f0c0074
 int id top 0x7f0c0025
 int id topPanel 0x7f0c0049
-int id tvBody 0x7f0c007e
+int id tvBody 0x7f0c007f
 int id up 0x7f0c0009
 int id useLogo 0x7f0c0014
 int id view_offset_helper 0x7f0c000a

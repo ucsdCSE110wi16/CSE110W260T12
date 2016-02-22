@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.parse.ParseUser;
+
 /**
  * Created by lamki on 2/1/2016.
  */
@@ -36,7 +38,8 @@ public class newpost extends Activity {
                 note.setId(note.getObjectId());
                 note.setTitle(title.getText().toString());
                 note.setContent(description.getText().toString());
-                note.setName(userName.getText().toString());
+                // Kenny 2/22 changed from: note.setName(userName.getText().toString());
+                note.setName(ParseUser.getCurrentUser().getUsername().toString());
                 note.setPhone(userPhone.getText().toString());
 
                 note.put("title", note.getTitle());

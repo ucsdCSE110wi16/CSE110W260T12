@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.lasergiraffe.rideshare.Layer.layerMain;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseInstallation;
@@ -77,24 +76,19 @@ public class MainActivity extends ListActivity {
         setListAdapter(adapter);
         refreshPostList();
 
-        Button toLayer = (Button) findViewById(R.id.toLayerPage);
-        toLayer.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent layerclass = new Intent(MainActivity.this, layerMain.class);
-                startActivity(layerclass);
-            }
 
-        });
         Button switchtonewpage = (Button) findViewById(R.id.newpost_button);
         switchtonewpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent newPost = new Intent(v.getContext(), newpost.class);
                 startActivityForResult(newPost, 1);
+                refreshPostList();
                 finish();
             }
         });
 
+        // OpenPost
         ListView list = getListView();
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -103,9 +97,12 @@ public class MainActivity extends ListActivity {
                 String noteTitle = parent.getItemAtPosition(position).toString();
                 String noteContent = ((Note)parent.getItemAtPosition(position)).getContent();
                 String note_key = ((Note)parent.getItemAtPosition(position)).getId();
+                String username = ((Note)parent.getItemAtPosition(position)).getName();
+                Log.v("System.out",noteTitle+" "+noteContent+" "+username);
                 i.putExtra(getString(R.string.theNote), noteTitle);
                 i.putExtra(getString(R.string.theContent), noteContent);
                 i.putExtra("note_key", note_key);
+                i.putExtra("note_username", username);
                 startActivity(i);
                 //finish();
             }
@@ -187,7 +184,7 @@ public class MainActivity extends ListActivity {
                     posts.clear();
                     for (ParseObject post : postList) {
                         Note note = new Note(post.getObjectId(), post.getString("title"),
-                                post.getString("name"), post.getString("phone"), post.getString("content"));
+                                post.getString("userName"), post.getString("phone"), post.getString("content"));
                         note.getObjectId();
                         posts.add(note);
                     }

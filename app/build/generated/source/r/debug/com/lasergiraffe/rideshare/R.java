@@ -2295,7 +2295,7 @@ containing a value of this type.
         public static final int adjust_height=0x7f0c0032;
         public static final int adjust_width=0x7f0c0033;
         public static final int alertTitle=0x7f0c004b;
-        public static final int already_have_acc=0x7f0c007c;
+        public static final int already_have_acc=0x7f0c007d;
         public static final int always=0x7f0c0034;
         public static final int beginning=0x7f0c0030;
         public static final int bottom=0x7f0c001c;
@@ -2307,7 +2307,7 @@ containing a value of this type.
         public static final int center_vertical=0x7f0c001f;
         public static final int checkbox=0x7f0c0054;
         public static final int chronometer=0x7f0c0097;
-        public static final int clear_button=0x7f0c0081;
+        public static final int clear_button=0x7f0c0082;
         public static final int clip_horizontal=0x7f0c002b;
         public static final int clip_vertical=0x7f0c002c;
         public static final int collapseActionView=0x7f0c0035;
@@ -2316,6 +2316,7 @@ containing a value of this type.
         public static final int customPanel=0x7f0c0051;
         public static final int decor_content_parent=0x7f0c005a;
         public static final int default_activity_button=0x7f0c0042;
+        public static final int deletePost=0x7f0c0079;
         public static final int description_id=0x7f0c008e;
         public static final int design_menu_item_action_area=0x7f0c008a;
         public static final int design_menu_item_action_area_stub=0x7f0c0089;
@@ -2346,8 +2347,8 @@ containing a value of this type.
         public static final int image=0x7f0c0041;
         public static final int info=0x7f0c009b;
         public static final int item_touch_helper_previous_elevation=0x7f0c0005;
-        public static final int ivProfileMe=0x7f0c007f;
-        public static final int ivProfileOther=0x7f0c007d;
+        public static final int ivProfileMe=0x7f0c0080;
+        public static final int ivProfileOther=0x7f0c007e;
         public static final int join_group=0x7f0c0077;
         public static final int left=0x7f0c0022;
         public static final int line1=0x7f0c0095;
@@ -2366,7 +2367,7 @@ containing a value of this type.
         public static final int navigation_header_container=0x7f0c0086;
         public static final int need_acc=0x7f0c0073;
         public static final int never=0x7f0c0037;
-        public static final int newpost_button=0x7f0c0080;
+        public static final int newpost_button=0x7f0c0081;
         public static final int none=0x7f0c0010;
         public static final int normal=0x7f0c000c;
         public static final int parallax=0x7f0c001a;
@@ -2376,8 +2377,8 @@ containing a value of this type.
         public static final int progress_circular=0x7f0c0006;
         public static final int progress_horizontal=0x7f0c0007;
         public static final int radio=0x7f0c0056;
-        public static final int register_password=0x7f0c007a;
-        public static final int register_username=0x7f0c0079;
+        public static final int register_password=0x7f0c007b;
+        public static final int register_username=0x7f0c007a;
         public static final int right=0x7f0c0023;
         public static final int screen=0x7f0c0027;
         public static final int scroll=0x7f0c0018;
@@ -2400,7 +2401,7 @@ containing a value of this type.
         public static final int showCustom=0x7f0c0011;
         public static final int showHome=0x7f0c0012;
         public static final int showTitle=0x7f0c0013;
-        public static final int sign_up=0x7f0c007b;
+        public static final int sign_up=0x7f0c007c;
         public static final int signin_password=0x7f0c0071;
         public static final int signin_username=0x7f0c0070;
         public static final int snackbar_action=0x7f0c0085;
@@ -2423,11 +2424,10 @@ containing a value of this type.
         public static final int title=0x7f0c0045;
         public static final int title_id=0x7f0c008b;
         public static final int title_template=0x7f0c004a;
-        public static final int toLayerPage=0x7f0c0082;
         public static final int toolbar=0x7f0c0074;
         public static final int top=0x7f0c0025;
         public static final int topPanel=0x7f0c0049;
-        public static final int tvBody=0x7f0c007e;
+        public static final int tvBody=0x7f0c007f;
         public static final int up=0x7f0c0009;
         public static final int useLogo=0x7f0c0014;
         public static final int view_offset_helper=0x7f0c000a;

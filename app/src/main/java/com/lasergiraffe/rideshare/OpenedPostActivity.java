@@ -3,6 +3,8 @@ package com.lasergiraffe.rideshare;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,6 +14,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.lasergiraffe.rideshare.util.SystemUiHider;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -118,7 +123,6 @@ public class OpenedPostActivity extends Activity {
         findViewById(R.id.join_group).setOnTouchListener(mDelayHideTouchListener);
 
         Button joinButton = (Button) findViewById(R.id.join_group);
-
         joinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,7 +162,26 @@ public class OpenedPostActivity extends Activity {
         title.setText(title_text);
         content.setText(content_text);
 
-
+        final String thisUser = ParseUser.getCurrentUser().getUsername();
+        Bundle extra = getIntent().getExtras();
+        final String thispost = extra.getString(getString(R.string.theContent));
+        final String thispostuser = extra.getString("note_username");
+        final Button deletepost = (Button)findViewById(R.id.deletePost);
+        if (thisUser.equals(thispostuser)) {
+            deletepost.getBackground().setColorFilter(null);
+        }
+        else {
+            deletepost.getBackground().setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
+            deletepost.setEnabled(false);
+        }
+        deletepost.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                ParseQuery<ParseObject> query = ParseQuery.getQuery("notes");
+                query.whereEqualTo("title", thispost);
+                // 2/22 kenny left off here, driver has the ability to delete his own post
+                finish();
+            }
+        });
     }
 
     @Override
