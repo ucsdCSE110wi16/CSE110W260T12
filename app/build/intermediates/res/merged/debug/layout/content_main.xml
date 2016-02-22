@@ -14,9 +14,8 @@
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="43dp">
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="80dp">
     </ListView>
 
     <Button
@@ -37,20 +36,4 @@
         android:layout_alignEnd="@android:id/list"
         android:layout_marginEnd="35dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="To Layer"
-        android:id="@+id/toLayerPage"
-        android:layout_alignBottom="@+id/newpost_button"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:id="@+id/logout_button"
-        android:layout_alignParentTop="true"
-        android:layout_alignEnd="@android:id/list" />
-
-</RelativeLayout><!-- From: file:/C:/Users/Daylon/AndroidStudioProjects/CSE110W260T12_2/app/src/main/res/layout/content_main.xml -->
+</RelativeLayout><!-- From: file:/C:/Users/Daylon/AndroidStudioProjects/CSE110W260T12/app/src/main/res/layout/content_main.xml -->
