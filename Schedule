@@ -9,6 +9,11 @@ Week 6:
 Week 7:
   DONE: Group chat / comment functionality set up! Users can click a post, join the group, and talk amongst each other there!
         Users can (MUST) create accounts / login to join! (helped to establish group chat)
+  INCOMPLETE: Distinction between group chat / commenting. Right now, we have one location where members can chat amongst each
+  other. To me, this looks like both group chat AND commenting, and the distinction between the two is a little ambiguous. WE
+  WILL NEED TO DISCUSS WITH OUR CUSTOMERS WEEK 8 LAB TO DETERMINE EXACTLY HOW THEY WANT TO SEPERATE THE TWO, and then we 
+  can push the implementation of that seperation to week 8 (I'm thinking, for a proper "group chat", we'll have to first create
+  the groups, so that's tentatively step 1 for week 8).
 Week 8:
   TODO: Group functionality. Join group, limit group size, etc. User stories 7, 12, 13 (HIGH PRIORITY) - Daylon/Kenny
   TODO: Clean up the project. Still need to fix creating new posts to fit customer specifications (price etc).
