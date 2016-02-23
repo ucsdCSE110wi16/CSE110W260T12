@@ -1,24 +1,31 @@
 User Stories: (We are Developers)
 ­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­
+DONE:
 1. As a rider and driver I want to see the menu screen and be able to post a ride request so that people can be
-connected to share rides. 5 days
+connected to share rides. 5 days 
 2. As a rider and driver I want to see a home screen that displays available posts and can create a post so that
 people can see where the user wants to go. 1 week
 3. As a rider and driver I want to be able to click on the post and the post will expand with information so that
 people can pick rides good for them. 4 days 
 4.As a rider and driver I want a group chat for people in the same group so that people in the same group can
 communicate details about the ride. 3 days ­ low priority
-5. As a rider and driver I would like a map view so that I can see where my destination is on a map.
-(Low priority) 1 week
 6. As a rider and driver I want a group page so that people in the same group can be connected. ­ want to be
 able to contact people in the car 1 week
-7. As a rider and driver I want to set group restrictions so that other people can’t join every group. 3 days
 8. As a rider I want drivers to enter their information (phone number?) for them to post a ride so that people will be
 discouraged from making fake rides 2 days
+10. As a rider I want a comment box (Block of text) for more information when the post is selected so
+that users can get more information about rides. 2 days (KIND OF DONE? GET SPECIFIC FEEDBACK IN LAB)
+14. As a rider I would like priority to be determined by departure time so that more recent rides will be
+seen first. 2 days
+15. As a rider I would like the post creator’s name, email, phone number, facebook, etc. so that the
+driver/other rides can be easily contacted. 4 days
+
+TODO:
+5. As a rider and driver I would like a map view so that I can see where my destination is on a map.
+(Low priority) 1 week
+7. As a rider and driver I want to set group restrictions so that other people can’t join every group. 3 days
 9. As a rider I want the title to be just source to destination and time so that the posts are informative
 and you don’t have to look hard to find information. 3 days
-10. As a rider I want a comment box (Block of text) for more information when the post is selected so
-that users can get more information about rides. 2 days
 11. As a rider would like the two feeds separated by color but in the same location so that all rides
 can be seen together and that they are easily identified if they are uber rides or one with a
 driver. 3 days
@@ -26,7 +33,3 @@ driver. 3 days
 keep track of their rides. 2 days
 13. As a rider and driver I want to be able to leave my groups so that I can cancel my rides as
 needed. 3 days
-14. As a rider I would like priority to be determined by departure time so that more recent rides will be
-seen first. 2 days
-15. As a rider I would like the post creator’s name, email, phone number, facebook, etc. so that the
-driver/other rides can be easily contacted. 4 days
