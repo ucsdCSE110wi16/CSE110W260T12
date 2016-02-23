@@ -10,8 +10,11 @@ Week 7:
   DONE: Group chat / comment functionality set up! Users can click a post, join the group, and talk amongst each other there!
         Users can (MUST) create accounts / login to join! (helped to establish group chat)
 Week 8:
+  TODO: Group functionality. Join group, limit group size, etc. User stories 7, 12, 13 (HIGH PRIORITY) - Daylon/Kenny
   TODO: Clean up the project. Still need to fix creating new posts to fit customer specifications (price etc).
+      includes user story 11 (seperation by driver/rider), 9 (title = source to destination + time) - Amit/Yahav 
   TODO: Work on design (colors and layout look pretty bad) - Amit / Yahav work on this 
-  TODO: refresh ability on main screen
-  TODO: set group limits? / know who is in the group
-Week 9-10: miscellaneous bonus features
+Week 9-10: 
+    TODO: Map functionality (User story 5)
+    TODO: refresh ability on main screen
+  
