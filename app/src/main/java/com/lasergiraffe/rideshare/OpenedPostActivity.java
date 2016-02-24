@@ -61,7 +61,12 @@ public class OpenedPostActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String note_id=null;
+        final String thisUser = ParseUser.getCurrentUser().getUsername();
+        Bundle extra = getIntent().getExtras();
+        final String thispost = extra.getString(getString(R.string.theContent));
+        final String thispostuser = extra.getString("note_username");
+        final String note_id = extra.getString("note_key");
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_opened_post);
@@ -132,18 +137,19 @@ public class OpenedPostActivity extends Activity {
         joinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent i = new Intent(OpenedPostActivity.this, ChatActivity.class);
-                String note_key = getIntent().getExtras().getString("note_key");
-                i.putExtra("note_key", note_key);//note string
                 ParseUser user = ParseUser.getCurrentUser();
                 List<String> myGroups = (ArrayList<String>) user.get("group_key");
-                myGroups.add(note_key);
-                user.put("group_key", myGroups);
-                user.saveInBackground();
-                startActivity(i);
-                //finish();*/
-                Toast.makeText(OpenedPostActivity.this, "Successfully joined the group!",
-                        Toast.LENGTH_SHORT).show();
+                if(myGroups.contains(note_id)){
+                    Toast.makeText(OpenedPostActivity.this, "Already in group!",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    myGroups.add(note_id);
+                    user.put("group_key", myGroups);
+                    user.saveInBackground();
+                    Toast.makeText(OpenedPostActivity.this, "Successfully joined the group!",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -176,10 +182,9 @@ public class OpenedPostActivity extends Activity {
         title.setText(title_text);
         content.setText(content_text);
 
-        final String thisUser = ParseUser.getCurrentUser().getUsername();
-        Bundle extra = getIntent().getExtras();
-        final String thispost = extra.getString(getString(R.string.theContent));
-        final String thispostuser = extra.getString("note_username");
+
+        //MOVED VARIABLES TO TOP
+
         final Button deletepost = (Button)findViewById(R.id.deletePost);
         if (thisUser.equals(thispostuser)) {
             deletepost.getBackground().setColorFilter(null);

@@ -17,6 +17,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,6 +97,29 @@ public class MyGroups extends ListActivity {
                 i.putExtra("note_key", note_key);
                 startActivity(i);
                 //finish();
+            }
+
+        });
+        list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                ParseUser user = ParseUser.getCurrentUser();
+                List<String> myGroups = (ArrayList<String>) user.get("group_key");
+                String note_key = ((Note) parent.getItemAtPosition(position)).getId();
+                myGroups.remove(note_key);
+                user.put("group_key", myGroups);
+                user.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e == null) {
+                            //successful save
+                            refreshGroupList();
+                        } else {
+                            Log.v("System.out", e.getMessage());
+                        }
+                    }
+                });
+                return false;
             }
         });
     }
