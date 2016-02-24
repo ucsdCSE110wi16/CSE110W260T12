@@ -98,7 +98,7 @@ public class MainActivity extends ListActivity {
                 String noteContent = ((Note)parent.getItemAtPosition(position)).getContent();
                 String note_key = ((Note)parent.getItemAtPosition(position)).getId();
                 String username = ((Note)parent.getItemAtPosition(position)).getName();
-                Log.v("System.out",noteTitle+" "+noteContent+" "+username);
+                //Log.v("System.out",noteTitle+" "+noteContent+" "+username);
                 i.putExtra(getString(R.string.theNote), noteTitle);
                 i.putExtra(getString(R.string.theContent), noteContent);
                 i.putExtra("note_key", note_key);
@@ -144,14 +144,25 @@ public class MainActivity extends ListActivity {
                 finish();
             }
         });
+
+        Button myGroups = (Button) findViewById(R.id.myGroups);
+        myGroups.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(MainActivity.this, MyGroups.class);
+                System.out.println("Why though");
+                startActivity(i);
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        System.out.println("Created?");
+        //System.out.println("Created?");
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        System.out.println("Created options");
+        //System.out.println("Created options");
         return true;
     }
 

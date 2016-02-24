@@ -141,6 +141,10 @@
             android:name="com.lasergiraffe.rideshare.ChatActivity"
             android:label="@string/title_activity_chat" >
         </activity>
+        <activity
+            android:name="com.lasergiraffe.rideshare.MyGroups"
+            android:label="@string/title_activity_my_groups" >
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"

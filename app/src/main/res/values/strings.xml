@@ -20,4 +20,6 @@
 
     <string name="profile_me">My Profile Pic</string>
     <string name="profile_other">Other profile pic</string>
+    <string name="title_activity_my_groups">MyGroups</string>
+
 </resources>

@@ -45,4 +45,13 @@
         android:layout_alignParentTop="true"
         android:layout_alignEnd="@android:id/list" />
 
-</RelativeLayout><!-- From: file:/C:/Users/lamki/AndroidStudioProjects/CSE110W260T12/app/src/main/res/layout/content_main.xml -->
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Groups"
+        android:id="@+id/myGroups"
+        android:layout_alignTop="@+id/logout_button"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout><!-- From: file:/C:/Users/Daylon/AndroidStudioProjects/CSE110W260T12_3/app/src/main/res/layout/content_main.xml -->

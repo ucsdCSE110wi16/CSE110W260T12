@@ -135,6 +135,10 @@
             android:name=".ChatActivity"
             android:label="@string/title_activity_chat" >
         </activity>
+        <activity
+            android:name=".MyGroups"
+            android:label="@string/title_activity_my_groups" >
+        </activity>
     </application>
 
 </manifest>

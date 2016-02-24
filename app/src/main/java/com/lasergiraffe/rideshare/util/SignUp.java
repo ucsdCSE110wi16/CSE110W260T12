@@ -21,6 +21,11 @@ import com.parse.ParseUser;
 import com.lasergiraffe.rideshare.R;
 import com.parse.SignUpCallback;
 
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.parse.Parse.initialize;
 
 public class SignUp extends AppCompatActivity {
@@ -35,9 +40,11 @@ public class SignUp extends AppCompatActivity {
         if(username.getText().length()==0 || password.getText().length()==0)
             return;
         v.setEnabled(false);
+        JSONArray myGroups = new JSONArray();
         ParseUser user = new ParseUser();
         user.setUsername(username.getText().toString());
         user.setPassword(password.getText().toString());
+        user.put("group_key", myGroups);
         user.signUpInBackground(new SignUpCallback() {
             @Override
             public void done(ParseException e) {

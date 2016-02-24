@@ -12,11 +12,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lasergiraffe.rideshare.util.SystemUiHider;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -126,10 +132,18 @@ public class OpenedPostActivity extends Activity {
         joinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(OpenedPostActivity.this, ChatActivity.class);
-                i.putExtra("note_key", getIntent().getExtras().getString("note_key")); //note string
+                /*Intent i = new Intent(OpenedPostActivity.this, ChatActivity.class);
+                String note_key = getIntent().getExtras().getString("note_key");
+                i.putExtra("note_key", note_key);//note string
+                ParseUser user = ParseUser.getCurrentUser();
+                List<String> myGroups = (ArrayList<String>) user.get("group_key");
+                myGroups.add(note_key);
+                user.put("group_key", myGroups);
+                user.saveInBackground();
                 startActivity(i);
-                //finish();
+                //finish();*/
+                Toast.makeText(OpenedPostActivity.this, "Successfully joined the group!",
+                        Toast.LENGTH_SHORT).show();
             }
         });
 

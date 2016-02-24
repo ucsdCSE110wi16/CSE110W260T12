@@ -16,6 +16,9 @@ import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Login extends AppCompatActivity {
 
@@ -31,15 +34,12 @@ public class Login extends AppCompatActivity {
 
                     @Override
                     public void done(ParseUser user, ParseException e) {
-                        System.out.println("1");
                         if(user!=null) {
-                            System.out.println("2");
                             Intent i = new Intent(Login.this, MainActivity.class);
                             startActivity(i);
                             finish();
                         }
                         else{
-                            System.out.println("3");
                             // Signup failed. Look at the ParseException to see what happened.
                             switch(e.getCode()){
                                 case ParseException.USERNAME_TAKEN:
