@@ -15,11 +15,18 @@ Week 7:
   can push the implementation of that seperation to week 8 (I'm thinking, for a proper "group chat", we'll have to first create
   the groups, so that's tentatively step 1 for week 8).
 Week 8:
-  TODO: Group functionality. Join group, limit group size, etc. User stories 7, 12, 13 (HIGH PRIORITY) - Daylon/Kenny
+  TODO: Group functionality. Join group, limit group size, etc. User stories 7, 12, 13 (HIGH PRIORITY) - Daylon
+      DONE (except for 1 small visual bug, will fix soon) woohoo
+  TODO: Fix Delete button for post (has to clear messages as well as post), clean up code / debugging - Kenny
   TODO: Clean up the project. Still need to fix creating new posts to fit customer specifications (price etc).
       includes user story 11 (seperation by driver/rider), 9 (title = source to destination + time) - Amit/Yahav 
   TODO: Work on design (colors and layout look pretty bad) - Amit / Yahav work on this 
+  OI AMIT/YAHAV THIS FOR YOU: https://docs.google.com/document/d/1IxgpDPHwM_JrnHbX79Edxzbz0VrPBj03_BXSM3hBngM/edit?usp=sharing
+  
+  I think we can be done(?) with the app by the end of this weekend.
+  
 Week 9-10: 
-    TODO: Map functionality (User story 5)
-    TODO: refresh ability on main screen
+    TODO: Map functionality (User story 5) (optional, customers said they don't really want it)
+    TODO: refresh ability on main screen 
+    TODO: clean up code (so we can show off to our potential recruiters huehue)
   
