@@ -75,7 +75,9 @@ public class MyGroups extends ListActivity {
                     groups.clear();
                     for (ParseObject post : postList) {
                         Note note = new Note(post.getObjectId(), post.getString("title"),
-                                post.getString("userName"), post.getString("phone"), post.getString("content"));
+                                post.getString("userName"), post.getString("phone"), post.getString("content"),
+                                post.getInt("capacity"), post.getInt("currNumRiders"));
+                        System.out.println("capacity is " + post.getInt("capacity"));
                         note.getObjectId();
                         groups.add(note);
                     }
@@ -107,6 +109,15 @@ public class MyGroups extends ListActivity {
                 List<String> myGroups = (ArrayList<String>) user.get("group_key");
                 String note_key = ((Note) parent.getItemAtPosition(position)).getId();
                 myGroups.remove(note_key);
+                ParseQuery<Note> query = ParseQuery.getQuery("notes");
+                Note note = null;
+                try {
+                    note = (Note)query.get(note_key);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                note.increment("currNumRiders", -1); //currNumRiders--
+                note.saveInBackground();
                 user.put("group_key", myGroups);
                 user.saveInBackground(new SaveCallback() {
                     @Override

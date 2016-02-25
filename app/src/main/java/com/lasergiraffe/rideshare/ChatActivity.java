@@ -29,7 +29,7 @@ public class ChatActivity extends AppCompatActivity {
     static final String USER_ID_KEY = "userId";
     static final String BODY_KEY = "body";
     static final int MAX_CHAT_MESSAGES_TO_SHOW = 50;
-    static final int POLL_INTERVAL = 100; // milliseconds
+    static final int POLL_INTERVAL = 1000; // milliseconds
 
 
     EditText etMessage;
@@ -76,8 +76,6 @@ public class ChatActivity extends AppCompatActivity {
                 message.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
-                        Toast.makeText(ChatActivity.this, "Successfully created message on Parse",
-                                Toast.LENGTH_SHORT).show();
                         refreshMessages();
                     }
                 });

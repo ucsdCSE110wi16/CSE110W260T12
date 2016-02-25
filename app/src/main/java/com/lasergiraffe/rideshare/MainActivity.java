@@ -29,6 +29,13 @@ public class MainActivity extends ListActivity {
 
     public static List<Note> posts;
     static boolean started = false; //don't reinitialize parse if already done once
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshPostList();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -61,7 +68,7 @@ public class MainActivity extends ListActivity {
         // Declare post as an arraylist
 
         /* prevent from this activity if not logged on */
-        ParseUser currentUser = ParseUser.getCurrentUser();
+        final ParseUser currentUser = ParseUser.getCurrentUser();
 
         if(currentUser == null) {
             Intent intent = new Intent(this, Login.class);
@@ -98,11 +105,15 @@ public class MainActivity extends ListActivity {
                 String noteContent = ((Note)parent.getItemAtPosition(position)).getContent();
                 String note_key = ((Note)parent.getItemAtPosition(position)).getId();
                 String username = ((Note)parent.getItemAtPosition(position)).getName();
+                int capacity = ((Note)parent.getItemAtPosition(position)).getCapacity();
+                int currNumRiders = ((Note)parent.getItemAtPosition(position)).getCurrNumRiders();
                 //Log.v("System.out",noteTitle+" "+noteContent+" "+username);
                 i.putExtra(getString(R.string.theNote), noteTitle);
                 i.putExtra(getString(R.string.theContent), noteContent);
                 i.putExtra("note_key", note_key);
                 i.putExtra("note_username", username);
+                i.putExtra("capacity", capacity);
+                i.putExtra("currNumRiders", currNumRiders);
                 startActivity(i);
                 //finish();
             }
@@ -151,7 +162,6 @@ public class MainActivity extends ListActivity {
             @Override
             public void onClick(View v){
                 Intent i = new Intent(MainActivity.this, MyGroups.class);
-                System.out.println("Why though");
                 startActivity(i);
             }
         });
@@ -195,7 +205,8 @@ public class MainActivity extends ListActivity {
                     posts.clear();
                     for (ParseObject post : postList) {
                         Note note = new Note(post.getObjectId(), post.getString("title"),
-                                post.getString("userName"), post.getString("phone"), post.getString("content"));
+                                post.getString("userName"), post.getString("phone"), post.getString("content"), post.getInt("capacity"),
+                                post.getInt("currNumRiders"));
                         note.getObjectId();
                         posts.add(note);
                     }

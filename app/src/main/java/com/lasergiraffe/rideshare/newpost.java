@@ -3,11 +3,18 @@ package com.lasergiraffe.rideshare;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by lamki on 2/1/2016.
@@ -42,15 +49,34 @@ public class newpost extends Activity {
                 note.setName(ParseUser.getCurrentUser().getUsername().toString());
                 note.setPhone(userPhone.getText().toString());
 
+                //SETTING CAPACITY TO 5 FOR ALL FOR NOW
+                note.setCapacity(5);
+                note.setCurrNumRiders(1);
+
                 note.put("title", note.getTitle());
                 note.put("content", note.getContent());
                 note.put("userName", note.getName());
                 note.put("userPhone", note.getPhone());
-                note.saveInBackground();
+                note.put("capacity", note.getCapacity());
+                note.put("currNumRiders", note.getCurrNumRiders());
+                note.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e == null) {
+                            ParseUser user = ParseUser.getCurrentUser();
+                            List<String> myGroups = (ArrayList<String>) user.get("group_key");
+                            myGroups.add(note.getObjectId());
+                            user.put("group_key", myGroups);
+                            user.saveInBackground();
+                            Intent main = new Intent(newpost.this, MainActivity.class);
+                            startActivity(main);
+                            finish();
+                        } else {
+                            Log.v("System.out", e.getMessage());
+                        }
+                    }
+                });
 
-                Intent main = new Intent(newpost.this, MainActivity.class);
-                startActivity(main);
-                finish();
                 /*Intent main = new Intent();
                 setResult(0, main);
                 finish();*/

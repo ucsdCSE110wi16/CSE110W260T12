@@ -375,6 +375,7 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <!-- From: file:/C:/Users/Daylon/AndroidStudioProjects/CSE110W260T12_3/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="currNumRidersOverCapacity">0/5</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="hello_world">Hello world!</string>

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lasergiraffe.rideshare.util.SystemUiHider;
+import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -66,6 +67,10 @@ public class OpenedPostActivity extends Activity {
         final String thispost = extra.getString(getString(R.string.theContent));
         final String thispostuser = extra.getString("note_username");
         final String note_id = extra.getString("note_key");
+        final int currNumRiders = extra.getInt("currNumRiders");
+        final int capacity = extra.getInt("capacity");
+        String s = currNumRiders+"/"+capacity;
+
 
         super.onCreate(savedInstanceState);
 
@@ -143,10 +148,24 @@ public class OpenedPostActivity extends Activity {
                     Toast.makeText(OpenedPostActivity.this, "Already in group!",
                             Toast.LENGTH_SHORT).show();
                 }
+                else if(currNumRiders>=capacity){
+                    Toast.makeText(OpenedPostActivity.this, "Group full!",
+                            Toast.LENGTH_SHORT).show();
+                }
                 else {
                     myGroups.add(note_id);
                     user.put("group_key", myGroups);
+                    ParseQuery<Note> query = ParseQuery.getQuery("notes");
+                    Note note = null;
+                    try {
+                        note = (Note)query.get(note_id);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    note.increment("currNumRiders");
+                    note.saveInBackground();
                     user.saveInBackground();
+
                     Toast.makeText(OpenedPostActivity.this, "Successfully joined the group!",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -155,6 +174,7 @@ public class OpenedPostActivity extends Activity {
 
         TextView title = (TextView) findViewById(R.id.fullscreen_title);
         TextView content = (TextView) findViewById(R.id.fullscreen_content);
+        TextView currNumRidersOverCapacity = (TextView) findViewById(R.id.currNumRidersOverCapacity);
         //TextView name = (TextView) findViewById(R.id.fullscreen_name);
 
         Bundle extras = null;
@@ -175,12 +195,12 @@ public class OpenedPostActivity extends Activity {
             else{
                 title_text=extras.getString(getString(R.string.theNote));
                 content_text=extras.getString(getString(R.string.theContent));
-                //name_text = extras.getString(getString(R.string.name))
 
             }
         }
         title.setText(title_text);
         content.setText(content_text);
+        currNumRidersOverCapacity.setText(s);
 
 
         //MOVED VARIABLES TO TOP

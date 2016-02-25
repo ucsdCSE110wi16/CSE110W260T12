@@ -14,18 +14,22 @@ public class Note extends ParseObject implements View.OnClickListener{
     private String name;
     private String phone;
     private String content;
+    private int capacity;
+    private int currNumRiders;
 
     public Note(){
         //empty constructor
     }
 
 
-    public Note(String noteId, String noteTitle, String noteName, String notePhone, String noteContent) {
+    public Note(String noteId, String noteTitle, String noteName, String notePhone, String noteContent, int noteCapacity, int noteCurrNumRiders) {
         id = noteId;
         title = noteTitle;
         name = noteName;
         phone = notePhone;
         content = noteContent;
+        capacity = noteCapacity;
+        currNumRiders = noteCurrNumRiders;
 
     }
 
@@ -56,6 +60,10 @@ public class Note extends ParseObject implements View.OnClickListener{
     public void setName( String name) { this.name = name; }
     public String getPhone() { return phone; }
     public void setPhone( String phone ) { this.phone = phone;}
+    public void setCapacity( int capacity ){this.capacity=capacity;}
+    public int getCapacity() {return capacity;}
+    public void setCurrNumRiders( int currNumRiders ){this.currNumRiders=currNumRiders;}
+    public int getCurrNumRiders() {return currNumRiders;}
 
 
     @Override
