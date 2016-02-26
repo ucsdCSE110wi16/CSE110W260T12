@@ -79,6 +79,9 @@ public class OpenedPostActivity extends Activity {
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
         final View contentView = findViewById(R.id.fullscreen_title);
 
+        TextView title = (TextView) findViewById(R.id.fullscreen_title);
+        TextView content = (TextView) findViewById(R.id.fullscreen_content);
+        final TextView currNumRidersOverCapacity = (TextView) findViewById(R.id.currNumRidersOverCapacity);
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
         mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
@@ -164,6 +167,7 @@ public class OpenedPostActivity extends Activity {
                     }
                     note.increment("currNumRiders");
                     note.saveInBackground();
+                    currNumRidersOverCapacity.setText(currNumRiders+1+"/"+capacity);
                     user.saveInBackground();
 
                     Toast.makeText(OpenedPostActivity.this, "Successfully joined the group!",
@@ -172,9 +176,6 @@ public class OpenedPostActivity extends Activity {
             }
         });
 
-        TextView title = (TextView) findViewById(R.id.fullscreen_title);
-        TextView content = (TextView) findViewById(R.id.fullscreen_content);
-        TextView currNumRidersOverCapacity = (TextView) findViewById(R.id.currNumRidersOverCapacity);
         //TextView name = (TextView) findViewById(R.id.fullscreen_name);
 
         Bundle extras = null;

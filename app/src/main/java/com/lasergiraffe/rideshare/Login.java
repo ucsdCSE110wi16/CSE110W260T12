@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity {
                     public void done(ParseUser user, ParseException e) {
                         if(user!=null) {
                             Intent i = new Intent(Login.this, MainActivity.class);
-                            startActivity(i);
+                            //startActivity(i);
                             finish();
                         }
                         else{

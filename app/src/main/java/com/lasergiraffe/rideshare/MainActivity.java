@@ -39,64 +39,38 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        if(!started) {
-
-            ParseObject.registerSubclass(Note.class);
-            ParseObject.registerSubclass(Message.class);
-
-
-            initialize(this);
-            ParseInstallation.getCurrentInstallation().saveInBackground();
-            started = true;
-        }
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // [Optional] Power your app with Local Datastore. For more info, go to
-        // https://parse.com/docs/android/guide#local-datastore
-        //enableLocalDatastore(this);
-
-        //already done once check (VERY INELEGANT SOLUTION - work on later)
-        /*if(!started) {
-            ParseObject.registerSubclass(Note.class);
-
-            initialize(this);
-            ParseInstallation.getCurrentInstallation().saveInBackground();
-            started = true;
-        }*/
-        // Declare post as an arraylist
-
         /* prevent from this activity if not logged on */
-        final ParseUser currentUser = ParseUser.getCurrentUser();
+        checkLoggedOn();
 
-        if(currentUser == null) {
-            Intent intent = new Intent(this, Login.class);
-            startActivity(intent);
-            finish();
-        }
+        /* sets up layout */
+        setupPosts();
 
+        /* sets up parse */
+        initializeParse();
 
-
-        posts = new ArrayList<Note>();
-        ArrayAdapter<Note> adapter = new ArrayAdapter<Note>(this, R.layout.list_item_layout, posts);
-        setListAdapter(adapter);
-        refreshPostList();
-
-
+        //BUTTONS :D
         Button switchtonewpage = (Button) findViewById(R.id.newpost_button);
+        Button clear = (Button) findViewById(R.id.clear_button);
+        Button logout = (Button) findViewById(R.id.logout_button);
+        Button myGroups = (Button) findViewById(R.id.myGroups);
+
+        //listview is the layout for this page
+        ListView list = getListView();
+
         switchtonewpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent newPost = new Intent(v.getContext(), newpost.class);
                 startActivityForResult(newPost, 1);
                 refreshPostList();
-                finish();
+                //finish();
             }
         });
 
-        // OpenPost
-        ListView list = getListView();
+
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -107,7 +81,6 @@ public class MainActivity extends ListActivity {
                 String username = ((Note)parent.getItemAtPosition(position)).getName();
                 int capacity = ((Note)parent.getItemAtPosition(position)).getCapacity();
                 int currNumRiders = ((Note)parent.getItemAtPosition(position)).getCurrNumRiders();
-                //Log.v("System.out",noteTitle+" "+noteContent+" "+username);
                 i.putExtra(getString(R.string.theNote), noteTitle);
                 i.putExtra(getString(R.string.theContent), noteContent);
                 i.putExtra("note_key", note_key);
@@ -119,7 +92,6 @@ public class MainActivity extends ListActivity {
             }
         });
 
-        Button clear = (Button) findViewById(R.id.clear_button);
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -144,7 +116,6 @@ public class MainActivity extends ListActivity {
             }
         });
 
-        Button logout = (Button) findViewById(R.id.logout_button);
         logout.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -152,11 +123,11 @@ public class MainActivity extends ListActivity {
                 ParseUser.logOut();
                 Intent intent = new Intent(MainActivity.this, Login.class);
                 startActivity(intent);
-                finish();
+                //finish();
             }
         });
 
-        Button myGroups = (Button) findViewById(R.id.myGroups);
+
         myGroups.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -186,7 +157,7 @@ public class MainActivity extends ListActivity {
                 ParseUser.logOut();
                 Intent intent = new Intent(this, Login.class);
                 startActivity(intent);
-                finish();
+                //finish();
                 return true;
         }
         return false;
@@ -216,5 +187,32 @@ public class MainActivity extends ListActivity {
                 }
             }
         });
+    }
+
+    private void checkLoggedOn(){
+        final ParseUser currentUser = ParseUser.getCurrentUser();
+
+        if(currentUser == null) {
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+            //finish();
+        }
+    }
+
+    private void setupPosts(){
+        posts = new ArrayList<Note>();
+        ArrayAdapter<Note> adapter = new ArrayAdapter<Note>(this, R.layout.list_item_layout, posts);
+        setListAdapter(adapter);
+        refreshPostList();
+    }
+
+    private void initializeParse(){
+        ParseObject.registerSubclass(Note.class);
+        ParseObject.registerSubclass(Message.class);
+
+
+        initialize(this);
+        ParseInstallation.getCurrentInstallation().saveInBackground();
+        //started = true;
     }
 }

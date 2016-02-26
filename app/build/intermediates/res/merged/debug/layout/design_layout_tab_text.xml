@@ -20,4 +20,4 @@
           android:layout_height="wrap_content"
           android:ellipsize="end"
           android:gravity="center"
-          android:maxLines="2"/><!-- From: file:/usr/local/google/buildbot/src/googleplex-android/mnc-supportlib-release/frameworks/support/design/res/layout/design_layout_tab_text.xml --><!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110W260T12/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/layout/design_layout_tab_text.xml -->
+          android:maxLines="2"/><!-- From: file:/usr/local/google/buildbot/src/googleplex-android/mnc-supportlib-release/frameworks/support/design/res/layout/design_layout_tab_text.xml --><!-- From: file:/C:/Users/Daylon/AndroidStudioProjects/CSE110W260T12_5/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/layout/design_layout_tab_text.xml -->

@@ -68,18 +68,14 @@ public class newpost extends Activity {
                             myGroups.add(note.getObjectId());
                             user.put("group_key", myGroups);
                             user.saveInBackground();
-                            Intent main = new Intent(newpost.this, MainActivity.class);
-                            startActivity(main);
+                            //Intent main = new Intent(newpost.this, MainActivity.class);
+                            //startActivity(main);
                             finish();
                         } else {
                             Log.v("System.out", e.getMessage());
                         }
                     }
                 });
-
-                /*Intent main = new Intent();
-                setResult(0, main);
-                finish();*/
 
             }
         });
