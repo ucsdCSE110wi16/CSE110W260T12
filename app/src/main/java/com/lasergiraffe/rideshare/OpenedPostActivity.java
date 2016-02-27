@@ -2,7 +2,6 @@ package com.lasergiraffe.rideshare;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
@@ -15,12 +14,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lasergiraffe.rideshare.util.SystemUiHider;
+import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-
-import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +69,6 @@ public class OpenedPostActivity extends Activity {
         final int currNumRiders = extra.getInt("currNumRiders");
         final int capacity = extra.getInt("capacity");
         String s = currNumRiders+"/"+capacity;
-
 
         super.onCreate(savedInstanceState);
 
@@ -190,8 +188,6 @@ public class OpenedPostActivity extends Activity {
                 content_text=null;
                 name_text = null;
                 phone_text = null;
-
-
             }
             else{
                 title_text=extras.getString(getString(R.string.theNote));
@@ -205,7 +201,6 @@ public class OpenedPostActivity extends Activity {
 
 
         //MOVED VARIABLES TO TOP
-
         final Button deletepost = (Button)findViewById(R.id.deletePost);
         if (thisUser.equals(thispostuser)) {
             deletepost.getBackground().setColorFilter(null);
@@ -214,11 +209,34 @@ public class OpenedPostActivity extends Activity {
             deletepost.getBackground().setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
             deletepost.setEnabled(false);
         }
+        //Delete the post (Only person who opens the post has the privilege)
         deletepost.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                ParseQuery<ParseObject> query = ParseQuery.getQuery("notes");
-                query.whereEqualTo("title", thispost);
-                // 2/22 kenny left off here, driver has the ability to delete his own post
+                ParseQuery<ParseObject> queryForNote = ParseQuery.getQuery("notes");
+                ParseQuery<ParseObject> queryForMsg = ParseQuery.getQuery("Message");
+                //Delete the post based on the note_id
+                queryForNote.getInBackground(note_id,new GetCallback<ParseObject>(){
+                    public void done(ParseObject object, ParseException e) {
+                        if (e == null)
+                            object.deleteInBackground();
+                        else
+                            System.out.println("Error in deleting");
+                    }
+                });
+                //Delete the messages related to the post
+                queryForMsg.whereEqualTo("note_key", note_id);
+                queryForMsg.findInBackground(new FindCallback<ParseObject>() {
+                    public void done(List<ParseObject> invites, ParseException e) {
+                        if (e == null) {
+                            // iterate over all messages and delete them
+                            for (ParseObject invite : invites) {
+                                invite.deleteInBackground();
+                            }
+                        } else {
+                            //Handle condition here
+                        }
+                    }
+                });
                 finish();
             }
         });

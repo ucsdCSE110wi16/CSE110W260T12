@@ -2,7 +2,6 @@ package com.lasergiraffe.rideshare;
 
 import android.app.ListActivity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -93,7 +92,6 @@ public class MyGroups extends ListActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(MyGroups.this, ChatActivity.class);
                 String note_key = ((Note) parent.getItemAtPosition(position)).getId();
-                //Log.v("System.out",noteTitle+" "+noteContent+" "+username);
                 i.putExtra("note_key", note_key);
                 startActivity(i);
                 //finish();

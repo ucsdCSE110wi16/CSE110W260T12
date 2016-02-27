@@ -42,14 +42,14 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /* sets up parse */
+        initializeParse();
+
         /* prevent from this activity if not logged on */
         checkLoggedOn();
 
         /* sets up layout */
         setupPosts();
-
-        /* sets up parse */
-        initializeParse();
 
         //BUTTONS :D
         Button switchtonewpage = (Button) findViewById(R.id.newpost_button);
@@ -60,6 +60,7 @@ public class MainActivity extends ListActivity {
         //listview is the layout for this page
         ListView list = getListView();
 
+        //Click the "New Post" button to make a new post
         switchtonewpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +71,7 @@ public class MainActivity extends ListActivity {
             }
         });
 
-
+        // Click an item on the action bar to show the description
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -88,10 +89,12 @@ public class MainActivity extends ListActivity {
                 i.putExtra("capacity", capacity);
                 i.putExtra("currNumRiders", currNumRiders);
                 startActivity(i);
+                refreshPostList();
                 //finish();
             }
         });
 
+        // "Clear" Button (We will get rid of this button)
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -116,6 +119,7 @@ public class MainActivity extends ListActivity {
             }
         });
 
+        // "Log out" Button for users to log out
         logout.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -127,7 +131,7 @@ public class MainActivity extends ListActivity {
             }
         });
 
-
+        //"My Group" Button to show users' own groups
         myGroups.setOnClickListener(new View.OnClickListener(){
 
             @Override

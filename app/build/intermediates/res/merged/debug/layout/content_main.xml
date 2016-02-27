@@ -54,4 +54,4 @@
         android:layout_alignTop="@+id/logout_button"
         android:layout_alignParentStart="true" />
 
-</RelativeLayout><!-- From: file:/C:/Users/Daylon/AndroidStudioProjects/CSE110W260T12_5/app/src/main/res/layout/content_main.xml -->
+</RelativeLayout><!-- From: file:/C:/Users/lamki/AndroidStudioProjects/CSE110W260T12/app/src/main/res/layout/content_main.xml -->
