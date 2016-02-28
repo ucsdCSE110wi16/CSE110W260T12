@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -80,7 +81,26 @@ public class newpost extends Activity {
             }
         });
 
+        //ToggleButton toggle = (ToggleButton) findViewById(R.id.driverToggle);
+        //toggle.setOnClickListener();
 
+
+    }
+
+    public void setDriver(View view){
+
+        boolean isOn = ((ToggleButton) view).isChecked();
+
+        if (isOn)
+            Toast.makeText(getApplicationContext(), "You are a Driver", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(getApplicationContext(), "You are a Rider", Toast.LENGTH_SHORT).show();
+    }
+
+    public void getDriver(View view){
+
+        boolean isOn = ((ToggleButton) view).isChecked();
+        return isOn;
     }
 }
 
