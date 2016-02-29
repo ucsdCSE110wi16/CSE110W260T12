@@ -71,9 +71,11 @@ public class MyGroups extends ListActivity {
                     // and notify the adapter
                     groups.clear();
                     for (ParseObject post : postList) {
-                        Note note = new Note(post.getObjectId(), post.getString("title"),
-                                post.getString("userName"), post.getString("phone"), post.getString("content"),
-                                post.getInt("capacity"), post.getInt("currNumRiders"));
+                        Note note = new Note(post.getObjectId(), post.getString("noteTitle"),
+                                post.getString("noteName"), post.getString("notePhone"),
+                                post.getString("noteDetails"), post.getInt("noteCapacity"),
+                                post.getInt("noteCurrNumRiders"), post.getString("noteToDest"),
+                                post.getString("noteFromDest"), post.getDouble("notePrice"));
                         System.out.println("capacity is " + post.getInt("capacity"));
                         note.getObjectId();
                         groups.add(note);

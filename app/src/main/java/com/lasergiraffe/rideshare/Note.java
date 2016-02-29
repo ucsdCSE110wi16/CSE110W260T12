@@ -27,7 +27,7 @@ public class Note extends ParseObject implements View.OnClickListener{
 
     public Note(String noteId, String noteTitle, String noteName, String notePhone,
                 String noteDetails, int noteCapacity, int noteCurrNumRiders, String destTo,
-                String destFrom, double priceTotal,) {
+                String destFrom, double priceTotal) {
         id = noteId;
         title = noteTitle;
         name = noteName;
@@ -44,7 +44,7 @@ public class Note extends ParseObject implements View.OnClickListener{
     @Override
     // toString is the function for the content of the action bar
     public String toString() {
-        return fromDest "  -->  " + toDest;
+        return fromDest + "  -->  " + toDest;
     }
 
     //GETTERS

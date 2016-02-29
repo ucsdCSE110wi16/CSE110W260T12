@@ -91,7 +91,8 @@
                 android:layout_marginRight="15dp"
                 android:paddingBottom="15dp"
                 android:paddingTop="30dp"
-                android:hint="@string/numSeats" />
+                android:hint="@string/numSeats"
+                android:inputType="number" />
 
             <EditText
                 android:layout_width="match_parent"

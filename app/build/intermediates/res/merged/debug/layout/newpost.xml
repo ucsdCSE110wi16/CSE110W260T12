@@ -80,7 +80,19 @@
                 android:layout_marginRight="15dp"
                 android:paddingTop="30dp"
                 android:paddingBottom="15dp"
-                android:hint="@string/priceEstPost" />
+                android:hint="@string/priceEstPost"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/numSeats_id"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:paddingBottom="15dp"
+                android:paddingTop="30dp"
+                android:hint="@string/numSeats"
+                android:inputType="number" />
 
             <EditText
                 android:layout_width="match_parent"

@@ -386,6 +386,17 @@
     <string name="logout">logout</string>
     <string name="message_hint">Say anything</string>
     <string name="namePost">Name</string>
+    <string name="noteCapacity">capacity</string>
+    <string name="noteCurrNumRiders">currNumRiders</string>
+    <string name="noteDetails">noteDetails</string>
+    <string name="noteFromDest">fromDest</string>
+    <string name="noteKey">noteKey</string>
+    <string name="noteName">noteName</string>
+    <string name="notePhone">phone number</string>
+    <string name="notePrice">price</string>
+    <string name="noteTitle">noteTitle</string>
+    <string name="noteToDest">toDest</string>
+    <string name="numSeats">Number of Seats</string>
     <string name="phonePost">Phone #</string>
     <string name="priceEstPost">Est. Price per Person (Optional)</string>
     <string name="pricePost">Price per Person</string>
@@ -399,8 +410,6 @@
     <!-- From: file:/Users/Yahav/AndroidStudioProjects/CSE110W260T12/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="submitPost">Submit</string>
-    <string name="theContent">hahaha</string>
-    <string name="theNote">theNote</string>
     <string name="title_activity_chat">ChatActivity</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_my_groups">MyGroups</string>

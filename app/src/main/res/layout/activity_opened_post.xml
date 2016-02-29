@@ -1,57 +1,109 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#0099cc"
-    tools:context="com.lasergiraffe.rideshare.OpenedPostActivity">
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context="com.lasergiraffe.rideshare.OpenedPostActivity"
+
+    android:orientation="vertical"
+    android:id="@+id/openedpostbg_id">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView2" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:text="Title"
+                android:id="@+id/titleText_id"
+                android:textSize="100dp"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Name"
+                android:id="@+id/nameText_id"
+                android:textSize="30sp"
+                android:textAlignment="textStart"
+                android:layout_marginLeft="15dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Phone #"
+                android:id="@+id/phoneText_id"
+                android:textSize="25sp"
+                android:textAlignment="textStart"
+                android:layout_marginLeft="25dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:text="Time/Date"
+                android:id="@+id/timeDateText_id"
+                android:textSize="50dp"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Seats Available"
+                android:id="@+id/numSeats_id"
+                android:textSize="50dp"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Price"
+                android:id="@+id/priceText_id"
+                android:textSize="50dp"
+                android:textAlignment="center"
+                android:textColor="#23bf20" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Details"
+                android:id="@+id/detailsText_id"
+                android:textSize="30dp"
+                android:textAlignment="center" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JOIN GROUP"
+                android:id="@+id/join_group"
+                android:layout_gravity="center_horizontal"
+                android:height="100dp"
+                android:width="150dp"
+                android:layout_marginTop="100dp"
+                android:textSize="25dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
     <!--android:id="@+id/"-->
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
-    <TextView android:id="@+id/fullscreen_title" android:layout_width="match_parent"
-        android:layout_height="117dp" android:keepScreenOn="true" android:textColor="#33b5e5"
-        android:textStyle="bold" android:textSize="50dp" android:gravity="center"
-        android:text="Texty text" />
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
-    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:layout_gravity="center_horizontal|top">
 
-        <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/black_overlay" android:orientation="horizontal"
-            tools:ignore="UselessParent">
 
-            <Button android:id="@+id/join_group" style="?metaButtonBarButtonStyle"
-                android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_weight="1" android:text="Join group!" />
 
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="270dp"
-            android:text="New Text"
-            android:id="@+id/fullscreen_content"
-            android:layout_gravity="center"
-            android:textSize="30dp"
-            android:textAlignment="center" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete this post"
-            android:id="@+id/deletePost"
-            android:layout_gravity="right|center_vertical" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/currNumRidersOverCapacity"
-            android:layout_gravity="right|bottom" />
-    </FrameLayout>
-
-</FrameLayout>

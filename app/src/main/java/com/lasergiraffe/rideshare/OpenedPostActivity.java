@@ -2,6 +2,7 @@ package com.lasergiraffe.rideshare;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
@@ -61,25 +62,40 @@ public class OpenedPostActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         final String thisUser = ParseUser.getCurrentUser().getUsername();
+
         Bundle extra = getIntent().getExtras();
+
+        final String noteTitle = extra.getString(getString(R.string.noteTitle));
+        final String noteToDest = extra.getString(getString(R.string.noteToDest));
+        final String noteFromDest = extra.getString(getString(R.string.noteFromDest));
         final String noteDetails = extra.getString(getString(R.string.noteDetails));
-        final String noteName = extra.getString("note_username");
-        final String note_id = extra.getString("note_key");
-        final int currNumRiders = extra.getInt("currNumRiders");
-        final int capacity = extra.getInt("capacity");
+        final String noteName = extra.getString(getString(R.string.noteName));
+        final String noteKey = extra.getString(getString(R.string.noteKey));
+        final String notePrice = extra.getString(getString(R.string.notePrice));
+        final String notePhone = extra.getString(getString(R.string.notePhone));
+        final int currNumRiders = Integer.parseInt(extra.getString(getString(R.string.noteCurrNumRiders)));
+        final int capacity = Integer.parseInt(extra.getString(getString(R.string.noteCapacity)));
         String s = currNumRiders+"/"+capacity;
 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_opened_post);
 
-        final View controlsView = findViewById(R.id.fullscreen_content_controls);
-        final View contentView = findViewById(R.id.fullscreen_title);
+       final View controlsView = findViewById(R.id.openedpostbg_id);
+       final View contentView = findViewById(R.id.titleText_id);
 
-        TextView title = (TextView) findViewById(R.id.fullscreen_title);
-        TextView content = (TextView) findViewById(R.id.fullscreen_content);
-        final TextView currNumRidersOverCapacity = (TextView) findViewById(R.id.currNumRidersOverCapacity);
+        TextView titleText = (TextView) findViewById(R.id.titleText_id);
+        TextView nameText = (TextView) findViewById(R.id.nameText_id);
+        TextView phoneText = (TextView) findViewById(R.id.phoneText_id);
+        TextView timeDateText = (TextView) findViewById(R.id.timeDateText_id);
+        TextView numSeatsText = (TextView) findViewById(R.id.numSeats_id);
+        TextView priceText = (TextView) findViewById(R.id.priceText_id);
+        TextView detailsText = (TextView) findViewById(R.id.detailsText_id);
+
+
+        // ??????????? final TextView currNumRidersOverCapacity = (TextView) findViewById(R.id.currNumRidersOverCapacity);
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
         mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
@@ -145,7 +161,7 @@ public class OpenedPostActivity extends Activity {
             public void onClick(View v) {
                 ParseUser user = ParseUser.getCurrentUser();
                 List<String> myGroups = (ArrayList<String>) user.get("group_key");
-                if(myGroups.contains(note_id)){
+                if(myGroups.contains(noteKey)){
                     Toast.makeText(OpenedPostActivity.this, "Already in group!",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -154,18 +170,18 @@ public class OpenedPostActivity extends Activity {
                             Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    myGroups.add(note_id);
+                    myGroups.add(noteKey);
                     user.put("group_key", myGroups);
                     ParseQuery<Note> query = ParseQuery.getQuery("notes");
                     Note note = null;
                     try {
-                        note = (Note)query.get(note_id);
+                        note = (Note)query.get(noteKey);
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
                     note.increment("currNumRiders");
                     note.saveInBackground();
-                    currNumRidersOverCapacity.setText(currNumRiders+1+"/"+capacity);
+                    //??????????? currNumRidersOverCapacity.setText(currNumRiders+1+"/"+capacity);
                     user.saveInBackground();
 
                     Toast.makeText(OpenedPostActivity.this, "Successfully joined the group!",
@@ -178,20 +194,35 @@ public class OpenedPostActivity extends Activity {
 
         Bundle extras = null;
         String title_text = null;
-        String content_text = null;
+        String details_text = null;
         String name_text = null;
         String phone_text= null;
+        String timeDate = null;
+        double price = 0;
+        int numSeats = 0;
+
         if(savedInstanceState==null){
             extras = getIntent().getExtras();
             if(extras==null){
-                title_text=null;
-                content_text=null;
-                name_text = null;
-                phone_text = null;
+                 title_text = null;
+                 details_text = null;
+                 name_text = null;
+                 phone_text= null;
+                 timeDate = null;
+                 price = 0;
+                 numSeats = 0;
             }
             else{
-                title_text=extras.getString(getString(R.string.theNote));
-                content_text=extras.getString(getString(R.string.theContent));
+                title_text = extras.getString(getString(R.string.noteTitle));
+                details_text = extras.getString(getString(R.string.noteDetails));
+                name_text = extras.getString(getString(R.string.noteName));
+                phone_text = extras.getString(getString(R.string.notePhone));
+
+                price = extras.getString(getString(R.string.notePrice));
+                numSeats = extras.getString(getString(R.string.noteDetails));
+
+
+                timeDate = extras.getString(getString(R.string.note));
 
             }
         }

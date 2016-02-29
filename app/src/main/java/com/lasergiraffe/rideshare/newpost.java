@@ -28,10 +28,13 @@ import java.util.Locale;
  */
 public class newpost extends Activity {
     private Note note;
-    EditText title;
-    EditText description; //content
-    EditText userName; //name
-    EditText userPhone; //phone
+    EditText noteDetails; //details
+    EditText noteName; //name
+    EditText notePhone; //phone
+    EditText noteToDest;
+    EditText noteFromDest;
+    EditText notePrice;
+    EditText noteCapacity;
     Button submit;
 
     /* Calendar for the newPost */
@@ -43,36 +46,44 @@ public class newpost extends Activity {
         setContentView(R.layout.newpost);
 
         submit = (Button) findViewById(R.id.submit_id);
-        //title = (EditText) findViewById(R.id.title_id);
-        userName = (EditText) findViewById(R.id.name_id);
-        userPhone = (EditText) findViewById(R.id.phone_id);
-        description = (EditText) findViewById(R.id.description_id);
+
+        noteName = (EditText) findViewById(R.id.name_id);
+        notePhone = (EditText) findViewById(R.id.phone_id);
+        noteToDest = (EditText) findViewById(R.id.destTo_id);
+        noteFromDest = (EditText) findViewById(R.id.destFrom_id);
+        notePrice = (EditText) findViewById(R.id.price_id);
+        noteCapacity = (EditText) findViewById(R.id.numSeats_id);
+        noteDetails = (EditText) findViewById(R.id.details_id);
+
         note = new Note();
-
-        EditText price = (EditText) findViewById(R.id.price_id);
-
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 note.setId(note.getObjectId());
-                note.setTitle(title.getText().toString());
-                note.setContent(description.getText().toString());
-                // Kenny 2/22 changed from: note.setName(userName.getText().toString());
-                note.setName(ParseUser.getCurrentUser().getUsername().toString());
-                note.setPhone(userPhone.getText().toString());
+                note.setDetails(noteDetails.getText().toString());
+                note.setPhone(notePhone.getText().toString());
+                note.setCapacity(Integer.parseInt(noteCapacity.getText().toString()));
+                note.setFromDest(noteFromDest.getText().toString());
+                note.setToDest(noteToDest.getText().toString());
+                note.setPrice(Double.parseDouble(notePrice.getText().toString()));
 
-                //SETTING CAPACITY TO 5 FOR ALL FOR NOW
-                note.setCapacity(5);
+                //make an addCurrNumRider method and do riders++ ?????
                 note.setCurrNumRiders(1);
+                //USE this for Parse USERNAME -- ParseUser.getCurrentUser().getUsername().toString()
+                note.setName(noteName.getText().toString());
 
-                note.put("title", note.getTitle());
-                note.put("content", note.getContent());
-                note.put("userName", note.getName());
-                note.put("userPhone", note.getPhone());
-                note.put("capacity", note.getCapacity());
-                note.put("currNumRiders", note.getCurrNumRiders());
+                note.put("noteTitle", note.getTitle());
+                note.put("noteDetails", note.getDetails());
+                note.put("noteName", note.getName());
+                note.put("notePhone", note.getPhone());
+                note.put("notePrice", note.getPrice());
+                note.put("noteToDest", note.getToDest());
+                note.put("noteFromDest", note.getFromDest());
+                note.put("noteID", note.getId());
+                note.put("noteCapacity", note.getCapacity());
+                note.put("noteCurrNumRiders", note.getCurrNumRiders());
                 note.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
