@@ -44,5 +44,6 @@
     <string name="noteTime">noteTime</string>
     <string name="noteDate">noteDate</string>
     <string name="noteTimeDate">noteTimeDate</string>
+    <string name="noteUsername">noteUsername</string>
 
 </resources>

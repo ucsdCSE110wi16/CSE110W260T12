@@ -19,6 +19,7 @@ public class Note extends ParseObject implements View.OnClickListener{
     private String time;
     private String date;
     private String price;
+    private String username;
     private int capacity;
     private int currNumRiders;
 
@@ -30,7 +31,7 @@ public class Note extends ParseObject implements View.OnClickListener{
 
     public Note(String noteId, String noteTitle, String noteName, String notePhone,
                 String noteDetails, int noteCapacity, int noteCurrNumRiders, String destTo,
-                String destFrom, String priceTotal, String theTime, String theDate) {
+                String destFrom, String priceTotal, String theTime, String theDate, String username) {
         id = noteId;
         title = noteTitle;
         name = noteName;
@@ -43,6 +44,7 @@ public class Note extends ParseObject implements View.OnClickListener{
         price = priceTotal;
         time = theTime;
         date = theDate;
+        this.username = username;
 
     }
 
@@ -65,6 +67,7 @@ public class Note extends ParseObject implements View.OnClickListener{
     public String getFromDest() { return fromDest; }
     public String getTime(){ return time; }
     public String getDate(){ return date; }
+    public String getUsername(){ return username; }
 
     //SETTERS
     public void setId(String id) { this.id = id; }
@@ -79,6 +82,7 @@ public class Note extends ParseObject implements View.OnClickListener{
     public void setFromDest(String fromDest) {  this.fromDest = fromDest; }
     public void setTime(String time){ this.time = time; }
     public void setDate(String date){ this.date = date; }
+    public void setUsername(String username){ this.username = username; }
 
 
 

@@ -90,6 +90,7 @@ public class MainActivity extends ListActivity {
                 String noteTime = ((Note)parent.getItemAtPosition(position)).getTime();
                 String noteDate = ((Note)parent.getItemAtPosition(position)).getDate();
                 String noteTimeDate = noteTime + "          " + noteDate;
+                String noteUsername = ((Note)parent.getItemAtPosition(position)).getUsername();
 
                 i.putExtra(getString(R.string.noteTitle), noteTitle);
                 i.putExtra(getString(R.string.noteDetails), noteDetails);
@@ -102,6 +103,7 @@ public class MainActivity extends ListActivity {
                 i.putExtra(getString(R.string.notePrice), notePrice);
                 i.putExtra(getString(R.string.notePhone), notePhone);
                 i.putExtra(getString(R.string.noteTimeDate), noteTimeDate);
+                i.putExtra(getString(R.string.noteUsername), noteUsername);
 
                 startActivity(i);
                 refreshPostList();
@@ -199,7 +201,8 @@ public class MainActivity extends ListActivity {
                                 post.getString("noteDetails"), post.getInt("noteCapacity"),
                                 post.getInt("noteCurrNumRiders"), post.getString("noteToDest"),
                                 post.getString("noteFromDest"), post.getString("notePrice"),
-                                post.getString("noteTime"), post.getString("noteDate"));
+                                post.getString("noteTime"), post.getString("noteDate"),
+                                post.getString("noteUsername"));
                         note.getObjectId();
                         posts.add(note);
                     }

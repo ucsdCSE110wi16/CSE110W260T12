@@ -399,6 +399,7 @@
     <string name="noteTimeDate">noteTimeDate</string>
     <string name="noteTitle">noteTitle</string>
     <string name="noteToDest">toDest</string>
+    <string name="noteUsername">noteUsername</string>
     <string name="numSeats">Number of Seats</string>
     <string name="phonePost">Phone #</string>
     <string name="priceEstPost">Est. Price per Person (Optional)</string>

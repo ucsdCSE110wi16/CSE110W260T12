@@ -86,7 +86,7 @@ public class newpost extends Activity {
 
                 //make an addCurrNumRider method and do riders++ ?????
                 note.setCurrNumRiders(1);
-                //USE this for Parse USERNAME -- ParseUser.getCurrentUser().getUsername().toString()
+                note.setUsername(ParseUser.getCurrentUser().getUsername().toString());
                 note.setName(noteName.getText().toString());
 
 
@@ -102,6 +102,7 @@ public class newpost extends Activity {
                 note.put("noteCurrNumRiders", note.getCurrNumRiders());
                 note.put("noteTime", note.getTime());
                 note.put("noteDate", note.getDate());
+                note.put("noteUsername", note.getUsername());
 
                 note.saveInBackground(new SaveCallback() {
                     @Override

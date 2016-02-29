@@ -72,6 +72,7 @@ public class OpenedPostActivity extends Activity {
         //final String noteFromDest = extra.getString(getString(R.string.noteFromDest));
         String noteDetails = extra.getString(getString(R.string.noteDetails));
         String noteName = extra.getString(getString(R.string.noteName));
+        final String thispostuser = extra.getString(getString(R.string.noteUsername));
         final String noteKey = extra.getString(getString(R.string.noteKey));
         String notePrice = extra.getString(getString(R.string.notePrice));
         String notePhone = extra.getString(getString(R.string.notePhone));
