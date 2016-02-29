@@ -22,7 +22,8 @@ public class Note extends ParseObject implements View.OnClickListener{
     }
 
 
-    public Note(String noteId, String noteTitle, String noteName, String notePhone, String noteContent, int noteCapacity, int noteCurrNumRiders) {
+    public Note(String noteId, String noteTitle, String noteName, String notePhone,
+                String noteContent, int noteCapacity, int noteCurrNumRiders) {
         id = noteId;
         title = noteTitle;
         name = noteName;

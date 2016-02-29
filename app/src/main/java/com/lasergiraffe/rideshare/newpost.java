@@ -17,6 +17,7 @@ import com.parse.SaveCallback;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Created by lamki on 2/1/2016.
  */
@@ -33,11 +34,14 @@ public class newpost extends Activity {
         setContentView(R.layout.newpost);
 
         submit = (Button) findViewById(R.id.submit_id);
-        title = (EditText) findViewById(R.id.title_id);
+        //title = (EditText) findViewById(R.id.title_id);
         userName = (EditText) findViewById(R.id.name_id);
         userPhone = (EditText) findViewById(R.id.phone_id);
         description = (EditText) findViewById(R.id.description_id);
         note = new Note();
+
+        EditText price = (EditText) findViewById(R.id.price_id);
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,14 +94,20 @@ public class newpost extends Activity {
     public void setDriver(View view){
 
         boolean isOn = ((ToggleButton) view).isChecked();
+        EditText price = (EditText) findViewById(R.id.price_id);
 
-        if (isOn)
+
+        if (isOn) {
             Toast.makeText(getApplicationContext(), "You are a Driver", Toast.LENGTH_SHORT).show();
-        else
+            price.setHint(R.string.priceEstPost);
+        }
+        else {
             Toast.makeText(getApplicationContext(), "You are a Rider", Toast.LENGTH_SHORT).show();
+            price.setHint(R.string.pricePost);
+        }
     }
 
-    public void getDriver(View view){
+    public boolean getDriver(View view){
 
         boolean isOn = ((ToggleButton) view).isChecked();
         return isOn;

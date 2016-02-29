@@ -376,19 +376,28 @@
     <!-- From: file:/Users/Yahav/AndroidStudioProjects/CSE110W260T12/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="currNumRidersOverCapacity">0/5</string>
+    <string name="destFromPost">From: Destination</string>
+    <string name="destToPost">To: Destination</string>
+    <string name="detailsPost">Details (Optional)</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="hello_world">Hello world!</string>
     <string name="logout">logout</string>
     <string name="message_hint">Say anything</string>
+    <string name="namePost">Name</string>
+    <string name="phonePost">Phone #</string>
+    <string name="priceEstPost">Est. Price per Person (Optional)</string>
+    <string name="pricePost">Price per Person</string>
     <string name="profile_me">My Profile Pic</string>
     <string name="profile_other">Other profile pic</string>
     <string name="send">Send</string>
+    <string name="specifyTimeDate">Specify the Time and Date of Departure below:</string>
     <!-- From: file:/Users/Yahav/AndroidStudioProjects/CSE110W260T12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
     <!-- From: file:/Users/Yahav/AndroidStudioProjects/CSE110W260T12/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="submitPost">Submit</string>
     <string name="theContent">hahaha</string>
     <string name="theNote">theNote</string>
     <string name="title_activity_chat">ChatActivity</string>
