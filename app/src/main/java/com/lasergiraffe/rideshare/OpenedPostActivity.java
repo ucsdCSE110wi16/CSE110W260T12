@@ -63,8 +63,8 @@ public class OpenedPostActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         final String thisUser = ParseUser.getCurrentUser().getUsername();
         Bundle extra = getIntent().getExtras();
-        final String thispost = extra.getString(getString(R.string.theContent));
-        final String thispostuser = extra.getString("note_username");
+        final String noteDetails = extra.getString(getString(R.string.noteDetails));
+        final String noteName = extra.getString("note_username");
         final String note_id = extra.getString("note_key");
         final int currNumRiders = extra.getInt("currNumRiders");
         final int capacity = extra.getInt("capacity");

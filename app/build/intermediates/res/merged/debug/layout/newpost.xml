@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_width="wrap_content"
     android:background="#42cfff">
 
@@ -80,7 +80,7 @@
                 android:layout_marginRight="15dp"
                 android:paddingTop="30dp"
                 android:paddingBottom="15dp"
-                android:hint="@string/pricePost" />
+                android:hint="@string/priceEstPost" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -106,18 +106,20 @@
                 android:textSize="20sp" />
 
             <TimePicker
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/timePicker"
+                android:id="@+id/timePicker_id"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />
+                android:layout_marginRight="15dp"
+                android:paddingBottom="15dp" />
 
             <DatePicker
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/datePicker"
+                android:id="@+id/datePicker_id"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />
+                android:layout_marginRight="15dp"
+                android:paddingBottom="15dp" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
@@ -126,7 +128,8 @@
                 android:text="@string/submitPost"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/submit_id"
-                android:padding="15dp"/>
+                android:padding="15dp"
+                android:layout_gravity="center_horizontal" />
 
 
         </LinearLayout>

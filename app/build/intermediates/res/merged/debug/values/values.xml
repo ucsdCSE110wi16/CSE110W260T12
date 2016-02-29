@@ -376,6 +376,7 @@
     <!-- From: file:/Users/Yahav/AndroidStudioProjects/CSE110W260T12/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="currNumRidersOverCapacity">0/5</string>
+    <string name="datePost">Date of Departure</string>
     <string name="destFromPost">From: Destination</string>
     <string name="destToPost">To: Destination</string>
     <string name="detailsPost">Details (Optional)</string>

@@ -1,11 +1,13 @@
 package com.lasergiraffe.rideshare;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -14,8 +16,11 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 
 /**
@@ -28,6 +33,10 @@ public class newpost extends Activity {
     EditText userName; //name
     EditText userPhone; //phone
     Button submit;
+
+    /* Calendar for the newPost */
+    //final Calendar inputCal = Calendar.getInstance();
+    //EditText inputDate = (EditText) findViewById(R.id.date_id);
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,12 +94,50 @@ public class newpost extends Activity {
             }
         });
 
-        //ToggleButton toggle = (ToggleButton) findViewById(R.id.driverToggle);
-        //toggle.setOnClickListener();
+
+        /* when Date of Departure EditText is Clicked, pop up a calendar on screen */
+/*
+        inputDate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(newpost.this, new DatePickerDialog(), inputCal
+                        .get(Calendar.YEAR), inputCal.get(Calendar.MONTH),
+                        inputCal.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+*/
+
 
 
     }
 
+/*
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            // TODO Auto-generated method stub
+            inputCal.set(Calendar.YEAR, year);
+            inputCal.set(Calendar.MONTH, monthOfYear);
+            inputCal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateLabel();
+        }
+
+    };
+
+
+    /* update the Date Label once the Date is chosen
+    private void updateLabel() {
+
+        String myFormat = "MM/dd/yy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        inputDate.setText(sdf.format(inputCal.getTime()));
+    }
+*/
     public void setDriver(View view){
 
         boolean isOn = ((ToggleButton) view).isChecked();
@@ -99,11 +146,12 @@ public class newpost extends Activity {
 
         if (isOn) {
             Toast.makeText(getApplicationContext(), "You are a Driver", Toast.LENGTH_SHORT).show();
-            price.setHint(R.string.priceEstPost);
+            price.setHint(R.string.pricePost);
+
         }
         else {
             Toast.makeText(getApplicationContext(), "You are a Rider", Toast.LENGTH_SHORT).show();
-            price.setHint(R.string.pricePost);
+            price.setHint(R.string.priceEstPost);
         }
     }
 

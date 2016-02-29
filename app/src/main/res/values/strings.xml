@@ -5,8 +5,8 @@
     <string name="title_activity_opened_post">OpenedPostActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="theNote">theNote</string>
-    <string name="theContent">hahaha</string>
+    <string name="noteTitle">noteTitle</string>
+    <string name="noteDetails">noteDetails</string>
     <string name="title_activity_sign_up">SignUp</string>
 
     <string name="hello_world">Hello world!</string>
@@ -31,5 +31,15 @@
     <string name="submitPost">Submit</string>
     <string name="specifyTimeDate">Specify the Time and Date of Departure below:</string>
     <string name="priceEstPost">Est. Price per Person (Optional)</string>
+    <string name="datePost">Date of Departure</string>
+    <string name="numSeats">Number of Seats</string>
+    <string name="noteKey">noteKey</string>
+    <string name="noteName">noteName</string>
+    <string name="noteCapacity">capacity</string>
+    <string name="noteCurrNumRiders">currNumRiders</string>
+    <string name="noteToDest">toDest</string>
+    <string name="noteFromDest">fromDest</string>
+    <string name="notePrice">price</string>
+    <string name="notePhone">phone number</string>
 
 </resources>

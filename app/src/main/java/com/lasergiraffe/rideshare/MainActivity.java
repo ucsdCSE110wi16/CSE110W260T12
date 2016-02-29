@@ -76,18 +76,28 @@ public class MainActivity extends ListActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(MainActivity.this, OpenedPostActivity.class);
-                String noteTitle = parent.getItemAtPosition(position).toString();
-                String noteContent = ((Note)parent.getItemAtPosition(position)).getContent();
-                String note_key = ((Note)parent.getItemAtPosition(position)).getId();
-                String username = ((Note)parent.getItemAtPosition(position)).getName();
-                int capacity = ((Note)parent.getItemAtPosition(position)).getCapacity();
-                int currNumRiders = ((Note)parent.getItemAtPosition(position)).getCurrNumRiders();
-                i.putExtra(getString(R.string.theNote), noteTitle);
-                i.putExtra(getString(R.string.theContent), noteContent);
-                i.putExtra("note_key", note_key);
-                i.putExtra("note_username", username);
-                i.putExtra("capacity", capacity);
-                i.putExtra("currNumRiders", currNumRiders);
+
+                String noteTitle = ((Note)parent.getItemAtPosition(position)).getTitle();
+                String noteDetails = ((Note)parent.getItemAtPosition(position)).getDetails();
+                String noteKey = ((Note)parent.getItemAtPosition(position)).getId();
+                String noteName = ((Note)parent.getItemAtPosition(position)).getName();
+                int noteCapacity = ((Note)parent.getItemAtPosition(position)).getCapacity();
+                int noteCurrNumRiders = ((Note)parent.getItemAtPosition(position)).getCurrNumRiders();
+                String noteToDest = ((Note)parent.getItemAtPosition(position)).getToDest();
+                String noteFromDest = ((Note)parent.getItemAtPosition(position)).getFromDest();
+                double notePrice = ((Note)parent.getItemAtPosition(position)).getPrice();
+                String notePhone = ((Note)parent.getItemAtPosition(position)).getPhone();
+
+                i.putExtra(getString(R.string.noteTitle), noteTitle);
+                i.putExtra(getString(R.string.noteDetails), noteDetails);
+                i.putExtra(getString(R.string.noteKey), noteKey);
+                i.putExtra(getString(R.string.noteName), noteName);
+                i.putExtra(getString(R.string.noteCapacity), noteCapacity);
+                i.putExtra(getString(R.string.noteCurrNumRiders), noteCurrNumRiders);
+                i.putExtra(getString(R.string.noteToDest), noteToDest);
+                i.putExtra(getString(R.string.noteFromDest), noteFromDest);
+                i.putExtra(getString(R.string.notePrice), notePrice);
+                i.putExtra(getString(R.string.notePhone), notePhone);
                 startActivity(i);
                 refreshPostList();
                 //finish();
@@ -179,9 +189,11 @@ public class MainActivity extends ListActivity {
                     // and notify the adapter
                     posts.clear();
                     for (ParseObject post : postList) {
-                        Note note = new Note(post.getObjectId(), post.getString("title"),
-                                post.getString("userName"), post.getString("phone"), post.getString("content"), post.getInt("capacity"),
-                                post.getInt("currNumRiders"));
+                        Note note = new Note(post.getObjectId(), post.getString("noteTitle"),
+                                post.getString("noteName"), post.getString("notePhone"),
+                                post.getString("noteDetails"), post.getInt("noteCapacity"),
+                                post.getInt("noteCurrNumRiders"), post.getString("noteToDest"),
+                                post.getString("noteFromDest"), post.getDouble("notePrice"));
                         note.getObjectId();
                         posts.add(note);
                     }
