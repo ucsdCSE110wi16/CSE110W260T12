@@ -16,9 +16,12 @@ public class Note extends ParseObject implements View.OnClickListener{
     private String name;
     private String phone;
     private String details;
-    private double price;
+    private String time;
+    private String date;
+    private String price;
     private int capacity;
     private int currNumRiders;
+
 
     public Note(){
         //empty constructor
@@ -27,7 +30,7 @@ public class Note extends ParseObject implements View.OnClickListener{
 
     public Note(String noteId, String noteTitle, String noteName, String notePhone,
                 String noteDetails, int noteCapacity, int noteCurrNumRiders, String destTo,
-                String destFrom, double priceTotal) {
+                String destFrom, String priceTotal, String theTime, String theDate) {
         id = noteId;
         title = noteTitle;
         name = noteName;
@@ -38,6 +41,8 @@ public class Note extends ParseObject implements View.OnClickListener{
         toDest = destTo;
         fromDest = destFrom;
         price = priceTotal;
+        time = theTime;
+        date = theDate;
 
     }
 
@@ -55,21 +60,25 @@ public class Note extends ParseObject implements View.OnClickListener{
     public String getPhone() { return phone; }
     public int getCapacity() { return capacity; }
     public int getCurrNumRiders() { return currNumRiders; }
-    public double getPrice() { return price; }
+    public String getPrice() { return price; }
     public String getToDest() { return toDest; }
     public String getFromDest() { return fromDest; }
+    public String getTime(){ return time; }
+    public String getDate(){ return date; }
 
     //SETTERS
     public void setId(String id) { this.id = id; }
-    public void setTitle(String title) { this.title = title; }
+    public void setTitle() { this.title = toString(); }
     public void setDetails(String details) { this.details = details; }
     public void setName( String name) { this.name = name; }
     public void setPhone( String phone ) { this.phone = phone;}
     public void setCapacity( int capacity ){ this.capacity=capacity; }
     public void setCurrNumRiders( int currNumRiders ){ this.currNumRiders = currNumRiders; }
-    public double setPrice(double price) { return this.price = price; }
-    public String setToDest(String toDest) { return this.toDest = toDest; }
-    public String setFromDest(String fromDest) { return this.fromDest = fromDest; }
+    public void setPrice(String price) {  this.price = price; }
+    public void setToDest(String toDest) {  this.toDest = toDest; }
+    public void setFromDest(String fromDest) {  this.fromDest = fromDest; }
+    public void setTime(String time){ this.time = time; }
+    public void setDate(String date){ this.date = date; }
 
 
 

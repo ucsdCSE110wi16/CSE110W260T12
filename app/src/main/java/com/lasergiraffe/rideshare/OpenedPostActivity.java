@@ -67,24 +67,28 @@ public class OpenedPostActivity extends Activity {
 
         Bundle extra = getIntent().getExtras();
 
-        final String noteTitle = extra.getString(getString(R.string.noteTitle));
-        final String noteToDest = extra.getString(getString(R.string.noteToDest));
-        final String noteFromDest = extra.getString(getString(R.string.noteFromDest));
-        final String noteDetails = extra.getString(getString(R.string.noteDetails));
-        final String noteName = extra.getString(getString(R.string.noteName));
+        String noteTitle = extra.getString(getString(R.string.noteTitle));
+        //final String noteToDest = extra.getString(getString(R.string.noteToDest));
+        //final String noteFromDest = extra.getString(getString(R.string.noteFromDest));
+        String noteDetails = extra.getString(getString(R.string.noteDetails));
+        String noteName = extra.getString(getString(R.string.noteName));
         final String noteKey = extra.getString(getString(R.string.noteKey));
-        final String notePrice = extra.getString(getString(R.string.notePrice));
-        final String notePhone = extra.getString(getString(R.string.notePhone));
-        final int currNumRiders = Integer.parseInt(extra.getString(getString(R.string.noteCurrNumRiders)));
-        final int capacity = Integer.parseInt(extra.getString(getString(R.string.noteCapacity)));
-        String s = currNumRiders+"/"+capacity;
+        String notePrice = extra.getString(getString(R.string.notePrice));
+        String notePhone = extra.getString(getString(R.string.notePhone));
+        String noteTimeDate = extra.getString(getString(R.string.noteTimeDate));
+        int noteCurrNumRiders = Integer.parseInt(extra.getString(getString(R.string.noteCurrNumRiders)));
+        int noteCapacity = Integer.parseInt(extra.getString(getString(R.string.noteCapacity)));
+        String totalSeatsAvailable = noteCurrNumRiders + "/" + noteCapacity;
+
+        final int finalCurrNumRiders = noteCurrNumRiders;
+        final int finalCapacity = noteCapacity;
 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_opened_post);
 
-       final View controlsView = findViewById(R.id.openedpostbg_id);
-       final View contentView = findViewById(R.id.titleText_id);
+        final View controlsView = findViewById(R.id.openedpostbg_id);
+        final View contentView = findViewById(R.id.titleText_id);
 
         TextView titleText = (TextView) findViewById(R.id.titleText_id);
         TextView nameText = (TextView) findViewById(R.id.nameText_id);
@@ -165,7 +169,7 @@ public class OpenedPostActivity extends Activity {
                     Toast.makeText(OpenedPostActivity.this, "Already in group!",
                             Toast.LENGTH_SHORT).show();
                 }
-                else if(currNumRiders>=capacity){
+                else if(finalCurrNumRiders >= finalCapacity){
                     Toast.makeText(OpenedPostActivity.this, "Group full!",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -179,7 +183,7 @@ public class OpenedPostActivity extends Activity {
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-                    note.increment("currNumRiders");
+                    note.increment(getString(R.string.noteCurrNumRiders));
                     note.saveInBackground();
                     //??????????? currNumRidersOverCapacity.setText(currNumRiders+1+"/"+capacity);
                     user.saveInBackground();
@@ -193,46 +197,46 @@ public class OpenedPostActivity extends Activity {
         //TextView name = (TextView) findViewById(R.id.fullscreen_name);
 
         Bundle extras = null;
-        String title_text = null;
-        String details_text = null;
-        String name_text = null;
-        String phone_text= null;
-        String timeDate = null;
-        double price = 0;
-        int numSeats = 0;
-
         if(savedInstanceState==null){
             extras = getIntent().getExtras();
             if(extras==null){
-                 title_text = null;
-                 details_text = null;
-                 name_text = null;
-                 phone_text= null;
-                 timeDate = null;
-                 price = 0;
-                 numSeats = 0;
+                 noteTitle = null;
+                 noteDetails = null;
+                 noteName= null;
+                 notePhone= null;
+                 noteTimeDate = null;
+                 notePrice = null;
+                 noteCurrNumRiders = 0;
+                 noteCapacity = 0;
+                 totalSeatsAvailable = null;
             }
             else{
-                title_text = extras.getString(getString(R.string.noteTitle));
-                details_text = extras.getString(getString(R.string.noteDetails));
-                name_text = extras.getString(getString(R.string.noteName));
-                phone_text = extras.getString(getString(R.string.notePhone));
-
-                price = extras.getString(getString(R.string.notePrice));
-                numSeats = extras.getString(getString(R.string.noteDetails));
-
-
-                timeDate = extras.getString(getString(R.string.note));
+                noteTitle = extras.getString(getString(R.string.noteTitle));
+                noteDetails = extras.getString(getString(R.string.noteDetails));
+                noteName = extras.getString(getString(R.string.noteName));
+                notePhone = extras.getString(getString(R.string.notePhone));
+                notePrice = extras.getString(getString(R.string.notePrice));
+                noteCurrNumRiders = Integer.parseInt(extra.getString(getString(R.string.noteCurrNumRiders)));
+                noteCapacity = Integer.parseInt(extra.getString(getString(R.string.noteCapacity)));
+                noteTimeDate = extras.getString(getString(R.string.noteTimeDate));
+                totalSeatsAvailable = (noteCurrNumRiders + "/" + noteCapacity);
 
             }
         }
-        title.setText(title_text);
-        content.setText(content_text);
-        currNumRidersOverCapacity.setText(s);
+        titleText.setText(noteTitle);
+        detailsText.setText(noteDetails);
+        nameText.setText(noteName);
+        phoneText.setText(notePhone);
+        priceText.setText(notePrice);
+        numSeatsText.setText(totalSeatsAvailable);
+        timeDateText.setText(noteTimeDate);
+
+
+        //currNumRidersOverCapacity.setText(s);
 
 
         //MOVED VARIABLES TO TOP
-        final Button deletepost = (Button)findViewById(R.id.deletePost);
+        final Button deletepost = (Button)findViewById(R.id.deletePost_id);
         if (thisUser.equals(thispostuser)) {
             deletepost.getBackground().setColorFilter(null);
         }
@@ -246,7 +250,7 @@ public class OpenedPostActivity extends Activity {
                 ParseQuery<ParseObject> queryForNote = ParseQuery.getQuery("notes");
                 ParseQuery<ParseObject> queryForMsg = ParseQuery.getQuery("Message");
                 //Delete the post based on the note_id
-                queryForNote.getInBackground(note_id,new GetCallback<ParseObject>(){
+                queryForNote.getInBackground(noteKey,new GetCallback<ParseObject>(){
                     public void done(ParseObject object, ParseException e) {
                         if (e == null)
                             object.deleteInBackground();
@@ -255,7 +259,7 @@ public class OpenedPostActivity extends Activity {
                     }
                 });
                 //Delete the messages related to the post
-                queryForMsg.whereEqualTo("note_key", note_id);
+                queryForMsg.whereEqualTo("noteKey", noteKey);
                 queryForMsg.findInBackground(new FindCallback<ParseObject>() {
                     public void done(List<ParseObject> invites, ParseException e) {
                         if (e == null) {

@@ -388,12 +388,15 @@
     <string name="namePost">Name</string>
     <string name="noteCapacity">capacity</string>
     <string name="noteCurrNumRiders">currNumRiders</string>
+    <string name="noteDate">noteDate</string>
     <string name="noteDetails">noteDetails</string>
     <string name="noteFromDest">fromDest</string>
     <string name="noteKey">noteKey</string>
     <string name="noteName">noteName</string>
     <string name="notePhone">phone number</string>
     <string name="notePrice">price</string>
+    <string name="noteTime">noteTime</string>
+    <string name="noteTimeDate">noteTimeDate</string>
     <string name="noteTitle">noteTitle</string>
     <string name="noteToDest">toDest</string>
     <string name="numSeats">Number of Seats</string>

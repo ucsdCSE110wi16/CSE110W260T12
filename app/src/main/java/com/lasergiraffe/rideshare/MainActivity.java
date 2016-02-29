@@ -83,10 +83,13 @@ public class MainActivity extends ListActivity {
                 String noteName = ((Note)parent.getItemAtPosition(position)).getName();
                 int noteCapacity = ((Note)parent.getItemAtPosition(position)).getCapacity();
                 int noteCurrNumRiders = ((Note)parent.getItemAtPosition(position)).getCurrNumRiders();
-                String noteToDest = ((Note)parent.getItemAtPosition(position)).getToDest();
-                String noteFromDest = ((Note)parent.getItemAtPosition(position)).getFromDest();
-                double notePrice = ((Note)parent.getItemAtPosition(position)).getPrice();
+                //String noteToDest = ((Note)parent.getItemAtPosition(position)).getToDest();
+                //String noteFromDest = ((Note)parent.getItemAtPosition(position)).getFromDest();
+                String notePrice = ((Note)parent.getItemAtPosition(position)).getPrice();
                 String notePhone = ((Note)parent.getItemAtPosition(position)).getPhone();
+                String noteTime = ((Note)parent.getItemAtPosition(position)).getTime();
+                String noteDate = ((Note)parent.getItemAtPosition(position)).getDate();
+                String noteTimeDate = noteTime + "          " + noteDate;
 
                 i.putExtra(getString(R.string.noteTitle), noteTitle);
                 i.putExtra(getString(R.string.noteDetails), noteDetails);
@@ -94,10 +97,12 @@ public class MainActivity extends ListActivity {
                 i.putExtra(getString(R.string.noteName), noteName);
                 i.putExtra(getString(R.string.noteCapacity), noteCapacity);
                 i.putExtra(getString(R.string.noteCurrNumRiders), noteCurrNumRiders);
-                i.putExtra(getString(R.string.noteToDest), noteToDest);
-                i.putExtra(getString(R.string.noteFromDest), noteFromDest);
+                //i.putExtra(getString(R.string.noteToDest), noteToDest);
+                //i.putExtra(getString(R.string.noteFromDest), noteFromDest);
                 i.putExtra(getString(R.string.notePrice), notePrice);
                 i.putExtra(getString(R.string.notePhone), notePhone);
+                i.putExtra(getString(R.string.noteTimeDate), noteTimeDate);
+
                 startActivity(i);
                 refreshPostList();
                 //finish();
@@ -193,7 +198,8 @@ public class MainActivity extends ListActivity {
                                 post.getString("noteName"), post.getString("notePhone"),
                                 post.getString("noteDetails"), post.getInt("noteCapacity"),
                                 post.getInt("noteCurrNumRiders"), post.getString("noteToDest"),
-                                post.getString("noteFromDest"), post.getDouble("notePrice"));
+                                post.getString("noteFromDest"), post.getString("notePrice"),
+                                post.getString("noteTime"), post.getString("noteDate"));
                         note.getObjectId();
                         posts.add(note);
                     }

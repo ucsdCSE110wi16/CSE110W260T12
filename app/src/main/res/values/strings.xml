@@ -41,5 +41,8 @@
     <string name="noteFromDest">fromDest</string>
     <string name="notePrice">price</string>
     <string name="notePhone">phone number</string>
+    <string name="noteTime">noteTime</string>
+    <string name="noteDate">noteDate</string>
+    <string name="noteTimeDate">noteTimeDate</string>
 
 </resources>

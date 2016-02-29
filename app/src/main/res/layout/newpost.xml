@@ -81,7 +81,8 @@
                 android:paddingTop="30dp"
                 android:paddingBottom="15dp"
                 android:hint="@string/priceEstPost"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:onClick="setPriceSign" />
 
             <EditText
                 android:layout_width="match_parent"

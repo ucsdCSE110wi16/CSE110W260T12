@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -35,6 +36,8 @@ public class newpost extends Activity {
     EditText noteFromDest;
     EditText notePrice;
     EditText noteCapacity;
+    TimePicker noteTime;
+    DatePicker noteDate;
     Button submit;
 
     /* Calendar for the newPost */
@@ -54,6 +57,8 @@ public class newpost extends Activity {
         notePrice = (EditText) findViewById(R.id.price_id);
         noteCapacity = (EditText) findViewById(R.id.numSeats_id);
         noteDetails = (EditText) findViewById(R.id.details_id);
+        noteTime = (TimePicker) findViewById(R.id.timePicker_id);
+        noteDate = (DatePicker) findViewById(R.id.datePicker_id);
 
         note = new Note();
 
@@ -67,12 +72,23 @@ public class newpost extends Activity {
                 note.setCapacity(Integer.parseInt(noteCapacity.getText().toString()));
                 note.setFromDest(noteFromDest.getText().toString());
                 note.setToDest(noteToDest.getText().toString());
-                note.setPrice(Double.parseDouble(notePrice.getText().toString()));
+                note.setPrice(notePrice.getText().toString());
+                note.setTitle();
+
+                String hour = Integer.toString( noteTime.getHour() );
+                String minute = Integer.toString( noteTime.getMinute() );
+                note.setTime(hour + ":" + minute);
+
+                String month = Integer.toString( noteDate.getMonth() );
+                String day = Integer.toString( noteDate.getDayOfMonth() );
+                String year = Integer.toString( noteDate.getYear() );
+                note.setDate(month + "/" + day + "/" + year);
 
                 //make an addCurrNumRider method and do riders++ ?????
                 note.setCurrNumRiders(1);
                 //USE this for Parse USERNAME -- ParseUser.getCurrentUser().getUsername().toString()
                 note.setName(noteName.getText().toString());
+
 
                 note.put("noteTitle", note.getTitle());
                 note.put("noteDetails", note.getDetails());
@@ -84,6 +100,9 @@ public class newpost extends Activity {
                 note.put("noteID", note.getId());
                 note.put("noteCapacity", note.getCapacity());
                 note.put("noteCurrNumRiders", note.getCurrNumRiders());
+                note.put("noteTime", note.getTime());
+                note.put("noteDate", note.getDate());
+
                 note.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
@@ -170,6 +189,12 @@ public class newpost extends Activity {
 
         boolean isOn = ((ToggleButton) view).isChecked();
         return isOn;
+    }
+
+    public void setPriceSign( View view ){
+        EditText price = (EditText) view;
+        if(price.getText().toString() == "")
+            price.setText("$");
     }
 }
 
