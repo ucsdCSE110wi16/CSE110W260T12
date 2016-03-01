@@ -69,7 +69,9 @@ public class newpost extends Activity {
                 note.setId(note.getObjectId());
                 note.setDetails(noteDetails.getText().toString());
                 note.setPhone(notePhone.getText().toString());
-                note.setCapacity(Integer.parseInt(noteCapacity.getText().toString()));
+                String s = noteCapacity.getText().toString();
+                int i = Integer.parseInt(s);
+                note.setCapacity(i);
                 note.setFromDest(noteFromDest.getText().toString());
                 note.setToDest(noteToDest.getText().toString());
                 note.setPrice(notePrice.getText().toString());
@@ -86,7 +88,7 @@ public class newpost extends Activity {
 
                 //make an addCurrNumRider method and do riders++ ?????
                 note.setCurrNumRiders(1);
-                note.setUsername(ParseUser.getCurrentUser().getUsername().toString());
+                note.setUsername(ParseUser.getCurrentUser().getUsername());
                 note.setName(noteName.getText().toString());
 
 
@@ -97,7 +99,7 @@ public class newpost extends Activity {
                 note.put("notePrice", note.getPrice());
                 note.put("noteToDest", note.getToDest());
                 note.put("noteFromDest", note.getFromDest());
-                note.put("noteID", note.getId());
+                //note.put("noteKey", note.getId());
                 note.put("noteCapacity", note.getCapacity());
                 note.put("noteCurrNumRiders", note.getCurrNumRiders());
                 note.put("noteTime", note.getTime());
@@ -194,7 +196,7 @@ public class newpost extends Activity {
 
     public void setPriceSign( View view ){
         EditText price = (EditText) view;
-        if(price.getText().toString() == "")
+        if(price.getText().toString() == null)
             price.setText("$");
     }
 }

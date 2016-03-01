@@ -81,8 +81,8 @@ public class OpenedPostActivity extends Activity {
         int noteCapacity = Integer.parseInt(extra.getString(getString(R.string.noteCapacity)));
         String totalSeatsAvailable = noteCurrNumRiders + "/" + noteCapacity;
 
-        final int finalCurrNumRiders = noteCurrNumRiders;
-        final int finalCapacity = noteCapacity;
+        final int finalCurrNumRiders = 1;//noteCurrNumRiders;
+        final int finalCapacity = 2;//noteCapacity;
 
         super.onCreate(savedInstanceState);
 
@@ -103,6 +103,7 @@ public class OpenedPostActivity extends Activity {
         // ??????????? final TextView currNumRidersOverCapacity = (TextView) findViewById(R.id.currNumRidersOverCapacity);
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
+        /*
         mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
         mSystemUiHider.setup();
         mSystemUiHider
@@ -154,11 +155,12 @@ public class OpenedPostActivity extends Activity {
                 }
             }
         });
-
+*/
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.join_group).setOnTouchListener(mDelayHideTouchListener);
+
+        //findViewById(R.id.join_group).setOnTouchListener(mDelayHideTouchListener);
 
         Button joinButton = (Button) findViewById(R.id.join_group);
         joinButton.setOnClickListener(new View.OnClickListener() {
@@ -226,9 +228,12 @@ public class OpenedPostActivity extends Activity {
         }
         titleText.setText(noteTitle);
         detailsText.setText(noteDetails);
-        nameText.setText(noteName);
+        if( noteName.isEmpty())
+            nameText.setText(thisUser);
+        else
+            nameText.setText(noteName);
         phoneText.setText(notePhone);
-        priceText.setText(notePrice);
+        priceText.setText("$" + notePrice);
         numSeatsText.setText(totalSeatsAvailable);
         timeDateText.setText(noteTimeDate);
 
@@ -277,7 +282,7 @@ public class OpenedPostActivity extends Activity {
             }
         });
     }
-
+/*
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -287,13 +292,14 @@ public class OpenedPostActivity extends Activity {
         // are available.
         delayedHide(100);
     }
-
+*/
 
     /**
      * Touch listener to use for in-layout UI controls to delay hiding the
      * system UI. This is to prevent the jarring behavior of controls going away
      * while interacting with activity UI.
      */
+    /*
     View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -311,13 +317,15 @@ public class OpenedPostActivity extends Activity {
             mSystemUiHider.hide();
         }
     };
-
+*/
     /**
      * Schedules a call to hide() in [delay] milliseconds, canceling any
      * previously scheduled calls.
      */
+    /*
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
+    */
 }
