@@ -61,6 +61,8 @@ public class OpenedPostActivity extends Activity {
      */
     private SystemUiHider mSystemUiHider;
 
+    private int numRiders;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -84,6 +86,7 @@ public class OpenedPostActivity extends Activity {
         int noteCurrNumRiders = extra.getInt(getString(R.string.noteCurrNumRiders));
         int noteCapacity = extra.getInt(getString(R.string.noteCapacity));
         String totalSeatsAvailable = noteCurrNumRiders + "/" + noteCapacity;
+        numRiders = noteCurrNumRiders;
 
 
 
@@ -196,6 +199,7 @@ public class OpenedPostActivity extends Activity {
                         e.printStackTrace();
                     }
                     note.increment(getString(R.string.noteCurrNumRiders));
+                    numRiders++;
                     note.saveInBackground();
                     //??????????? currNumRidersOverCapacity.setText(currNumRiders+1+"/"+capacity);
                     user.saveInBackground();
@@ -219,8 +223,8 @@ public class OpenedPostActivity extends Activity {
                  noteTimeDate = null;
                  notePrice = null;
                  isADriver = false;
-                 noteCurrNumRiders = 0;
-                 noteCapacity = 0;
+
+
                  totalSeatsAvailable = null;
             }
             else{
@@ -229,10 +233,9 @@ public class OpenedPostActivity extends Activity {
                 noteName = extras.getString(getString(R.string.noteName));
                 notePhone = extras.getString(getString(R.string.notePhone));
                 notePrice = extras.getString(getString(R.string.notePrice));
-                noteCurrNumRiders = extra.getInt(getString(R.string.noteCurrNumRiders));
                 noteCapacity = extra.getInt(getString(R.string.noteCapacity));
                 noteTimeDate = extras.getString(getString(R.string.noteTimeDate));
-                totalSeatsAvailable = (noteCurrNumRiders + "/" + noteCapacity + "  Seats Available");
+                totalSeatsAvailable = (numRiders + "/" + noteCapacity + "  Seats Available");
                 isADriver = extra.getBoolean(getString(R.string.noteIsDriver));
 
             }
@@ -250,6 +253,8 @@ public class OpenedPostActivity extends Activity {
         else
             p = "$" + notePrice + "  per Person  (Approx.)";
         priceText.setText(p);
+        if(notePrice.isEmpty())
+            priceText.setVisibility(View.INVISIBLE);
         numSeatsText.setText(totalSeatsAvailable);
         timeDateText.setText(noteTimeDate);
 

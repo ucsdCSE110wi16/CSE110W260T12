@@ -76,12 +76,22 @@ public class newpost extends Activity {
             public void onClick(View v) {
 
                 boolean readyToSubmit;
+                boolean zeroCapacity;
+
+                if(noteCapacity.getCurrentTextColor() == getResources().getColor(R.color.red))
+                    noteCapacity.setTextColor(getResources().getColor(R.color.black_overlay));
+
                 if (    noteToDest.getText().toString().matches("") ||
                         noteFromDest.getText().toString().matches("") ||
                         noteCapacity.getText().toString().matches("") )
                     readyToSubmit = false;
                 else
                     readyToSubmit = true;
+
+                if(noteCapacity.getText().toString().matches("0"))
+                    zeroCapacity = true;
+                else
+                    zeroCapacity = false;
 
                 if(!readyToSubmit){
                     Toast.makeText(newpost.this, "You did not fill out all of the Required Fields",
@@ -94,7 +104,14 @@ public class newpost extends Activity {
                     if ( noteCapacity.getText().toString().matches("") )
                         noteCapacity.setHintTextColor(getResources().getColor(R.color.red));
 
-                }else {
+
+
+                }else if(zeroCapacity){
+                    Toast.makeText(newpost.this, "Cannot have 0 Number of Seats",
+                            Toast.LENGTH_LONG).show();
+
+                    noteCapacity.setTextColor(getResources().getColor(R.color.red));
+                }else{
 
                     note.setId(note.getObjectId());
                     note.setDetails(noteDetails.getText().toString());
