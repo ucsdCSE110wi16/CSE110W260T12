@@ -91,6 +91,7 @@ public class MainActivity extends ListActivity {
                 String noteDate = ((Note)parent.getItemAtPosition(position)).getDate();
                 String noteTimeDate = noteTime + "          " + noteDate;
                 String noteUsername = ((Note)parent.getItemAtPosition(position)).getUsername();
+                boolean noteIsDriver = ((Note)parent.getItemAtPosition(position)).getDriver();
 
                 i.putExtra(getString(R.string.noteTitle), noteTitle);
                 i.putExtra(getString(R.string.noteDetails), noteDetails);
@@ -104,6 +105,7 @@ public class MainActivity extends ListActivity {
                 i.putExtra(getString(R.string.notePhone), notePhone);
                 i.putExtra(getString(R.string.noteTimeDate), noteTimeDate);
                 i.putExtra(getString(R.string.noteUsername), noteUsername);
+                i.putExtra(getString(R.string.noteIsDriver), noteIsDriver);
 
                 startActivity(i);
                 refreshPostList();
@@ -202,7 +204,7 @@ public class MainActivity extends ListActivity {
                                 post.getInt("noteCurrNumRiders"), post.getString("noteToDest"),
                                 post.getString("noteFromDest"), post.getString("notePrice"),
                                 post.getString("noteTime"), post.getString("noteDate"),
-                                post.getString("noteUsername"));
+                                post.getString("noteUsername"), post.getBoolean("noteIsDriver"));
                         note.getObjectId();
                         posts.add(note);
                     }

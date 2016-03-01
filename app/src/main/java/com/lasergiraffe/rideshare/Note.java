@@ -22,6 +22,7 @@ public class Note extends ParseObject implements View.OnClickListener{
     private String username;
     private int capacity;
     private int currNumRiders;
+    private boolean isDriver;
 
 
     public Note(){
@@ -31,7 +32,8 @@ public class Note extends ParseObject implements View.OnClickListener{
 
     public Note(String noteId, String noteTitle, String noteName, String notePhone,
                 String noteDetails, int noteCapacity, int noteCurrNumRiders, String destTo,
-                String destFrom, String priceTotal, String theTime, String theDate, String username) {
+                String destFrom, String priceTotal, String theTime, String theDate, String username,
+                boolean isItADriver) {
         id = noteId;
         title = noteTitle;
         name = noteName;
@@ -45,6 +47,7 @@ public class Note extends ParseObject implements View.OnClickListener{
         time = theTime;
         date = theDate;
         this.username = username;
+        isDriver = isItADriver;
 
     }
 
@@ -68,6 +71,7 @@ public class Note extends ParseObject implements View.OnClickListener{
     public String getTime(){ return time; }
     public String getDate(){ return date; }
     public String getUsername(){ return username; }
+    public boolean getDriver() { return isDriver; }
 
     //SETTERS
     public void setId(String id) { this.id = id; }
@@ -83,6 +87,7 @@ public class Note extends ParseObject implements View.OnClickListener{
     public void setTime(String time){ this.time = time; }
     public void setDate(String date){ this.date = date; }
     public void setUsername(String username){ this.username = username; }
+    public void setDriver(boolean isDriver){ this.isDriver = isDriver; }
 
 
 

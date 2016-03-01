@@ -97,6 +97,11 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
+    <!-- From: file:/Users/Yahav/AndroidStudioProjects/CSE110W260T12/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="red">#ff0000</color>
+    <!-- From: file:/Users/Yahav/AndroidStudioProjects/CSE110W260T12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <eat-comment/>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
@@ -385,12 +390,13 @@
     <string name="hello_world">Hello world!</string>
     <string name="logout">logout</string>
     <string name="message_hint">Say anything</string>
-    <string name="namePost">Name</string>
+    <string name="namePost">Name (Optional)</string>
     <string name="noteCapacity">capacity</string>
     <string name="noteCurrNumRiders">currNumRiders</string>
     <string name="noteDate">noteDate</string>
     <string name="noteDetails">noteDetails</string>
     <string name="noteFromDest">fromDest</string>
+    <string name="noteIsDriver">noteIsDriver</string>
     <string name="noteKey">noteKey</string>
     <string name="noteName">noteName</string>
     <string name="notePhone">phone number</string>
@@ -401,7 +407,7 @@
     <string name="noteToDest">toDest</string>
     <string name="noteUsername">noteUsername</string>
     <string name="numSeats">Number of Seats</string>
-    <string name="phonePost">Phone #</string>
+    <string name="phonePost">Phone # (Optional)</string>
     <string name="priceEstPost">Est. Price per Person (Optional)</string>
     <string name="pricePost">Price per Person</string>
     <string name="profile_me">My Profile Pic</string>

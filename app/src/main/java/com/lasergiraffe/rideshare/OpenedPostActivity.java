@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.lasergiraffe.rideshare.util.SystemUiHider;
 import com.parse.FindCallback;
@@ -77,9 +78,13 @@ public class OpenedPostActivity extends Activity {
         String notePrice = extra.getString(getString(R.string.notePrice));
         String notePhone = extra.getString(getString(R.string.notePhone));
         String noteTimeDate = extra.getString(getString(R.string.noteTimeDate));
-        int noteCurrNumRiders = Integer.parseInt(extra.getString(getString(R.string.noteCurrNumRiders)));
-        int noteCapacity = Integer.parseInt(extra.getString(getString(R.string.noteCapacity)));
-        String totalSeatsAvailable = noteCurrNumRiders + "/" + noteCapacity;
+        boolean isADriver = Boolean.parseBoolean(extra.getString(getString(R.string.noteIsDriver)));
+        System.out.print(isADriver);
+        //int noteCurrNumRiders = Integer.parseInt(extra.getString(getString(R.string.noteCurrNumRiders)));
+        //int noteCapacity = Integer.parseInt(extra.getString(getString(R.string.noteCapacity)));
+        //String totalSeatsAvailable = noteCurrNumRiders + "/" + noteCapacity;
+
+
 
         final int finalCurrNumRiders = 1;//noteCurrNumRiders;
         final int finalCapacity = 2;//noteCapacity;
@@ -98,6 +103,9 @@ public class OpenedPostActivity extends Activity {
         TextView numSeatsText = (TextView) findViewById(R.id.numSeats_id);
         TextView priceText = (TextView) findViewById(R.id.priceText_id);
         TextView detailsText = (TextView) findViewById(R.id.detailsText_id);
+        TextView driverText = (TextView) findViewById(R.id.driverText_id);
+        //driverText.setVisibility(View.INVISIBLE);
+
 
 
         // ??????????? final TextView currNumRidersOverCapacity = (TextView) findViewById(R.id.currNumRidersOverCapacity);
@@ -209,9 +217,9 @@ public class OpenedPostActivity extends Activity {
                  notePhone= null;
                  noteTimeDate = null;
                  notePrice = null;
-                 noteCurrNumRiders = 0;
-                 noteCapacity = 0;
-                 totalSeatsAvailable = null;
+                // noteCurrNumRiders = 0;
+                 //noteCapacity = 0;
+                 //totalSeatsAvailable = null;
             }
             else{
                 noteTitle = extras.getString(getString(R.string.noteTitle));
@@ -219,10 +227,10 @@ public class OpenedPostActivity extends Activity {
                 noteName = extras.getString(getString(R.string.noteName));
                 notePhone = extras.getString(getString(R.string.notePhone));
                 notePrice = extras.getString(getString(R.string.notePrice));
-                noteCurrNumRiders = Integer.parseInt(extra.getString(getString(R.string.noteCurrNumRiders)));
-                noteCapacity = Integer.parseInt(extra.getString(getString(R.string.noteCapacity)));
+               // noteCurrNumRiders = Integer.parseInt(extra.getString(getString(R.string.noteCurrNumRiders)));
+                //noteCapacity = Integer.parseInt(extra.getString(getString(R.string.noteCapacity)));
                 noteTimeDate = extras.getString(getString(R.string.noteTimeDate));
-                totalSeatsAvailable = (noteCurrNumRiders + "/" + noteCapacity);
+                //totalSeatsAvailable = (noteCurrNumRiders + "/" + noteCapacity);
 
             }
         }
@@ -233,9 +241,20 @@ public class OpenedPostActivity extends Activity {
         else
             nameText.setText(noteName);
         phoneText.setText(notePhone);
-        priceText.setText("$" + notePrice);
-        numSeatsText.setText(totalSeatsAvailable);
+        String p = "$" + notePrice;
+        priceText.setText(p);
+        //numSeatsText.setText(totalSeatsAvailable);
         timeDateText.setText(noteTimeDate);
+
+        if(isADriver){
+            driverText.setText("WORKED");
+            String s = "** NOTE: This user is the Driver.  **";
+            driverText.setText(s);
+            driverText.setVisibility(View.VISIBLE);
+        }else{
+            driverText.setText("NOO WORK");
+        }
+
 
 
         //currNumRidersOverCapacity.setText(s);

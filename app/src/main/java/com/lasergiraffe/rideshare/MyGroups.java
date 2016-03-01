@@ -77,7 +77,7 @@ public class MyGroups extends ListActivity {
                                 post.getInt("noteCurrNumRiders"), post.getString("noteToDest"),
                                 post.getString("noteFromDest"), post.getString("notePrice"),
                                 post.getString("noteTime"), post.getString("noteDate"),
-                                post.getString("noteUsername"));
+                                post.getString("noteUsername"), post.getBoolean("noteIsDriver"));
                         System.out.println("capacity is " + post.getInt("capacity"));
                         note.getObjectId();
                         groups.add(note);
