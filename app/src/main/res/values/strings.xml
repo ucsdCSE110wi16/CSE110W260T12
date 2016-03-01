@@ -46,5 +46,6 @@
     <string name="noteTimeDate">noteTimeDate</string>
     <string name="noteUsername">noteUsername</string>
     <string name="noteIsDriver">noteIsDriver</string>
+    <string name="departSched">Departure Schedule:</string>
 
 </resources>

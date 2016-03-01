@@ -78,16 +78,17 @@ public class OpenedPostActivity extends Activity {
         String notePrice = extra.getString(getString(R.string.notePrice));
         String notePhone = extra.getString(getString(R.string.notePhone));
         String noteTimeDate = extra.getString(getString(R.string.noteTimeDate));
-        boolean isADriver = Boolean.parseBoolean(extra.getString(getString(R.string.noteIsDriver)));
-        System.out.print(isADriver);
-        //int noteCurrNumRiders = Integer.parseInt(extra.getString(getString(R.string.noteCurrNumRiders)));
-        //int noteCapacity = Integer.parseInt(extra.getString(getString(R.string.noteCapacity)));
-        //String totalSeatsAvailable = noteCurrNumRiders + "/" + noteCapacity;
+        boolean isADriver = extra.getBoolean(getString(R.string.noteIsDriver));
+
+
+        int noteCurrNumRiders = extra.getInt(getString(R.string.noteCurrNumRiders));
+        int noteCapacity = extra.getInt(getString(R.string.noteCapacity));
+        String totalSeatsAvailable = noteCurrNumRiders + "/" + noteCapacity;
 
 
 
-        final int finalCurrNumRiders = 1;//noteCurrNumRiders;
-        final int finalCapacity = 2;//noteCapacity;
+        final int finalCurrNumRiders = noteCurrNumRiders;
+        final int finalCapacity = noteCapacity;
 
         super.onCreate(savedInstanceState);
 
@@ -104,7 +105,7 @@ public class OpenedPostActivity extends Activity {
         TextView priceText = (TextView) findViewById(R.id.priceText_id);
         TextView detailsText = (TextView) findViewById(R.id.detailsText_id);
         TextView driverText = (TextView) findViewById(R.id.driverText_id);
-        //driverText.setVisibility(View.INVISIBLE);
+        driverText.setVisibility(View.INVISIBLE);
 
 
 
@@ -217,9 +218,10 @@ public class OpenedPostActivity extends Activity {
                  notePhone= null;
                  noteTimeDate = null;
                  notePrice = null;
-                // noteCurrNumRiders = 0;
-                 //noteCapacity = 0;
-                 //totalSeatsAvailable = null;
+                 isADriver = false;
+                 noteCurrNumRiders = 0;
+                 noteCapacity = 0;
+                 totalSeatsAvailable = null;
             }
             else{
                 noteTitle = extras.getString(getString(R.string.noteTitle));
@@ -227,10 +229,11 @@ public class OpenedPostActivity extends Activity {
                 noteName = extras.getString(getString(R.string.noteName));
                 notePhone = extras.getString(getString(R.string.notePhone));
                 notePrice = extras.getString(getString(R.string.notePrice));
-               // noteCurrNumRiders = Integer.parseInt(extra.getString(getString(R.string.noteCurrNumRiders)));
-                //noteCapacity = Integer.parseInt(extra.getString(getString(R.string.noteCapacity)));
+                noteCurrNumRiders = extra.getInt(getString(R.string.noteCurrNumRiders));
+                noteCapacity = extra.getInt(getString(R.string.noteCapacity));
                 noteTimeDate = extras.getString(getString(R.string.noteTimeDate));
-                //totalSeatsAvailable = (noteCurrNumRiders + "/" + noteCapacity);
+                totalSeatsAvailable = (noteCurrNumRiders + "/" + noteCapacity + "  Seats Available");
+                isADriver = extra.getBoolean(getString(R.string.noteIsDriver));
 
             }
         }
@@ -241,18 +244,19 @@ public class OpenedPostActivity extends Activity {
         else
             nameText.setText(noteName);
         phoneText.setText(notePhone);
-        String p = "$" + notePrice;
+        String p;
+        if(isADriver)
+            p = "$" + notePrice + "  per Person";
+        else
+            p = "$" + notePrice + "  per Person  (Approx.)";
         priceText.setText(p);
-        //numSeatsText.setText(totalSeatsAvailable);
+        numSeatsText.setText(totalSeatsAvailable);
         timeDateText.setText(noteTimeDate);
 
-        if(isADriver){
-            driverText.setText("WORKED");
+        if(isADriver) {
             String s = "** NOTE: This user is the Driver.  **";
             driverText.setText(s);
             driverText.setVisibility(View.VISIBLE);
-        }else{
-            driverText.setText("NOO WORK");
         }
 
 

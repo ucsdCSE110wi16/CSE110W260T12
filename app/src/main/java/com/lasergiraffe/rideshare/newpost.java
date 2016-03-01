@@ -62,14 +62,9 @@ public class newpost extends Activity {
         noteDate = (DatePicker) findViewById(R.id.datePicker_id);
         noteIsDriver = (ToggleButton) findViewById(R.id.driverToggle);
 
-        final boolean readyToSubmit;
 
-        if (    noteToDest.getText().toString().matches("") ||
-                noteFromDest.getText().toString().matches("") ||
-                noteCapacity.getText().toString().matches("") )
-            readyToSubmit = false;
-        else
-            readyToSubmit = true;
+
+
 
 
 
@@ -79,6 +74,15 @@ public class newpost extends Activity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                boolean readyToSubmit;
+                if (    noteToDest.getText().toString().matches("") ||
+                        noteFromDest.getText().toString().matches("") ||
+                        noteCapacity.getText().toString().matches("") )
+                    readyToSubmit = false;
+                else
+                    readyToSubmit = true;
+
                 if(!readyToSubmit){
                     Toast.makeText(newpost.this, "You did not fill out all of the Required Fields",
                                     Toast.LENGTH_LONG).show();
@@ -95,9 +99,9 @@ public class newpost extends Activity {
                     note.setId(note.getObjectId());
                     note.setDetails(noteDetails.getText().toString());
                     note.setPhone(notePhone.getText().toString());
-                    //String s = noteCapacity.getText().toString();
-                    //int i = Integer.parseInt(s);
-                    //note.setCapacity(i);
+                    String s = noteCapacity.getText().toString();
+                    int i = Integer.parseInt(s);
+                    note.setCapacity(i);
                     note.setFromDest(noteFromDest.getText().toString());
                     note.setToDest(noteToDest.getText().toString());
                     note.setPrice(notePrice.getText().toString());
@@ -122,7 +126,10 @@ public class newpost extends Activity {
                         minute = "0" + minute;
                     note.setTime(hour + ":" + minute + " " + timeOfDay);
 
-                    String month = Integer.toString(noteDate.getMonth());
+                    int intMonth = noteDate.getMonth() + 1;
+                    if (intMonth == 13)
+                        intMonth = 1;
+                    String month = Integer.toString(intMonth);
                     String day = Integer.toString(noteDate.getDayOfMonth());
                     String year = Integer.toString(noteDate.getYear());
                     note.setDate(month + "/" + day + "/" + year);
