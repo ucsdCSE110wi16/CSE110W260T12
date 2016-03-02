@@ -60,4 +60,4 @@
         android:onClick="showLogin"
         android:text="Already Have An Account? Log In!" />
 
-</LinearLayout><!-- From: file:/Users/Yahav/AndroidStudioProjects/CSE110W260T12/app/src/main/res/layout/activity_sign_up.xml -->
+</LinearLayout><!-- From: file:/C:/Users/lamki/AndroidStudioProjects/CSE110W260T12/app/src/main/res/layout/activity_sign_up.xml -->

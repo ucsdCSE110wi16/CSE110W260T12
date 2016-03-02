@@ -3,6 +3,7 @@ package com.lasergiraffe.rideshare;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,7 +27,7 @@ import static com.parse.Parse.initialize;
 
 
 public class MainActivity extends ListActivity {
-
+    SwipeRefreshLayout swipeRefreshLayout;
     public static List<Note> posts;
     static boolean started = false; //don't reinitialize parse if already done once
 
@@ -77,21 +78,21 @@ public class MainActivity extends ListActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(MainActivity.this, OpenedPostActivity.class);
 
-                String noteTitle = ((Note)parent.getItemAtPosition(position)).getTitle();
-                String noteDetails = ((Note)parent.getItemAtPosition(position)).getDetails();
-                String noteKey = ((Note)parent.getItemAtPosition(position)).getId();
-                String noteName = ((Note)parent.getItemAtPosition(position)).getName();
-                int noteCapacity = ((Note)parent.getItemAtPosition(position)).getCapacity();
-                int noteCurrNumRiders = ((Note)parent.getItemAtPosition(position)).getCurrNumRiders();
+                String noteTitle = ((Note) parent.getItemAtPosition(position)).getTitle();
+                String noteDetails = ((Note) parent.getItemAtPosition(position)).getDetails();
+                String noteKey = ((Note) parent.getItemAtPosition(position)).getId();
+                String noteName = ((Note) parent.getItemAtPosition(position)).getName();
+                int noteCapacity = ((Note) parent.getItemAtPosition(position)).getCapacity();
+                int noteCurrNumRiders = ((Note) parent.getItemAtPosition(position)).getCurrNumRiders();
                 //String noteToDest = ((Note)parent.getItemAtPosition(position)).getToDest();
                 //String noteFromDest = ((Note)parent.getItemAtPosition(position)).getFromDest();
-                String notePrice = ((Note)parent.getItemAtPosition(position)).getPrice();
-                String notePhone = ((Note)parent.getItemAtPosition(position)).getPhone();
-                String noteTime = ((Note)parent.getItemAtPosition(position)).getTime();
-                String noteDate = ((Note)parent.getItemAtPosition(position)).getDate();
+                String notePrice = ((Note) parent.getItemAtPosition(position)).getPrice();
+                String notePhone = ((Note) parent.getItemAtPosition(position)).getPhone();
+                String noteTime = ((Note) parent.getItemAtPosition(position)).getTime();
+                String noteDate = ((Note) parent.getItemAtPosition(position)).getDate();
                 String noteTimeDate = noteTime + "          " + noteDate;
-                String noteUsername = ((Note)parent.getItemAtPosition(position)).getUsername();
-                boolean noteIsDriver = ((Note)parent.getItemAtPosition(position)).getDriver();
+                String noteUsername = ((Note) parent.getItemAtPosition(position)).getUsername();
+                boolean noteIsDriver = ((Note) parent.getItemAtPosition(position)).getDriver();
 
                 i.putExtra(getString(R.string.noteTitle), noteTitle);
                 i.putExtra(getString(R.string.noteDetails), noteDetails);
@@ -135,6 +136,14 @@ public class MainActivity extends ListActivity {
                     }
                 });
                 refreshPostList();
+            }
+        });
+
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresh_layout);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            public void onRefresh() {
+                refreshPostList();
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
 

@@ -1,8 +1,8 @@
 package com.lasergiraffe.rideshare;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,14 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
 import com.lasergiraffe.rideshare.util.SignUp;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class Login extends AppCompatActivity {
@@ -28,6 +24,10 @@ public class Login extends AppCompatActivity {
     Button login;
     Button need_acc;
 
+    //Overriding the back button, such that we disable the back button on the login page
+    @Override
+    public void onBackPressed() {
+    }
     private void login(final View v){
         ParseUser.logInInBackground(username.getText().toString(), password.getText().toString(),
                 new LogInCallback() {
