@@ -2,25 +2,11 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jar="C:\Users\lamki\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-727b446fe936792e8ffcf39c3afbab7f1ae6f279.jar" />
-    </item>
-    <item
-        jar="C:\Users\lamki\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-nop\1.5.8\2919ed254f2280716f8a5ef66b07f305b65bc3ad\slf4j-nop-1.5.8.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="2919ed254f2280716f8a5ef66b07f305b65bc3ad">
-        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\slf4j-nop-1.5.8-7f2b85e31f5613b26444691dffdd58db47ec5bd3.jar" />
-    </item>
-    <item
-        jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\layer-sdk-0.19.5\layer-sdk-0.19.5.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="7b57952a8ea74a4794fc051ff790381cfb7e751b">
-        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\layer-sdk-0.19.5-6cdbb1b80a44fc0cebc3d6e1ccb99c890e307940.jar" />
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0-a622b02764b4c164513df675e0bfabd4a80fc7c6.jar" />
     </item>
     <item
         jar="C:\Users\lamki\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
@@ -30,53 +16,11 @@
         <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0-aca24e0a81e6a1be668e25244c9e016122a16e27.jar" />
     </item>
     <item
-        jar="C:\Users\lamki\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-d222057f29d300c16af0922a57735e5ab480b18c.jar" />
-    </item>
-    <item
-        jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\classes-baa880b31ac6813da8602e12ea272e90791b3325.jar" />
-    </item>
-    <item
         jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
         <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\classes-481323d1c1695a2f34fbd1b8240cc4ecdafeab4f.jar" />
-    </item>
-    <item
-        jar="C:\Users\lamki\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.5.8\2aaf496dfd551adb9b079f58a7e2d55eb383fc82\slf4j-api-1.5.8.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="2aaf496dfd551adb9b079f58a7e2d55eb383fc82">
-        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\slf4j-api-1.5.8-05210534d604dfa6ab57443ccee5ece775309920.jar" />
-    </item>
-    <item
-        jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\classes-0908c06e8e28831b899da2acb4bf9335d14d1c98.jar" />
-    </item>
-    <item
-        jar="C:\Users\lamki\.gradle\caches\modules-2\files-2.1\com.parse\parse-android\1.13.0\58a7d54b6a4f28be11f0cecec93097eddf473e6f\parse-android-1.13.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="58a7d54b6a4f28be11f0cecec93097eddf473e6f">
-        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\parse-android-1.13.0-55c06cfc9bb62c5460b8be4c4bd00fb0978b68a2.jar" />
-    </item>
-    <item
-        jar="C:\Users\lamki\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0-a622b02764b4c164513df675e0bfabd4a80fc7c6.jar" />
     </item>
     <item
         jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.8.0\jars\classes.jar"
@@ -86,11 +30,60 @@
         <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\classes-82f7226a165acc65c1fdced078686f325e44aee9.jar" />
     </item>
     <item
+        jar="C:\Users\lamki\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-d222057f29d300c16af0922a57735e5ab480b18c.jar" />
+    </item>
+    <item
         jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.8.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
         <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\classes-eb3364757927b799c5540ae42468fba2aecb7b23.jar" />
+    </item>
+    <item
+        jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-727b446fe936792e8ffcf39c3afbab7f1ae6f279.jar" />
+    </item>
+    <item
+        jar="C:\Users\lamki\.gradle\caches\modules-2\files-2.1\com.parse\parse-android\1.13.0\58a7d54b6a4f28be11f0cecec93097eddf473e6f\parse-android-1.13.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="58a7d54b6a4f28be11f0cecec93097eddf473e6f">
+        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\parse-android-1.13.0-55c06cfc9bb62c5460b8be4c4bd00fb0978b68a2.jar" />
+    </item>
+    <item
+        jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\layer-sdk-0.19.5\layer-sdk-0.19.5.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="7b57952a8ea74a4794fc051ff790381cfb7e751b">
+        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\layer-sdk-0.19.5-6cdbb1b80a44fc0cebc3d6e1ccb99c890e307940.jar" />
+    </item>
+    <item
+        jar="C:\Users\lamki\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-nop\1.5.8\2919ed254f2280716f8a5ef66b07f305b65bc3ad\slf4j-nop-1.5.8.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2919ed254f2280716f8a5ef66b07f305b65bc3ad">
+        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\slf4j-nop-1.5.8-7f2b85e31f5613b26444691dffdd58db47ec5bd3.jar" />
+    </item>
+    <item
+        jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\classes-0908c06e8e28831b899da2acb4bf9335d14d1c98.jar" />
+    </item>
+    <item
+        jar="C:\Users\lamki\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-466c33f8881939316f799104e0c256754f1ac674.jar" />
     </item>
     <item
         jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
@@ -100,11 +93,18 @@
         <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\classes-d374c198227ba60052d4288722b6d0be3ef3d721.jar" />
     </item>
     <item
-        jar="C:\Users\lamki\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jar="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-466c33f8881939316f799104e0c256754f1ac674.jar" />
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\classes-baa880b31ac6813da8602e12ea272e90791b3325.jar" />
+    </item>
+    <item
+        jar="C:\Users\lamki\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.5.8\2aaf496dfd551adb9b079f58a7e2d55eb383fc82\slf4j-api-1.5.8.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2aaf496dfd551adb9b079f58a7e2d55eb383fc82">
+        <dex dex="C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\build\intermediates\pre-dexed\debug\slf4j-api-1.5.8-05210534d604dfa6ab57443ccee5ece775309920.jar" />
     </item>
 
 </items>

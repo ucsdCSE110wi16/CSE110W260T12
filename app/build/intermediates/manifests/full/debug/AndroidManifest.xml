@@ -58,24 +58,12 @@
         </activity>
         <activity
             android:name="com.lasergiraffe.rideshare.OpenedPostActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_opened_post"
-            android:theme="@style/FullscreenTheme" >
+            android:label="@string/title_activity_opened_post" >
         </activity>
         <activity
             android:name="com.lasergiraffe.rideshare.newpost"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name="com.lasergiraffe.rideshare.Layer.layerMain"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
 
         <!-- Parse -->

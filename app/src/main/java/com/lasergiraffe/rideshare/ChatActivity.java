@@ -1,7 +1,8 @@
 package com.lasergiraffe.rideshare;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
-import android.os.Handler;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -24,7 +23,7 @@ import java.util.List;
 
 
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends Activity {
 
     static final String USER_ID_KEY = "userId";
     static final String BODY_KEY = "body";

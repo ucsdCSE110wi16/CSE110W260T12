@@ -54,7 +54,7 @@ public class MainActivity extends ListActivity {
 
         //BUTTONS :D
         Button switchtonewpage = (Button) findViewById(R.id.newpost_button);
-        Button clear = (Button) findViewById(R.id.clear_button);
+        //Button clear = (Button) findViewById(R.id.clear_button);
         Button logout = (Button) findViewById(R.id.logout_button);
         Button myGroups = (Button) findViewById(R.id.myGroups);
 
@@ -114,6 +114,7 @@ public class MainActivity extends ListActivity {
             }
         });
 
+        /*
         // "Clear" Button (We will get rid of this button)
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,7 +139,7 @@ public class MainActivity extends ListActivity {
                 refreshPostList();
             }
         });
-
+        */
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             public void onRefresh() {
