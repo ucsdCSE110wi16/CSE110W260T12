@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
-    android:background="#42cfff">
+    android:background="#ffffff">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,7 +25,8 @@
                 android:textOff="Rider"
                 android:textOn="Driver"
                 android:textSize="18sp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                />
 
             <EditText
                 android:layout_width="match_parent"
@@ -100,14 +101,16 @@
                 android:id="@+id/datePicker" />
 
             <Button
-                style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Submit"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/submit_id"
-                android:padding="15dp"/>
+                android:elevation="8dp"
+                android:padding="15dp"
+                android:background="@drawable/button"
+                />
 
 
         </LinearLayout>

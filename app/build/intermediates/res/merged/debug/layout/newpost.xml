@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="wrap_content"
-    android:background="#42cfff">
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -12,32 +12,42 @@
 
         <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ToggleButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New ToggleButton"
-                android:id="@+id/driverToggle"
-                android:layout_gravity="center_horizontal"
-                android:onClick="setDriver"
-                android:textOff="Rider"
-                android:textOn="Driver"
-                android:textSize="18sp"
-                android:layout_marginTop="10dp" />
-
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/name_id"
-                android:hint="@string/namePost"
-                android:ems="10"
-                android:paddingTop="10dp"
-                android:paddingBottom="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+                <EditText
+                        android:layout_width="191dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/name_id"
+                        android:hint="@string/namePost"
+                        android:ems="10"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"/>
+                <ToggleButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New ToggleButton"
+                    android:id="@+id/driverToggle"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="setDriver"
+                    android:textOff="Rider"
+                    android:textOn="Driver"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/raisedbutton"
+                    android:elevation="8dp"
+                    />
 
+            </LinearLayout>>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,8 +115,7 @@
                 android:paddingTop="30dp"
                 android:paddingBottom="15dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                />
+                android:layout_marginRight="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -134,16 +143,39 @@
                 android:layout_marginRight="15dp"
                 android:paddingBottom="15dp" />
 
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/submitPost"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/submit_id"
-                android:padding="15dp"
-                android:layout_gravity="center_horizontal" />
-
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submitPost"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/submit_id"
+                    android:padding="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:elevation="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/raisedbutton"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clear"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/clear"
+                    android:padding="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:elevation="8dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/raisedbutton"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

@@ -1,9 +1,9 @@
 package com.lasergiraffe.rideshare;
 
 import android.app.Activity;
-import android.app.DatePickerDialog;
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,11 +17,8 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 
 /**
@@ -39,6 +36,7 @@ public class newpost extends Activity {
     TimePicker noteTime;
     DatePicker noteDate;
     Button submit;
+    Button clear;
     ToggleButton noteIsDriver;
 
     /* Calendar for the newPost */
@@ -50,7 +48,7 @@ public class newpost extends Activity {
         setContentView(R.layout.newpost);
 
         submit = (Button) findViewById(R.id.submit_id);
-
+        clear = (Button) findViewById(R.id.clear);
         noteName = (EditText) findViewById(R.id.name_id);
         notePhone = (EditText) findViewById(R.id.phone_id);
         noteToDest = (EditText) findViewById(R.id.destTo_id);
@@ -61,13 +59,6 @@ public class newpost extends Activity {
         noteTime = (TimePicker) findViewById(R.id.timePicker_id);
         noteDate = (DatePicker) findViewById(R.id.datePicker_id);
         noteIsDriver = (ToggleButton) findViewById(R.id.driverToggle);
-
-
-
-
-
-
-
 
         note = new Note();
 
@@ -195,6 +186,34 @@ public class newpost extends Activity {
             }
         });
 
+        clear.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+
+                AlertDialog alertDialog = new AlertDialog.Builder(newpost.this).create();
+                alertDialog.setTitle("Confirmation");
+                alertDialog.setMessage("Do you really want to clear all text fields?");
+                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                noteName.getText().clear();
+                                notePhone.getText().clear();
+                                noteToDest.getText().clear();
+                                noteFromDest.getText().clear();
+                                notePrice.getText().clear();
+                                noteCapacity.getText().clear();
+                                noteDetails.getText().clear();
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+        });
 
         /* when Date of Departure EditText is Clicked, pop up a calendar on screen */
 /*
@@ -268,5 +287,6 @@ public class newpost extends Activity {
         if(price.getText().toString() == null)
             price.setText("$");
     }
+
 }
 

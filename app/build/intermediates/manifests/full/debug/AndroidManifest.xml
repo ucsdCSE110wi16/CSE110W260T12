@@ -59,12 +59,12 @@
         <activity
             android:name="com.lasergiraffe.rideshare.OpenedPostActivity"
             android:label="@string/title_activity_opened_post"
-            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
+            android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name="com.lasergiraffe.rideshare.newpost"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme" >
         </activity>
 
         <!-- Parse -->

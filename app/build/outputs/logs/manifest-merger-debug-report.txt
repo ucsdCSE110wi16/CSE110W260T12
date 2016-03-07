@@ -123,7 +123,7 @@ ADDED from C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\src\main\Andro
 	android:label
 		ADDED from C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\src\main\AndroidManifest.xml:56:13-63
 	android:theme
-		ADDED from C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\src\main\AndroidManifest.xml:55:13-77
+		ADDED from C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\src\main\AndroidManifest.xml:55:13-44
 	android:name
 		ADDED from C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\src\main\AndroidManifest.xml:54:13-47
 activity#com.lasergiraffe.rideshare.newpost
@@ -131,7 +131,7 @@ ADDED from C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\src\main\Andro
 	android:label
 		ADDED from C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\src\main\AndroidManifest.xml:60:13-45
 	android:theme
-		ADDED from C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\src\main\AndroidManifest.xml:61:13-56
+		ADDED from C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\src\main\AndroidManifest.xml:61:13-44
 	android:name
 		ADDED from C:\Users\lamki\AndroidStudioProjects\CSE110W260T12\app\src\main\AndroidManifest.xml:59:13-36
 service#com.parse.PushService
