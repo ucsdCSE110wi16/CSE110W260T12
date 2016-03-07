@@ -2277,7 +2277,10 @@ containing a value of this type.
         public static final int common_signin_btn_text_pressed_light=0x7f02005f;
         public static final int design_fab_background=0x7f020060;
         public static final int design_snackbar_background=0x7f020061;
-        public static final int notification_template_icon_bg=0x7f020062;
+        public static final int group=0x7f020062;
+        public static final int logout=0x7f020063;
+        public static final int newpost_button2=0x7f020064;
+        public static final int notification_template_icon_bg=0x7f020065;
     }
     public static final class id {
         public static final int action0=0x7f0c00a2;

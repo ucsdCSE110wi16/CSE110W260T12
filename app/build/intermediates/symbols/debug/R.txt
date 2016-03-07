@@ -602,7 +602,10 @@ int drawable common_signin_btn_text_pressed_dark 0x7f02005e
 int drawable common_signin_btn_text_pressed_light 0x7f02005f
 int drawable design_fab_background 0x7f020060
 int drawable design_snackbar_background 0x7f020061
-int drawable notification_template_icon_bg 0x7f020062
+int drawable group 0x7f020062
+int drawable logout 0x7f020063
+int drawable newpost_button2 0x7f020064
+int drawable notification_template_icon_bg 0x7f020065
 int id action0 0x7f0c00a2
 int id action_bar 0x7f0c005c
 int id action_bar_activity_content 0x7f0c0000
