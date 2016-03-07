@@ -150,7 +150,6 @@ public class MainActivity extends ListActivity {
 
         // "Log out" Button for users to log out
         logout.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View v) {
                 ParseUser.logOut();

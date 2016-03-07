@@ -20,14 +20,16 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Title"
                 android:id="@+id/titleText_id"
                 android:textSize="40sp"
                 android:textAlignment="center"
                 android:textColor="#570000"
-                android:layout_marginTop="60dp" />
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="match_parent"

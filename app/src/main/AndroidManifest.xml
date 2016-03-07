@@ -52,6 +52,7 @@
         </activity>
         <activity
             android:name=".OpenedPostActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
             android:label="@string/title_activity_opened_post" >
         </activity>
         <activity
