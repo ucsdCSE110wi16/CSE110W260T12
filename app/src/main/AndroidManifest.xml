@@ -28,7 +28,7 @@
     <application
         android:allowBackup="true"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/rideshare"
         android:label="@string/app_name"
         android:launchMode="singleTask"
         android:supportsRtl="true"

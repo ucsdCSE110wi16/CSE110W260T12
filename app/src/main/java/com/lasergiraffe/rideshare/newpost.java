@@ -46,7 +46,6 @@ public class newpost extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newpost);
-
         submit = (Button) findViewById(R.id.submit_id);
         clear = (Button) findViewById(R.id.clear);
         noteName = (EditText) findViewById(R.id.name_id);

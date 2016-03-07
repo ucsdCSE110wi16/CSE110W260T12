@@ -12,7 +12,7 @@
 
         <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
@@ -43,7 +43,7 @@
                     android:textSize="18sp"
                     android:textColor="@color/white"
                     android:layout_marginRight="15dp"
-                    android:background="@drawable/raisedbutton"
+                    android:background="@drawable/toggleselector"
                     android:elevation="8dp"
                     />
 
@@ -76,7 +76,6 @@
                 android:hint="@string/phonePost"
                 android:ems="10"
                 android:id="@+id/phone_id"
-                android:layout_gravity="center_horizontal"
                 android:paddingTop="30dp"
                 android:paddingBottom="15dp"
                 android:layout_marginLeft="15dp"
@@ -157,9 +156,9 @@
                     android:layout_gravity="center_horizontal"
                     android:elevation="8dp"
                     android:layout_marginLeft="15dp"
-                    android:background="@drawable/raisedbutton"
                     android:layout_weight="1"
                     android:textColor="@color/white"
+                    android:theme="@style/MyButton"
                     />
                 <Button
                     android:layout_width="wrap_content"
@@ -172,7 +171,7 @@
                     android:layout_gravity="center_horizontal"
                     android:elevation="8dp"
                     android:layout_marginRight="15dp"
-                    android:background="@drawable/raisedbutton"
+                    android:theme="@style/MyButton"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="1"/>
             </LinearLayout>

@@ -9,12 +9,27 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".RegisterActivity" >
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center_vertical"
         android:orientation="vertical" >
+        <ImageView
+            android:layout_width="283dp"
+            android:layout_height="156dp"
+            android:layout_marginTop="-60dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center_horizontal">
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ff0012" />
 
         <TextView
             android:layout_width="match_parent"
@@ -34,6 +49,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:text="Password:" />
 
         <EditText
@@ -43,14 +59,16 @@
             android:ems="10"
             android:inputType="textPassword" />
 
-        <Button
-            android:id="@+id/sign_up"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:onClick="register"
-            android:text="Sign Up" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:onClick="register"
+        android:text="Sign Up"
+        android:theme="@style/MyButton"/>
 
     <Button
         android:id="@+id/already_have_acc"
@@ -58,6 +76,7 @@
         android:layout_height="wrap_content"
         android:textSize="17sp"
         android:onClick="showLogin"
-        android:text="Already Have An Account? Log In!" />
+        android:text="Already Have An Account? Log In!"
+        android:theme="@style/MyButton"/>
 
 </LinearLayout>

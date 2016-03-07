@@ -44,7 +44,7 @@
     <color name="button_material_light">#ffd6d7d7</color>
     <!-- From: file:/C:/Users/lamki/AndroidStudioProjects/CSE110W260T12/app/src/main/res/values/colors.xml -->
     <eat-comment/>
-    <color name="colorAccent">#00BCD4</color>
+    <color name="colorAccent">#3ad4ea</color>
     <color name="colorPrimary">#00BCD4</color>
     <color name="colorPrimaryDark">#0097A7</color>
     <!-- From: file:/C:/Users/lamki/AndroidStudioProjects/CSE110W260T12/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.8.0/res/values/common_colors.xml -->
@@ -82,6 +82,11 @@
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
+    <!-- From: file:/C:/Users/lamki/AndroidStudioProjects/CSE110W260T12/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="lightBlue">#D2F8F4</color>
+    <!-- From: file:/C:/Users/lamki/AndroidStudioProjects/CSE110W260T12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <eat-comment/>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
@@ -1428,6 +1433,10 @@
         <item name="android:windowBackground">@null</item>
         <item name="metaButtonBarStyle">@style/ButtonBar</item>
         <item name="metaButtonBarButtonStyle">@style/ButtonBarButton</item>
+    </style>
+    <style name="MyButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
     </style>
     <!-- From: file:/C:/Users/lamki/AndroidStudioProjects/CSE110W260T12/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
