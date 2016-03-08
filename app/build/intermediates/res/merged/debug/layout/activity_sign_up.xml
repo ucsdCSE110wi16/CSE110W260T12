@@ -79,4 +79,4 @@
         android:text="Already Have An Account? Log In!"
         android:theme="@style/MyButton"/>
 
-</LinearLayout><!-- From: file:/C:/Users/lamki/AndroidStudioProjects/CSE110W260T12/app/src/main/res/layout/activity_sign_up.xml -->
+</LinearLayout>
