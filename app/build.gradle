@@ -3,7 +3,7 @@ apply plugin: 'maven'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.lasergiraffe.rideshare"
@@ -11,6 +11,9 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -40,4 +43,27 @@ dependencies {
     compile 'com.google.android.gms:play-services-gcm:7.8.0'
     compile 'org.slf4j:slf4j-nop:1.5.8'
     compile project(':layer-sdk-0.19.5')
+
+    // Android JUnit Runner
+    androidTestCompile 'com.android.support.test:runner:0.4.1'
+
+// JUnit4 Rules
+    androidTestCompile 'com.android.support.test:rules:0.4.1'
+
+// Espresso core
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+// Espresso-contrib for DatePicker, RecyclerView, Drawer actions, Accessibility checks, CountingIdlingResource
+    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.1'
+// Espresso-web for WebView support
+    androidTestCompile 'com.android.support.test.espresso:espresso-web:2.2.1'
+// Espresso-idling-resource for synchronization with background jobs
+    androidTestCompile 'com.android.support.test.espresso:espresso-idling-resource:2.2.1'
+}
+
+
+
+android {
+    lintOptions {
+        abortOnError false
+    }
 }
