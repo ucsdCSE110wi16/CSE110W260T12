@@ -80,8 +80,4 @@
         android:text="Need an account? Sign up!"
         android:theme="@style/MyButton"/>
 
-<<<<<<< HEAD
 </LinearLayout>
-=======
-</LinearLayout><!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110W260T12UIWork/app/src/main/res/layout/activity_login.xml -->
->>>>>>> old-state

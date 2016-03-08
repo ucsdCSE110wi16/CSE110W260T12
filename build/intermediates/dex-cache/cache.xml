@@ -2,109 +2,109 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\classes-79d143cae10f349b911b7fa6accd2b39c6ec9ed9.jar" />
-    </item>
-    <item
-        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-32d30385eb90f6a54a418f554d99c2c5686003b5.jar" />
-    </item>
-    <item
-        jar="C:\Users\Amit\.gradle\caches\modules-2\files-2.1\com.parse\parse-android\1.13.0\58a7d54b6a4f28be11f0cecec93097eddf473e6f\parse-android-1.13.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="58a7d54b6a4f28be11f0cecec93097eddf473e6f">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\parse-android-1.13.0-d57319bf80f768f088610388b33533791c862b0d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.8.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\classes-2761e7d1d24e308e901f0cc0ad44789ca7719760.jar" />
-    </item>
-    <item
-        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\classes-6e4f862a9d3c049fda24cd26b1fb84c9cbef2c42.jar" />
-    </item>
-    <item
-        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.8.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="c756d14e99d39471e99013a1e8fd2f3813ed42bf">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\classes-b337eed73c060f7f8440ed0d585004f6f44c0b72.jar" />
-    </item>
-    <item
-        jar="C:\Users\Amit\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-9b2b48a7e228dd8a4a972e7f755814d97806950e.jar" />
-    </item>
-    <item
-        jar="C:\Users\Amit\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0-739a4264145c666bb5c6bb6562cb71d55022a1b6.jar" />
-    </item>
-    <item
         jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\classes-6b9b1c1850cca834d818150d7b4031f56f7db5c7.jar" />
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_6b9b1c1850cca834d818150d7b4031f56f7db5c7.jar" />
     </item>
     <item
         jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\classes-93ff551efd33eba3258e1d1b47cb0241f1c3ce6e.jar" />
-    </item>
-    <item
-        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\layer-sdk-0.19.5\layer-sdk-0.19.5.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="7b57952a8ea74a4794fc051ff790381cfb7e751b">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\layer-sdk-0.19.5-97aa3f3e2c72165237ca5b3bd5d617c14828d9c1.jar" />
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_93ff551efd33eba3258e1d1b47cb0241f1c3ce6e.jar" />
     </item>
     <item
         jar="C:\Users\Amit\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0-9a1e797ba06d2c708a7f92f4256f009aa1c92a9e.jar" />
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_9a1e797ba06d2c708a7f92f4256f009aa1c92a9e.jar" />
     </item>
     <item
-        jar="C:\Users\Amit\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.5.8\2aaf496dfd551adb9b079f58a7e2d55eb383fc82\slf4j-api-1.5.8.jar"
+        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="2aaf496dfd551adb9b079f58a7e2d55eb383fc82">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\slf4j-api-1.5.8-af0c91ee4db7b6b71f21ec823d093a420a227870.jar" />
-    </item>
-    <item
-        jar="C:\Users\Amit\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-c24de8f84899466032b46567320854725ddb815d.jar" />
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.1.1_6e4f862a9d3c049fda24cd26b1fb84c9cbef2c42.jar" />
     </item>
     <item
         jar="C:\Users\Amit\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-nop\1.5.8\2919ed254f2280716f8a5ef66b07f305b65bc3ad\slf4j-nop-1.5.8.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="2919ed254f2280716f8a5ef66b07f305b65bc3ad">
-        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\slf4j-nop-1.5.8-9a27602f86ac874641a008643d9d95397cfd011d.jar" />
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\slf4j-nop-1.5.8_9a27602f86ac874641a008643d9d95397cfd011d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Amit\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_9b2b48a7e228dd8a4a972e7f755814d97806950e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Amit\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_739a4264145c666bb5c6bb6562cb71d55022a1b6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-7.8.0_2761e7d1d24e308e901f0cc0ad44789ca7719760.jar" />
+    </item>
+    <item
+        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\layer-sdk-0.19.5\layer-sdk-0.19.5.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="7b57952a8ea74a4794fc051ff790381cfb7e751b">
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\layer-sdk-0.19.5_97aa3f3e2c72165237ca5b3bd5d617c14828d9c1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_32d30385eb90f6a54a418f554d99c2c5686003b5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_79d143cae10f349b911b7fa6accd2b39c6ec9ed9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Amit\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.5.8\2aaf496dfd551adb9b079f58a7e2d55eb383fc82\slf4j-api-1.5.8.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2aaf496dfd551adb9b079f58a7e2d55eb383fc82">
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\slf4j-api-1.5.8_af0c91ee4db7b6b71f21ec823d093a420a227870.jar" />
+    </item>
+    <item
+        jar="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c756d14e99d39471e99013a1e8fd2f3813ed42bf">
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-gcm-7.8.0_b337eed73c060f7f8440ed0d585004f6f44c0b72.jar" />
+    </item>
+    <item
+        jar="C:\Users\Amit\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_9ac4c7352b69ea578d397f5e0b30d40bc9bfa935.jar" />
+    </item>
+    <item
+        jar="C:\Users\Amit\.gradle\caches\modules-2\files-2.1\com.parse\parse-android\1.13.0\58a7d54b6a4f28be11f0cecec93097eddf473e6f\parse-android-1.13.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="58a7d54b6a4f28be11f0cecec93097eddf473e6f">
+        <dex dex="C:\Users\Amit\Dropbox\College Winter 2016\CSE110\Project Repo\CSE110W260T12UIWork\app\build\intermediates\pre-dexed\debug\parse-android-1.13.0_d57319bf80f768f088610388b33533791c862b0d.jar" />
     </item>
 
 </items>

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="layer-sdk-0.19.5.layer-sdk-0.19.5">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/layer-sdk-0.19.5/layer-sdk-0.19.5.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
