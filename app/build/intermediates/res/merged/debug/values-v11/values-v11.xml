@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
+=======
+    <!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110W260T12UIWork/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml -->
+    <eat-comment/>
+>>>>>>> old-state
     <style name="Base.TextAppearance.AppCompat.Inverse">
         <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
         <item name="android:textColorHint">?android:attr/textColorHintInverse</item>
@@ -52,6 +57,11 @@
     </style>
     <style name="Base.Widget.AppCompat.ProgressBar.Horizontal" parent="android:Widget.Holo.ProgressBar.Horizontal">
     </style>
+<<<<<<< HEAD
+=======
+    <!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110W260T12UIWork/app/src/main/res/values-v11/styles.xml -->
+    <eat-comment/>
+>>>>>>> old-state
     <style name="FullscreenActionBarStyle" parent="android:Widget.Holo.ActionBar">
         <item name="android:background">@color/black_overlay</item>
     </style>
@@ -62,6 +72,11 @@
         <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
         <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
     </style>
+<<<<<<< HEAD
+=======
+    <!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110W260T12UIWork/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml -->
+    <eat-comment/>
+>>>>>>> old-state
     <style name="Platform.AppCompat" parent="Platform.V11.AppCompat"/>
     <style name="Platform.AppCompat.Light" parent="Platform.V11.AppCompat.Light"/>
     <style name="Platform.V11.AppCompat" parent="android:Theme.Holo">

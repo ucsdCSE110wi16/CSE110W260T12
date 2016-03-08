@@ -9,4 +9,8 @@
     android:layout_marginLeft="15dp"
     android:ellipsize="end"
     android:text="sans-serif-light">
+<<<<<<< HEAD
 </TextView>
+=======
+</TextView><!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110W260T12UIWork/app/src/main/res/layout/list_item_layout.xml -->
+>>>>>>> old-state

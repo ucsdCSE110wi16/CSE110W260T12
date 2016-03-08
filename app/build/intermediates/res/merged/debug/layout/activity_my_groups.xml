@@ -18,4 +18,8 @@
         android:layout_alignParentEnd="true">
     </ListView>
 
+<<<<<<< HEAD
 </RelativeLayout>
+=======
+</RelativeLayout><!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110W260T12UIWork/app/src/main/res/layout/activity_my_groups.xml -->
+>>>>>>> old-state

@@ -16,3 +16,7 @@
     <item
         android:color="@color/common_signin_btn_dark_text_default" />
 </selector>
+<<<<<<< HEAD
+=======
+<!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110W260T12UIWork/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.8.0/res/color/common_signin_btn_text_dark.xml -->
+>>>>>>> old-state

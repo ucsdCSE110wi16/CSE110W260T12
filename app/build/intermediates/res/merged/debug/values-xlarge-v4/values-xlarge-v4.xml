@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD:app/build/intermediates/res/merged/debug/values-xlarge-v4/values-xlarge-v4.xml
+=======
+    <!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110W260T12UIWork/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-xlarge/values-xlarge.xml -->
+    <eat-comment/>
+>>>>>>> old-state:app/build/intermediates/res/merged/debug/values-xlarge/values-xlarge.xml
     <bool name="abc_action_bar_expanded_action_views_exclusive">false</bool>
     <item name="abc_dialog_fixed_height_major" type="dimen">60%</item>
     <item name="abc_dialog_fixed_height_minor" type="dimen">90%</item>

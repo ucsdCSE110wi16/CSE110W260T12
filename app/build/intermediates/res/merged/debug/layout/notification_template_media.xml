@@ -50,4 +50,8 @@
         android:layout_height="match_parent"
         />
 </LinearLayout>
+<<<<<<< HEAD
 <!-- From: file:/usr/local/google/buildbot/src/googleplex-android/mnc-supportlib-release/frameworks/support/v7/appcompat/res/layout/notification_template_media.xml -->
+=======
+<!-- From: file:/usr/local/google/buildbot/src/googleplex-android/mnc-supportlib-release/frameworks/support/v7/appcompat/res/layout/notification_template_media.xml --><!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110W260T12UIWork/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_media.xml -->
+>>>>>>> old-state

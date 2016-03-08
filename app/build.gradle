@@ -3,7 +3,7 @@ apply plugin: 'maven'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.lasergiraffe.rideshare"
@@ -58,5 +58,11 @@ dependencies {
     androidTestCompile 'com.android.support.test.espresso:espresso-web:2.2.1'
 // Espresso-idling-resource for synchronization with background jobs
     androidTestCompile 'com.android.support.test.espresso:espresso-idling-resource:2.2.1'
+}
+
+android {
+    lintOptions {
+        abortOnError false
+    }
 }
 

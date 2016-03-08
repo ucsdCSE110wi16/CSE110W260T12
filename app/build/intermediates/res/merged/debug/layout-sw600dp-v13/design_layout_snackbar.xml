@@ -20,4 +20,8 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="bottom|center_horizontal"
+<<<<<<< HEAD:app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml
       style="@style/Widget.Design.Snackbar" /><!-- From: file:/usr/local/google/buildbot/src/googleplex-android/mnc-supportlib-release/frameworks/support/design/res/layout-sw600dp/design_layout_snackbar.xml -->
+=======
+      style="@style/Widget.Design.Snackbar" /><!-- From: file:/usr/local/google/buildbot/src/googleplex-android/mnc-supportlib-release/frameworks/support/design/res/layout-sw600dp/design_layout_snackbar.xml --><!-- From: file:/C:/Users/Amit/Dropbox/College%20Winter%202016/CSE110/Project%20Repo/CSE110W260T12UIWork/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/layout-sw600dp/design_layout_snackbar.xml -->
+>>>>>>> old-state:app/build/intermediates/res/merged/debug/layout-sw600dp/design_layout_snackbar.xml
