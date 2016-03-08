@@ -20,13 +20,16 @@ Week 8:
   TODO: Fix Delete button for post (has to clear messages as well as post), clean up code / debugging - Kenny
   TODO: Clean up the project. Still need to fix creating new posts to fit customer specifications (price etc).
       includes user story 11 (seperation by driver/rider), 9 (title = source to destination + time) - Amit/Yahav 
+      DONE
   TODO: Work on design (colors and layout look pretty bad) - Amit / Yahav work on this 
+      DONE (Looks Kinda Nice :) )
   OI AMIT/YAHAV THIS FOR YOU: https://docs.google.com/document/d/1IxgpDPHwM_JrnHbX79Edxzbz0VrPBj03_BXSM3hBngM/edit?usp=sharing
-  
+      DONE
   I think we can be done(?) with the app by the end of this weekend.
   
 Week 9-10: 
     TODO: Map functionality (User story 5) (optional, customers said they don't really want it)
     TODO: refresh ability on main screen 
     TODO: clean up code (so we can show off to our potential recruiters huehue)
-  
+    TODO: Writing Tests for Modules
+      In progress....Will be done 3/8
