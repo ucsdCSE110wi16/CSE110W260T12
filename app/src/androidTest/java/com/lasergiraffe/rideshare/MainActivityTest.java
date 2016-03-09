@@ -26,4 +26,5 @@ public class MainActivityTest {
     public void shouldLauchMainScreen() {
         onView(withText("Hello")).check(ViewAssertions.matches(isDisplayed()));
     }
+
 }
