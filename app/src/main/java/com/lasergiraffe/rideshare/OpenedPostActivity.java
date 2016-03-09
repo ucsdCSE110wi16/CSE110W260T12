@@ -192,8 +192,12 @@ public class OpenedPostActivity extends Activity {
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-                    note.increment(getString(R.string.noteCurrNumRiders));
+                   // note.increment(getString(R.string.noteCurrNumRiders));
+
                     numRiders++;
+                    note.setCurrNumRiders(numRiders);
+                    note.put("noteCurrNumRiders", note.getCurrNumRiders());
+                    refreshRiders(note);
                     note.saveInBackground();
                     //??????????? currNumRidersOverCapacity.setText(currNumRiders+1+"/"+capacity);
                     user.saveInBackground();
@@ -304,6 +308,16 @@ public class OpenedPostActivity extends Activity {
             }
         });
     }
+
+    public void refreshRiders(Note note){
+        Bundle extra = getIntent().getExtras();
+        int noteCurrNumRiders = note.getCurrNumRiders();
+        TextView numSeatsText = (TextView) findViewById(R.id.numSeats_id);
+        int noteCapacity = extra.getInt(getString(R.string.noteCapacity));
+        String totalSeatsAvailable = (noteCurrNumRiders + "/" + noteCapacity + "  Seats Available");
+        numSeatsText.setText(totalSeatsAvailable);
+    }
+
 /*
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

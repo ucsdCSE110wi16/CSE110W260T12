@@ -116,7 +116,7 @@ public class MyGroups extends ListActivity {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                note.increment("currNumRiders", -1); //currNumRiders--
+                note.increment("noteCurrNumRiders", -1); //currNumRiders--
                 note.saveInBackground();
                 user.put("group_key", myGroups);
                 user.saveInBackground(new SaveCallback() {
