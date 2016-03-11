@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="operand_one_edit_text" type="id" />
+    <item name="test1_text" type="id">username</item>
+    <item name="test2_text" type="id">Password</item>
+</resources>

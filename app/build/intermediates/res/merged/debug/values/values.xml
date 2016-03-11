@@ -259,9 +259,12 @@
     <item name="action_menu_presenter" type="id"/>
     <item name="home" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
+    <item name="operand_one_edit_text" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
     <item name="split_action_bar" type="id"/>
+    <item name="test1_text" type="id">username</item>
+    <item name="test2_text" type="id">Password</item>
     <item name="up" type="id"/>
     <item name="view_offset_helper" type="id"/>
     <integer name="abc_config_activityDefaultDur">220</integer>
@@ -365,6 +368,9 @@
     <string name="specifyTimeDate">Specify the Time and Date of Departure below:</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="submitPost">Submit</string>
+    <string name="test1">username</string>
+    <string name="test2">Password</string>
+    <string name="test3"/>
     <string name="title_activity_chat">ChatActivity</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_my_groups">MyGroups</string>
