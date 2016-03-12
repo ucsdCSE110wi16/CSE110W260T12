@@ -1,6 +1,5 @@
 package com.lasergiraffe.rideshare.util;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -8,33 +7,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import com.lasergiraffe.rideshare.Login;
-import com.lasergiraffe.rideshare.MainActivity;
-import com.lasergiraffe.rideshare.Note;
-import com.parse.Parse;
-import com.parse.ParseException;
-import com.parse.ParseInstallation;
-import com.parse.ParseObject;
-import com.parse.ParseUser;
+import android.widget.TextView;
 
 import com.lasergiraffe.rideshare.R;
+import com.parse.ParseException;
+import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 import org.json.JSONArray;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.parse.Parse.initialize;
-
 public class SignUp extends AppCompatActivity {
-   // boolean started = false;
+    // boolean started = false;
     EditText username;
     EditText password;
     Button sign_up;
     Button already_have_account;
-
+    TextView errorMessage;
     private void register(final View v){
 
         if(username.getText().length()==0 || password.getText().length()==0)
@@ -49,10 +37,24 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void done(ParseException e) {
                 if (e == null) {
-                    Intent i = new Intent(SignUp.this, MainActivity.class);
-                    startActivity(i);
                     finish();
                 } else {
+                    switch(e.getCode()){
+                        case ParseException.USERNAME_TAKEN:
+                            errorMessage.setText("Username Already Taken");
+                            break;
+                        case ParseException.USERNAME_MISSING:
+                            errorMessage.setText("Please add a username");
+                            break;
+                        case ParseException.PASSWORD_MISSING:
+                            errorMessage.setText("Please add a password");
+                            break;
+                        case ParseException.OBJECT_NOT_FOUND:
+                            errorMessage.setText("Username or password invalid");
+                            break;
+                        default:
+                            errorMessage.setText(e.getLocalizedMessage());
+                            break;}
                     v.setEnabled(true);
                 }
             }
@@ -76,6 +78,7 @@ public class SignUp extends AppCompatActivity {
         password = (EditText) findViewById(R.id.register_password);
         sign_up = (Button) findViewById(R.id.sign_up);
         already_have_account = (Button) findViewById(R.id.already_have_acc);
+        errorMessage = (TextView) findViewById(R.id.errorMessages);
 
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +91,7 @@ public class SignUp extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(SignUp.this, Login.class);
+                //Intent i = new Intent(SignUp.this, Login.class);
                 //startActivity(i);
                 finish();
             }

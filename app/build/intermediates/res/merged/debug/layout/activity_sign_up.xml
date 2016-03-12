@@ -29,7 +29,9 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_gravity="center_horizontal"
-            android:textColor="#ff0012" />
+            android:textAlignment="center"
+            android:textColor="#ff0012"
+            android:id="@+id/errorMessages" />
 
         <TextView
             android:layout_width="match_parent"

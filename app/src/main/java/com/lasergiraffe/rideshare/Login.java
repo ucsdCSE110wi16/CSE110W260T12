@@ -56,8 +56,7 @@ public class Login extends AppCompatActivity {
                                     break;
                                 default:
                                     errorMessage.setText(e.getLocalizedMessage());
-                                    break;
-                            }
+                                    break;}
                         }
                     }
                 });
@@ -84,7 +83,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(Login.this, SignUp.class);
                 startActivity(i);
-                //finish();
+                finish();
             }
 
 
